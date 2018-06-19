@@ -2,7 +2,7 @@ Hello, this is the directory for the MarioAI Benchmark and agents.
 
 ## Agents
 
-You'll find the python agents in the directory: `/src/main/java/amico/python/agents`.
+You'll find the python agents in the directory: [`/src/main/java/amico/python/agents`](https://github.com/MatPont/MarioBros-MachineLearning/tree/master/mario-ai-master/src/main/java/amico/python/agents).
 
 * Deep Q Learning is in `MarioDQNAgent2.py` it needs:
   * Tensorflow (I used 1.5.0 with CUDA 9.0.176 and cuDNN 7.0.5).
@@ -17,7 +17,7 @@ A library must be created to make possible communication between the agent in Py
 
 Some files are given with the benchmark to make easier this library, it was first for python2 so I modified the files to use python3. I tried everything in Linux, so the makefile for Windows and Mac (darwin) aren't probably working. Good luck if you use these OS.
 
-If you use Linux you'll probably need to modify in the directory `/src/main/java/amico/python/JavaPy` some files:
+If you use Linux you'll probably need to modify in the directory [`/src/main/java/amico/python/JavaPy`](https://github.com/MatPont/MarioBros-MachineLearning/tree/master/mario-ai-master/src/main/java/amico/python/JavaPy) some files:
 * in `Makefile.Linux` the variables:
   * `JAVADIRPATH` must be initialized with your java directory.
   * `PYTHONVERSION` must be initalized with your version of python.
@@ -32,7 +32,7 @@ I ran experiments on my laptop and on a slurm client called OSIRIM, the process 
 
 ## Configure MarioAI Benchmark
 
-You can configure the mario environment in `src/main/java/ch/idsia/scenarios/Main.java`. The variable marioAIOptions enable you to custom the environment.
+You can configure the mario environment in the Main class of [`src/main/java/ch/idsia/scenarios`](https://github.com/MatPont/MarioBros-MachineLearning/tree/master/mario-ai-master/src/main/java/ch/idsia/scenarios). The variable marioAIOptions enable you to custom the environment.
 
 ## Configure Agents
 
