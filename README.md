@@ -14,7 +14,7 @@ Three mains methods emerged from my preliminary study.
 
 ## References
 
-### Mario
+#### Mario
 [Karakovskiy et al. 2012] Sergey Karakovskiy and Julian Togelius.  The Mario AI Benchmark and 	Competitions. 2012.
 
 [Curran et al. 2015] William Curran, Tim Brys, Matthew E. Taylor and William D. Smart.  Using 	PCA to Efficiently Represent State Spaces. 2015.
