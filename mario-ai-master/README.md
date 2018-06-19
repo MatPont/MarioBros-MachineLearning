@@ -5,7 +5,7 @@ Hello, this is the directory for the MarioAI Benchmark and agents.
 You'll find the python agents in the directory: [`/src/main/java/amico/python/agents`](https://github.com/MatPont/MarioBros-MachineLearning/tree/master/mario-ai-master/src/main/java/amico/python/agents).
 
 * Deep Q Learning is in `MarioDQNAgent2.py` it needs:
-  * Tensorflow (I used 1.5.0 with CUDA 9.0.176 and cuDNN 7.0.5).
+  * Tensorflow (I used tensorflow-gpu 1.5.0 with CUDA 9.0.176 and cuDNN 7.0.5).
   * Numpy (I used 1.14.3).
   * The files: ops.py, SarstReplayMemory.py and PrioritizedSumTree.py contained in the same directory than the agent.
 * NEAT is in `MarioNEATAgent.py` and is not fully implemented yet.
