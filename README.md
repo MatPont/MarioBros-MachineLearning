@@ -19,10 +19,10 @@ Three mains methods emerged from my preliminary study.
 
 [Curran et al. 2015] William Curran, Tim Brys, Matthew E. Taylor and William D. Smart.  Using 	PCA to Efficiently Represent State Spaces. 2015.
 
-### AMOEBA
+#### AMOEBA
 [Nigon 2017] Julien Nigon.  Apprentissage artificiel adapté aux systèmes complexes par auto-	organisation coopérative de systèmes multi-agents. 2017.
 
-### Deep Reinforcement Learning (Deep Q Learning)
+#### Deep Reinforcement Learning (Deep Q Learning)
 [Watkins 1989] C. J. Watkins.  Learning from delayed rewards. 1989.
 
 [Liao et al. 2012] Y. Liao, K. Yi and Z. Yang.  Final Report Reinforcement Learning to Play Mario. 	2012.
@@ -47,7 +47,7 @@ Three mains methods emerged from my preliminary study.
 
 [Andersen 2018] P. Andersen.  Deep Reinforcement Learning using Capsules in Advanced Game 	Environments. 2018.
 
-### Evolutionnary Algorithm (NEAT)
+#### Evolutionnary Algorithm (NEAT)
 [Montana et al. 1989] David J. Montana and Lawrence Davis.  Training Feedforward Neural 	Networks Using Genetic Algorithms. 1989.
 
 [Stanley et al. 2002] K. O. Stanley and R. Miikkulainen.  Evolving Neural Networks through 	Augmenting Topologies. 2002.
@@ -58,7 +58,7 @@ Three mains methods emerged from my preliminary study.
 
 [Miikkulainen et al. 2017] Risto Miikkulainen, Jason Liang, Elliot Meyerson, Aditya Rawal, Dan 	Fink, Olivier Francon, Bala Raju, Hormoz Shahrzad, Arshak Navruzyan, Nigel Duffy and Babak 	Hodjat.  Evolving Deep Neural Networks. 2017.
 
-### NEAT and Backpropagation (with Q Learning)
+#### NEAT and Backpropagation (with Q Learning)
 [Whiteson et al. 2006] Shimon Whiteson and Peter Stone.  Evolutionary Function Approximation 	for Reinforcement Learning. 2006.
 
 [Whiteson 2010] Shimon Whiteson.  Adaptive Representations for Reinforcement Learning. 2010.
