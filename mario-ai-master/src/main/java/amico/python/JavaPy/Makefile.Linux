@@ -1,0 +1,28 @@
+#(old) -L/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/opt/epd/lib
+#      -L/usr/local/lib/python3.5/config-3.5m-x86_64-linux-gnu
+
+CC = g++
+MKDIR = mkdir
+JAVADIRPATH = /usr/lib/jvm/java-8-openjdk-amd64
+
+SRCDIR = src
+BUILDDIR = build
+CFLAGS = -shared -Wl,-soname,libAmiCoJavaPy.so.1 -fPIC -Xlinker --export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions
+INCLUDES = -I$(JAVADIRPATH)/include -I$(JAVADIRPATH)/include/linux -I/usr/include/python3.5m
+LFLAGS =  -L$(JAVADIRPATH)/jre/lib -L$(JAVADIRPATH)/jre/lib/amd64/server
+LIBS = -ljvm -lpthread -lz -lutil -lpython3.5m
+MAIN = $(BUILDDIR)/libAmiCoJavaPy.so
+
+all: $(MAIN)
+
+$(MAIN):
+	${MKDIR} -p $(BUILDDIR)
+	$(CC) $(CFLAGS) $(INCLUDES) $(LFLAGS) -o $(MAIN) $(SRCDIR)/ch_idsia_tools_amico_AmiCoJavaPy.cc $(LIBS) 
+
+.PHONY: clean
+
+clean:
+	rm -f $(MAIN)
+
+# DO NOT DELETE THIS LINE
+
