@@ -15,6 +15,7 @@ Three mains methods emerged from my preliminary study:
 For Deep Q Learning I took the original code from https://github.com/robmsylvester/Super-Mario-Bros-DQN and https://github.com/awjuliani/DeepRL-Agents/blob/master/Deep-Recurrent-Q-Network.ipynb. I combined them and made my own changes to make the code compatible with MarioAI Benchmark and some other features.
 
 **I recommand to see the README.md of the `mario-ai-master` directory to understand how to run agents and how to configure them.**
+
 `mario-ai-master_OSIRIM` is just a directory preconfigured to be used on a slurm client (like OSIRIM).
 
 ## References

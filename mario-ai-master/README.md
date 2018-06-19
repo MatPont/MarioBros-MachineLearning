@@ -44,7 +44,7 @@ and two reward functions:
 * (R0) Score: reward related to the score of the game.
 * (R1) Right and top: the agent is rewarded when he goes to the right and the top.
 
-To change state representation and reward function you need to modify the variables stateRepresentationID and rewardID at the beginning of an agent file.
+To change state representation and reward function you need to modify the variables `stateRepresentationID` and `rewardID` at the beginning of an agent file.
 
 * DQN Agent:
   * `useLSTM`: if True the before last layer will be LSTM
