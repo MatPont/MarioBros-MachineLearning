@@ -16,6 +16,10 @@ for e in lines:
 	result.append(e.split(","))
 """
 
+if len(sys.argv) < 2:
+	print("Usage:",sys.argv[0],"fileName...")
+	sys.exit(1)
+
 filesResult = []
 
 for arg in sys.argv[1:]:

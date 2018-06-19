@@ -50,7 +50,7 @@ To change state representation and reward function you need to modify the variab
   * `useLSTM`: if True the before last layer will be LSTM
     * `trace_length`: length of a memory when it is took from the replay memory.
     * `maskHalfLoss`: if True it will mask (reset to 0) the first half of each trace [Hausknecht et al. 2015].
-    * `reset_rnn_state`: if True LSTM will be stateless (meaning that LSTM state is reseted after every batch) otherwise it will be stateful (state is keeped).
+    * `reset_rnn_state`: if True LSTM will be stateless (meaning that LSTM state is reset after every batch) otherwise it will be stateful (state is keep for the next batch).
     * `useLSTMTanH`: if True LSTM use TanH for its inner activation function, otherwise it will use the activation function define in `build_network()` function (it's leaky_relu)
   * `useDuelingNetwork`: if True the last layer will be dueling [Wang et al. 2016].
   * You have also all the basic parameters like batch size, gamma (discouted reward factor), initial epsilon (exploration rate), minimum epsilon and epsilon decay, replay memory capacity, frequency of computing an action, frequency of updating target network and another one for saving model periodically.
