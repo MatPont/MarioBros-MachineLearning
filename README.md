@@ -7,7 +7,7 @@ We compare them using the MarioAI Benchmark [Karakovskiy et al. 2012].
 
 I took the benchmark from this github repository https://github.com/zerg000000/mario-ai.
 
-Three mains methods emerged from my preliminary study:
+Three mains methods emerged from my preliminary study.
 * Deep Q Learning [Mnih et al. 2013].
 * NEAT [Stanley et al. 2002].
 * NEAT + Q [Whiteson et al. 2006].
