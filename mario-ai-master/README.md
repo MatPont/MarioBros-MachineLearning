@@ -2,13 +2,13 @@ Hello, this is the directory for the MarioAI Benchmark and agents.
 
 ## Agents
 
-You'll find the python agents in the directory: "/src/main/java/amico/python/agents".
+You'll find the python agents in the directory: `/src/main/java/amico/python/agents`.
 
-* Deep Q Learning is in "MarioDQNAgent2.py" it needs:
-** Tensorflow (I used 1.5.0 with CUDA 9.0.176 and cuDNN 7.0.5).
-** Numpy (I used 1.14.3).
-** The files: ops.py, SarstReplayMemory.py and PrioritizedSumTree.py contained in the same directory than the agent.
-* NEAT is in "MarioNEATAgent.py" and is not fully implemented yet.
+* Deep Q Learning is in `MarioDQNAgent2.py` it needs:
+  * Tensorflow (I used 1.5.0 with CUDA 9.0.176 and cuDNN 7.0.5).
+  * Numpy (I used 1.14.3).
+  * The files: ops.py, SarstReplayMemory.py and PrioritizedSumTree.py contained in the same directory than the agent.
+* NEAT is in `MarioNEATAgent.py` and is not fully implemented yet.
 * NEAT + Q is not implemented yet.
 
 ## Run Agents
@@ -17,22 +17,22 @@ A library must be created to make possible communication between the agent in Py
 
 Some files are given with the benchmark to make easier this library, it was first for python2 so I modified the files to use python3. I tried everything in Linux, so the makefile for Windows and Mac (darwin) aren't probably working. Good luck if you use these OS.
 
-If you use Linux you'll probably need to modify in the directory "/src/main/java/amico/python/JavaPy" some files:
-* in Makefile.Linux the variables:
-  * JAVADIRPATH must be initialized with your java directory.
-  * PYTHONVERSION must be initalized with your version of python.
-* in src/ch_idsia_tools_amico_AmiCoJavaPy.cc the variable pythonLibName should be initialized with the library name of your python, for me it's "libpython3.5m.so" and you'll probably need to only replace "3.5" with your python version.
+If you use Linux you'll probably need to modify in the directory `/src/main/java/amico/python/JavaPy` some files:
+* in `Makefile.Linux` the variables:
+  * `JAVADIRPATH` must be initialized with your java directory.
+  * `PYTHONVERSION` must be initalized with your version of python.
+* in `src/ch_idsia_tools_amico_AmiCoJavaPy.cc` the variable `pythonLibName` should be initialized with the library name of your python, for me it's `libpython3.5m.so` and you'll probably need to only replace "3.5" with your python version.
 
 In this directory run the script: 
-* runDQN.sh to run DQN Agent
-* runNEAT.sh to run NEAT Agent
-* runNEATQ.sh to run NEAT + Q Agent
+* `runDQN.sh` to run DQN Agent
+* `runNEAT.sh` to run NEAT Agent
+* `runNEATQ.sh` to run NEAT + Q Agent
 
-I ran experiments on my laptop and on a slurm client called OSIRIM, the process will probably not be the same but if you're planing to use a slurm client look at README_OSIRIM.md.
+I ran experiments on my laptop and on a slurm client called OSIRIM, the process will probably not be the same but if you're planing to use a slurm client look at `README_OSIRIM.md`.
 
 ## Configure MarioAI Benchmark
 
-You can configure the mario environment in src/main/java/ch/idsia/scenarios/Main.java. The variable marioAIOptions enable you to custom the environment.
+You can configure the mario environment in `src/main/java/ch/idsia/scenarios/Main.java`. The variable marioAIOptions enable you to custom the environment.
 
 ## Configure Agents
 
@@ -47,12 +47,12 @@ and two reward functions:
 To change state representation and reward function you need to modify the variables stateRepresentationID and rewardID at the beginning of an agent file.
 
 * DQN Agent:
-  * useLSTM: if True the before last layer will be LSTM
-    * trace_length: length of a memory when it is took from the replay memory.
-    * maskHalfLoss: if True it will mask (reset to 0) the first half of each trace [Hausknecht et al. 2015].
-    * reset_rnn_state: if True LSTM will be stateless (meaning that LSTM state is reseted after every batch) otherwise it will be stateful (state is keeped).
-    * useLSTMTanH: if True LSTM use TanH for its inner activation function, otherwise it will use the activation function define in build_network() function (it's leaky_relu)
-  * useDuelingNetwork: if True the last layer will be dueling [Wang et al. 2016].
+  * `useLSTM`: if True the before last layer will be LSTM
+    * `trace_length`: length of a memory when it is took from the replay memory.
+    * `maskHalfLoss`: if True it will mask (reset to 0) the first half of each trace [Hausknecht et al. 2015].
+    * `reset_rnn_state`: if True LSTM will be stateless (meaning that LSTM state is reseted after every batch) otherwise it will be stateful (state is keeped).
+    * `useLSTMTanH`: if True LSTM use TanH for its inner activation function, otherwise it will use the activation function define in `build_network()` function (it's leaky_relu)
+  * `useDuelingNetwork`: if True the last layer will be dueling [Wang et al. 2016].
   * You have also all the basic parameters like batch size, gamma (discouted reward factor), initial epsilon (exploration rate), minimum epsilon and epsilon decay, replay memory capacity, frequency of computing an action, frequency of updating target network and another one for saving model periodically.
   * Learning rate decay exponentially, you have the parameters like initial learning rate, learning rate decay, steps and minimum learning rate.
   * You can clip gradients either with global norm or with min max clipping.
@@ -64,4 +64,4 @@ To change state representation and reward function you need to modify the variab
   
 ## Analyze results
 
-A python script called resultManager.py can help you to analyse the results of your agent (the file containing results is in src/main/bin/AmiCoBuild/JavaPy/episode_values.txt).
+A python script called `resultManager.py` can help you to analyse the results of your agent (the file containing results is in `src/main/bin/AmiCoBuild/JavaPy/episode_values.txt`).

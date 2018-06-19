@@ -7,12 +7,15 @@ We compare them using the MarioAI Benchmark [Karakovskiy et al. 2012].
 
 I took the benchmark from this github repository https://github.com/zerg000000/mario-ai:
 
-Three mains methods emerged from my preliminary study.
+Three mains methods emerged from my preliminary study:
 * Deep Q Learning [Mnih et al. 2013].
 * NEAT (NeuroEvolution of Augmenting Topologies) [Stanley et al. 2002].
 * NEAT + Q [Whiteson et al. 2006].
 
 For Deep Q Learning I took the original code from https://github.com/robmsylvester/Super-Mario-Bros-DQN and https://github.com/awjuliani/DeepRL-Agents/blob/master/Deep-Recurrent-Q-Network.ipynb. I combined them and made my own changes to make the code compatible with MarioAI Benchmark and some other features.
+
+**I recommand to see the README.md of the `mario-ai-master` directory to understand how to run agents and how to configure them.**
+`mario-ai-master_OSIRIM` is just a directory preconfigured to be used on a slurm client (like OSIRIM).
 
 ## References
 
