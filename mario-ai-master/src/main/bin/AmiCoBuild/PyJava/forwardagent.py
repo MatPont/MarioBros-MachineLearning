@@ -124,7 +124,7 @@ class ForwardAgent(MarioAgent):
             elif a[i] == 0:
                 actionStr += '0'
             else:
-                print "something very dangerous happen...."
+                print("something very dangerous happen....")
 
         actionStr += "\r\n"
         #print "action: " , actionStr
@@ -133,14 +133,14 @@ class ForwardAgent(MarioAgent):
     def getAction(self):
         """ Possible analysis of current observation and sending an action back
         """
-    	#print "M: mayJump: %s, onGround: %s, level[11,12]: %d, level[11,13]: %d, jc: %d" % (self.mayMarioJump, self.isMarioOnGround, self.levelScene[11,12], self.levelScene[11,13], self.trueJumpCounter)
-    	if (self.isEpisodeOver):
-    	    return (1, 1, 1, 1, 1, 1)
-               
+        #print "M: mayJump: %s, onGround: %s, level[11,12]: %d, level[11,13]: %d, jc: %d" % (self.mayMarioJump, self.isMarioOnGround, self.levelScene[11,12], self.levelScene[11,13], self.trueJumpCounter)
+        if (self.isEpisodeOver):
+        	return (1, 1, 1, 1, 1, 1)
+
             #print "LevelScene: \n"
             #print self.levelScene
             
-    	danger = self._dangerOfGap()
+        danger = self._dangerOfGap()
         #print "entered getAction1"
         if (self.getReceptiveFieldCellValue(self.marioEgoRow, self.marioEgoCol + 2) != 0 or \
             self.getReceptiveFieldCellValue(self.marioEgoRow, self.marioEgoCol + 1) != 0 or danger):
@@ -200,7 +200,7 @@ class ForwardAgent(MarioAgent):
             for y in range(self.receptiveFieldHeight):
                 tmpData += self.mapElToStr(self.getReceptiveFieldCellValue(x, y));
             ret += "\n%s" % tmpData;
-        print ret
+        print(ret)
 
     def mapElToStr(self, el):
         """maps element of levelScene to str representation"""
@@ -214,4 +214,4 @@ class ForwardAgent(MarioAgent):
 
     def printObs(self):
         """for debug"""
-        print repr(self.observation)
+        print(repr(self.observation))

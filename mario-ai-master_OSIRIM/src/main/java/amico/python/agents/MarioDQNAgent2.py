@@ -44,7 +44,7 @@ useDuelingNetwork = True
 
 # Either number of units in the LSTM or in the fully connected according to "useLSTM" (for stateRepresentationID : 0 or 1)
 S0_first_fc_num_units = 512 # also for S2
-S1_first_fc_num_units = 32
+S1_first_fc_num_units = 256
 
 # saveFiles:
 modelCheckpoint = "./modelWeights.ckpt"
@@ -281,7 +281,7 @@ class MarioDQNAgent():
 				inputLayer = self.network_inputs[scope_name]
 				
 				# fully-connected layer
-				num_units = 8
+				"""num_units = 8
 				with tf.variable_scope('fc1') as scope:
 					w1 = tf.get_variable('fcw1', shape=[inputLayer.get_shape()[1], num_units],
 							initializer=tf.contrib.layers.xavier_initializer())
@@ -302,7 +302,7 @@ class MarioDQNAgent():
 					fc3_out = tf.matmul(inputLayer, w3) + b3
 					fc3_out = activation(fc3_out)
 					fc3_out = tf.nn.dropout(fc3_out, keep_prob=self.dropout_keep_probability)
-				inputLayer = fc3_out				
+				inputLayer = fc3_out"""				
 				
 				num_units = first_fc_num_units
 				# fully-connected layer (LSTM or not)	

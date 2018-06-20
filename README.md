@@ -16,7 +16,7 @@ For Deep Q Learning I took the original code from https://github.com/robmsylvest
 
 **I recommend to see the README.md of the `mario-ai-master` directory to understand how to run agents and how to configure them.**
 
-`mario-ai-master_OSIRIM` is just a directory preconfigured to be used on a slurm client (like OSIRIM).
+`mario-ai-master_OSIRIM` is just a preconfigured directory to be used on a slurm client (like OSIRIM).
 
 ## References
 

@@ -15,10 +15,10 @@ class MarioAgent:
 
     def giveIntermediateReward(self, reward):
         pass
-      
+
     def setObservationDetails(rfWidth, rfHeight, egoRow, egoCol):
-	pass
-     
+    	pass
+
     def _getName(self):
         if self._name is None:
             self._name = self.__class__.__name__
@@ -28,7 +28,7 @@ class MarioAgent:
         """Change name to newname. Uniqueness is not guaranteed anymore."""
         self._name = newname
 
-    _name = None
+    _name = "marioagent"
     name = property(_getName, _setName)
 
     def __repr__(self):

@@ -1,11 +1,17 @@
+#
+#
+
 CC = g++
 MKDIR = mkdir
 
+JAVADIRPATH = /usr/lib/jvm/java-8-openjdk-amd64
+PYTHONVERSION = 3.5
+
 SRCDIR = src
 BUILDDIR = build
-CFLAGS = -shared -Wl,-soname,libAmiCoPyJava.so.1 -fPIC
-INCLUDES = -I/usr/include/python2.6 -I/usr/lib/jvm/java/include -I/usr/lib/jvm/java/include/linux
-LFLAGS = -L/usr/lib/jvm/java/jre/lib -L/usr/lib/jvm/java/jre/lib/i386/server
+CFLAGS = -shared -Wl,-soname,libAmiCoPyJava.so.1 -fPIC 
+INCLUDES = -I$(JAVADIRPATH)/include -I$(JAVADIRPATH)/include/linux -I/usr/include/python$(PYTHONVERSION)m 
+LFLAGS = -L$(JAVADIRPATH)/jre/lib -L$(JAVADIRPATH)/jre/lib/amd64/server
 LIBS = -ljvm -lpthread -lz -lutil
 MAIN = $(BUILDDIR)/libAmiCoPyJava.so
 
@@ -13,7 +19,7 @@ all: $(MAIN)
 
 $(MAIN):
 	${MKDIR} -p $(BUILDDIR)
-	$(CC) $(CFLAGS) $(INCLUDES) $(LFLAGS) $(LIBS) -o $(MAIN) $(SRCDIR)/PythonCallsJava.cc
+	$(CC) $(CFLAGS) $(INCLUDES) $(LFLAGS) -o $(MAIN) $(SRCDIR)/PythonCallsJava.cc $(LIBS)
 
 .PHONY: clean
 

@@ -11,7 +11,7 @@ SRCDIR = src
 BUILDDIR = build
 CFLAGS = -shared -Wl,-soname,libAmiCoJavaPy.so.1 -fPIC -Xlinker --export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions
 INCLUDES = -I$(JAVADIRPATH)/include -I$(JAVADIRPATH)/include/linux -I/usr/include/python$(PYTHONVERSION)m
-LFLAGS =  -L$(JAVADIRPATH)/jre/lib -L$(JAVADIRPATH)/jre/lib/amd64/server
+LFLAGS = -L$(JAVADIRPATH)/jre/lib -L$(JAVADIRPATH)/jre/lib/amd64/server
 LIBS = -ljvm -lpthread -lz -lutil -lpython$(PYTHONVERSION)m
 MAIN = $(BUILDDIR)/libAmiCoJavaPy.so
 

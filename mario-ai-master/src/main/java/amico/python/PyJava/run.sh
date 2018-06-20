@@ -9,12 +9,13 @@
 # Author: Nikolay Sohryakov, nikolay.sohryakov@gmail.com
 #
 
-MARIO_DIR="../../../../bin"
-OUT_DIR="../../../../bin"
+ROOT_DIR="../../../../../.."
+MARIO_DIR="$ROOT_DIR/target/classes"
+OUT_DIR="$ROOT_DIR/src/main/bin"
 BUILD_DIR="AmiCoBuild/PyJava"
 MAKE_OUT_DIR="./build"
 CMD_LINE_OPTIONS=
-AGENT=
+AGENT=DemoForwardJumpingAgent.py # default agent
 LIBRARY_FILE_NAME=
 COMPILE_LIBRARY="true"
 
@@ -71,9 +72,20 @@ if [ "$AGENT" = "" ]; then
     echo "Incorrect input! Option '-agent <agent_file>' is necessary!"
 fi
 
+if [ "${OS}" = "Linux" ]; then
+	export LD_LIBRARY_PATH=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server:$LD_LIBRARY_PATH
+	echo "$ LD_LIBRARY_PATH"
+	echo $LD_LIBRARY_PATH
+fi
+echo "$ PYTHONPATH"
+echo $PYTHONPATH
+
+echo ""
+echo ""
+
 cd "$OUT_DIR/$BUILD_DIR/"
 if [ "${OS}" = "Linux" ]; then
     ./AmiCoRunner.sh "$AGENT" "$CMD_LINE_OPTIONS"
 elif [ "${OS}" = "Darwin" ]; then
-    python "$AGENT" "$CMD_LINE_OPTIONS"
+    python3 "$AGENT" "$CMD_LINE_OPTIONS"
 fi

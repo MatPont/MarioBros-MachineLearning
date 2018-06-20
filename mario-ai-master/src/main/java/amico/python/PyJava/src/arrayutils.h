@@ -227,15 +227,15 @@ PyObject* PyObject_FromJObject (From jobj, char resType)
     switch (resType)
     {
         case 'Z': //boolean
-            return PyInt_FromLong(jobj);
+            return PyLong_FromLong(jobj);
         case 'B': //byte
-            return PyInt_FromLong(jobj);
+            return PyLong_FromLong(jobj);
         case 'C': //char
-            return PyInt_FromLong(jobj);
+            return PyLong_FromLong(jobj);
         case 'S': //short
-            return PyInt_FromLong(jobj);
+            return PyLong_FromLong(jobj);
         case 'I': //integer
-            return PyInt_FromLong(jobj);
+            return PyLong_FromLong(jobj);
         case 'J': //long
             return PyLong_FromLong(jobj);
         case 'F': //float
@@ -354,7 +354,7 @@ PyObject* convertJavaArrayToPythonArray<jobjectArray, jobject> (JNIEnv* env, job
     {
         jstring js= (jstring) (env)->GetObjectArrayElement(array, i);
         const char* res = (env)->GetStringUTFChars(js, NULL);
-        PyTuple_SET_ITEM(items, (Py_ssize_t) i, PyString_FromString(res));
+        PyTuple_SET_ITEM(items, (Py_ssize_t) i, PyBytes_FromString(res));
         (env)->ReleaseStringUTFChars((jstring)js, res);
     }
     env->DeleteLocalRef(array);

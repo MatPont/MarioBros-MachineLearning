@@ -41,7 +41,8 @@
 /**
  Version of the arguments of the @c Java @c Virtual @c Machine.
  */
-const int JVM_VERSION = 0x00010004;
+//const int JVM_VERSION = 0x00010004;
+const int JVM_VERSION = JNI_VERSION_1_8;
 
 static JNIEnv *env = NULL; /**< Method invokation is performed with @c JNIEnv */
 static JavaVM *jvm; /**< Pointer to the @c JVM */
@@ -122,14 +123,17 @@ _AMICOPYJAVA_API void amicoInitialize(int nOptions, ...)
 
     vm_args.version = JVM_VERSION;
     vm_args.ignoreUnrecognized = JNI_FALSE; // do not ignore unrecognized JVM startup options
+    //vm_args.ignoreUnrecognized = JNI_TRUE;
+    
+	std::cout << vm_args.options[0].optionString << std::endl;;    
+    
     /* Create the Java VM */
-
     std::cout << "AmiCo: Trying to create a JVM ..." << std::endl; std::cout.flush();
     res = JNI_CreateJavaVM(&jvm, (void**) &env, &vm_args);
 
     if (res < 0)
     {
-        std::cerr << "\nAmiCo: Can't create Java VM\n";
+        std::cerr << "\nAmiCo: Can't create Java VM ; res = " << res << "\n";
         std::cerr.flush();
         return;
     }
@@ -328,8 +332,10 @@ _AMICOPYJAVA_API void tick()
 
 _AMICOPYJAVA_API PyObject* getEvaluationInfo()
 {
-    jintArray a = (jintArray) (env)->CallObjectMethod(obj, midGetEvaluationInfo);
+    jintArray a = (jintArray) (env)->CallObjectMethod(obj, midGetEvaluationInfo);    
+	std::cout << "foo" << std::endl;        
     PyObject* p = convertJavaArrayToPythonArray<jintArray, jint> (env, a, 'I');
+	std::cout << "bar" << std::endl;    
     env->DeleteLocalRef(a);
     return p ;
 }

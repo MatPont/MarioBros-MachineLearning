@@ -2,9 +2,6 @@
 __author__ = "Sergey Karakovskiy, sergey at idsia fullstop ch"
 __date__ = "$August 26, 2010 1:33:34 PM$"
 
-
-import numpy as np
-
 from marioagent import MarioAgent
 
 class ForwardJumpingAgent(MarioAgent):
