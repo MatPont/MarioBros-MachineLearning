@@ -13,15 +13,11 @@ You'll find the python agents in the directory: [`/src/main/java/amico/python/ag
 
 ## Run Agents
 
-A library must be created to make possible communication between the agent in Python and the MarioAI Benchmark in Java. I used JavaPy which means that Java calls Python.
+A library must be created to make possible communication between the agent in Python and the MarioAI Benchmark in Java. 
 
-Some files are given with the benchmark to make easier this library, it was first for python2 so I modified the files to use python3. I tried everything in Linux, so the makefile for Windows and Mac (darwin) aren't probably working. Good luck if you use these OS.
+Some files are given with the benchmark to make easier this library, it was first for python2 so I modified the files to use python3. I tried everything in Linux, therefore the process for Windows and Mac (darwin) aren't described here. Good luck if you use these OS. 
 
-If you use Linux you'll probably need to modify in the directory [`/src/main/java/amico/python/JavaPy`](https://github.com/MatPont/MarioBros-MachineLearning/tree/master/mario-ai-master/src/main/java/amico/python/JavaPy) some files:
-* in `Makefile.Linux` the variables:
-  * `JAVADIRPATH` must be initialized with your java directory.
-  * `PYTHONVERSION` must be initalized with your version of python.
-* in `src/ch_idsia_tools_amico_AmiCoJavaPy.cc` the variable `pythonLibName` should be initialized with the library name of your python, for me it's `libpython3.5m.so` and you'll probably need to only replace "3.5" with your python version.
+You'll probably need to configure JavaPy or PyJava, see below.
 
 In this directory run the script: 
 * `runDQN.sh` to run DQN Agent
@@ -30,9 +26,23 @@ In this directory run the script:
 
 I ran experiments on my laptop and on a slurm client called OSIRIM, the process will probably not be the same but if you're planing to use a slurm client look at `README_OSIRIM.md`.
 
-## Configure MarioAI Benchmark
+### Configure JavaPy (for Deep Q Learning)
+
+I used JavaPy (which means that Java calls Python) for Deep Q learning.
+
+If you use Linux you'll probably need to modify in the directory [`/src/main/java/amico/python/JavaPy`](https://github.com/MatPont/MarioBros-MachineLearning/tree/master/mario-ai-master/src/main/java/amico/python/JavaPy) some files:
+* in `Makefile.Linux` the variables:
+  * `JAVADIRPATH` must be initialized with your java directory.
+  * `PYTHONVERSION` must be initalized with your version of python.
+* in `src/ch_idsia_tools_amico_AmiCoJavaPy.cc` the variable `pythonLibName` should be initialized with the library name of your python, for me it's `libpython3.5m.so` and you'll probably need to only replace "3.5" with your python version.
+
+#### Configure MarioAI Benchmark
 
 You can configure the mario environment in the Main class of [`src/main/java/ch/idsia/scenarios`](https://github.com/MatPont/MarioBros-MachineLearning/tree/master/mario-ai-master/src/main/java/ch/idsia/scenarios). The variable marioAIOptions enable you to custom the environment.
+
+### Configure PyJava (for NEAT and NEAT + Q)
+
+I used PyJava (which means that Python calls Java) for NEAT and probably for NEAT + Q.
 
 ## Configure Agents
 
@@ -64,4 +74,4 @@ To change state representation and reward function you need to modify the variab
   
 ## Analyze results
 
-A python script called `resultManager.py` can help you to analyse the results of your agent (the file containing results is in `src/main/bin/AmiCoBuild/JavaPy/episode_values.txt`).
+A python script called `resultManager.py` can help you to analyse the results of your agent (the file containing results is in `src/main/bin/AmiCoBuild/{JavaPy|PyJava}/episode_values.txt`).
