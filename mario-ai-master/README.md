@@ -68,10 +68,10 @@ To change state representation and reward function you need to modify the variab
   * You can clip gradients either with global norm or with min max clipping.
   * The optimizer is RMSProp, there is also in comment an Adam optimizer.
   * You can either compute loss with mean squared error or with "softmax cross entropy with logits" that is commented in the code.
-
-With DQN we have two networks:
-  * for **S0**: it's a convolutional neural network, with 3 convolutional layer and 2 fully-connected layer.
-  * for **S1**: it's a basic neural network with 1 hidden layer.
+  
+  * With DQN we have two networks:
+    * for **S0**: it's a convolutional neural network, with 3 convolutional layer and 2 fully-connected layer.
+    * for **S1**: it's a basic neural network with 1 hidden layer.
 
 * NEAT Agent:
   * .
