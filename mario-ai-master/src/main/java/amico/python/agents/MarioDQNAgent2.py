@@ -31,7 +31,7 @@ gamma = 0.9 # discounted future reward for Q Learning
 
 # LSTM parameters:
 useLSTM = True
-trace_length = 8 # need to fully divide batch_size
+trace_length = 2 # need to fully divide batch_size
 maskHalfLoss = True # Mask the first half loss of every trace of the batch
 reset_rnn_state = False # LSTM stateless (True) or stateful (False) (stateless: reset state after every batch, stateful: keep state)
 useLSTMTanH = True # Allows to use TanH for LSTM or the activation define in build_network() function 
@@ -57,6 +57,8 @@ if useLSTM:
 	if trace_length > batch_size:
 		trace_length = batch_size
 	batch_size //= trace_length
+	if trace_length == 1:
+		maskHalfLoss = False
 else:
 	trace_length = 1
 

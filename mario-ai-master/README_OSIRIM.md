@@ -19,7 +19,7 @@ Go to the directory then run:
 ```sbatch runDQN.sh```
 
 If it doesn't works maybe you'll need to modify Makefile.Linux and ch_idsia_tools_amico_AmiCoJavaPy.cc like it's explained in README.md.
-You also need to have no graphic displayed, to disable the graphic display of MarioAI Benchmark you need to use `marioAIOptions.setVisualization(false);` in src/main/java/ch/idsia/scenarios/Main.java.
+You also need to have no graphic displayed, to disable the graphic display of MarioAI Benchmark you need to use `marioAIOptions.setVisualization(false)` in src/main/java/ch/idsia/scenarios/Main.java.
 
 You can show a report for your running (or pending) jobs with:
 

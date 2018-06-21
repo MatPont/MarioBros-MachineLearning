@@ -184,6 +184,6 @@ class SarstReplayMemory:
 			rewards = self.rewards[chosen_sarst_indexes]
 			next_states = self.next_states[chosen_sarst_indexes]
 			terminal_flags = self.terminal_flags[chosen_sarst_indexes]
-
+		
 		return states, actions, rewards, next_states, terminal_flags
    

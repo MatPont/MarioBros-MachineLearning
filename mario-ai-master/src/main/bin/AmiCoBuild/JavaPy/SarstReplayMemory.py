@@ -185,5 +185,12 @@ class SarstReplayMemory:
 			next_states = self.next_states[chosen_sarst_indexes]
 			terminal_flags = self.terminal_flags[chosen_sarst_indexes]
 
+		print(states.shape)
+		print(actions.shape)
+		print(rewards.shape)
+		print(next_states.shape)
+		print(terminal_flags.shape)
+		input()
+		
 		return states, actions, rewards, next_states, terminal_flags
    

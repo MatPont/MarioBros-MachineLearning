@@ -31,7 +31,7 @@ gamma = 0.9 # discounted future reward for Q Learning
 
 # LSTM parameters:
 useLSTM = True
-trace_length = 8 # need to fully divide batch_size
+trace_length = 1 # need to fully divide batch_size
 maskHalfLoss = True # Mask the first half loss of every trace of the batch
 reset_rnn_state = False # LSTM stateless (True) or stateful (False) (stateless: reset state after every batch, stateful: keep state)
 useLSTMTanH = True # Allows to use TanH for LSTM or the activation define in build_network() function 
@@ -44,7 +44,7 @@ useDuelingNetwork = True
 
 # Either number of units in the LSTM or in the fully connected according to "useLSTM" (for stateRepresentationID : 0 or 1)
 S0_first_fc_num_units = 512 # also for S2
-S1_first_fc_num_units = 8
+S1_first_fc_num_units = 256
 
 # saveFiles:
 modelCheckpoint = "./modelWeights.ckpt"
@@ -57,6 +57,8 @@ if useLSTM:
 	if trace_length > batch_size:
 		trace_length = batch_size
 	batch_size //= trace_length
+	if trace_length == 1:
+		maskHalfLoss = False
 else:
 	trace_length = 1
 

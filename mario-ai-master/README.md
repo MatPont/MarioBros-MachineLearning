@@ -15,7 +15,7 @@ You'll find the python agents in the directory: [`/src/main/java/amico/python/ag
 
 A library must be created to make possible communication between the agent in Python and the MarioAI Benchmark in Java. 
 
-Some files are given with the benchmark to make easier this library, it was first for python2 so I modified the files to use python3. I tried everything in Linux, therefore the process for Windows and Mac (darwin) aren't described here. Good luck if you use these OS. 
+Some files are given with the benchmark to make easier this library, it was first for python 2 so I modified the files to use python 3. I tried everything in Linux, therefore the process for Windows and Mac (darwin) aren't described here. Good luck if you use these OS. 
 
 You'll probably need to configure JavaPy or PyJava, see below.
 
@@ -38,7 +38,7 @@ If you use Linux you'll probably need to modify in the directory [`/src/main/jav
 
 #### Configure MarioAI Benchmark
 
-You can configure the mario environment in the Main class of [`src/main/java/ch/idsia/scenarios`](https://github.com/MatPont/MarioBros-MachineLearning/tree/master/mario-ai-master/src/main/java/ch/idsia/scenarios). The variable marioAIOptions enable you to custom the environment.
+You can configure the mario environment in the Main class of [`src/main/java/ch/idsia/scenarios`](https://github.com/MatPont/MarioBros-MachineLearning/tree/master/mario-ai-master/src/main/java/ch/idsia/scenarios). This Main class define the training environment of the agent, like the number of levels before the end of training, their difficulty, the time limit for a level etc. It's mainly the variable `marioAIOptions` that will allow you to custom the environment.
 
 ### Configure PyJava (for NEAT and NEAT + Q)
 
@@ -47,12 +47,12 @@ I used PyJava (which means that Python calls Java) for NEAT and probably for NEA
 ## Configure Agents
 
 We used two state representations:
-* (S0) Grid view: a grid of size 19*19 where Mario is always in the center. Each cell contains a number representing a coin, an object, an enemy etc. It is a simplified view from the pixels view.
-* (S1) 4 parameters view: speed of Mario on X and Y axis and distance of the first obstacle to the right and the bottom of Mario.
+* (**S0**) Grid view: a grid of size 19*19 where Mario is always in the center. Each cell contains a number representing a coin, an object, an enemy etc. It is a simplified view from the pixels view.
+* (**S1**) 4 parameters view: speed of Mario on X and Y axis and distance of the first obstacle to the right and the bottom of Mario.
 
 and two reward functions:
-* (R0) Score: reward related to the score of the game.
-* (R1) Right and top: the agent is rewarded when he goes to the right and the top.
+* (**R0**) Score: reward related to the score of the game.
+* (**R1**) Right and top: the agent is rewarded when he goes to the right and the top.
 
 To change state representation and reward function you need to modify the variables `stateRepresentationID` and `rewardID` at the beginning of an agent file.
 
@@ -68,6 +68,10 @@ To change state representation and reward function you need to modify the variab
   * You can clip gradients either with global norm or with min max clipping.
   * The optimizer is RMSProp, there is also in comment an Adam optimizer.
   * You can either compute loss with mean squared error or with "softmax cross entropy with logits" that is commented in the code.
+
+With DQN we have two networks:
+  * for **S0**: it's a convolutional neural network, with 3 convolutional layer and 2 fully-connected layer.
+  * for **S1**: it's a basic neural network with 1 hidden layer.
 
 * NEAT Agent:
   * .
