@@ -26,7 +26,7 @@ In this directory run the script:
 
 I ran experiments on my laptop and on a slurm client called OSIRIM, the process will probably not be the same but if you're planing to use a slurm client look at `README_OSIRIM.md`.
 
-### Configure JavaPy (for Deep Q Learning)
+### Configure Deep Q Learning
 
 I used JavaPy (which means that Java calls Python) for Deep Q learning.
 
@@ -36,11 +36,13 @@ If you use Linux you'll probably need to modify in the directory [`/src/main/jav
   * `PYTHONVERSION` must be initalized with your version of python.
 * in `src/ch_idsia_tools_amico_AmiCoJavaPy.cc` the variable `pythonLibName` should be initialized with the library name of your python, for me it's `libpython3.5m.so` and you'll probably need to only replace "3.5" with your python version.
 
-#### Configure MarioAI Benchmark
+In the `__init__` function of the MarioDQNAgent class you need to specify the tensorflow device in the line `with tf.device('/gpu:0'):`, if you're not using tensorflow-gpu replace `gpu` by `cpu`
+
+#### Custom Mario environment
 
 You can configure the mario environment in the Main class of [`src/main/java/ch/idsia/scenarios`](https://github.com/MatPont/MarioBros-MachineLearning/tree/master/mario-ai-master/src/main/java/ch/idsia/scenarios). This Main class define the training environment of the agent, like the number of levels before the end of training, their difficulty, the time limit for a level etc. It's mainly the variable `marioAIOptions` that will allow you to custom the environment.
 
-### Configure PyJava (for NEAT and NEAT + Q)
+### Configure NEAT and NEAT + Q
 
 I used PyJava (which means that Python calls Java) for NEAT and probably for NEAT + Q.
 
@@ -68,7 +70,6 @@ To change state representation and reward function you need to modify the variab
   * You can clip gradients either with global norm or with min max clipping.
   * The optimizer is RMSProp, there is also in comment an Adam optimizer.
   * You can either compute loss with mean squared error or with "softmax cross entropy with logits" that is commented in the code.
-  
   * With DQN we have two networks:
     * for **S0**: it's a convolutional neural network, with 3 convolutional layer and 2 fully-connected layer.
     * for **S1**: it's a basic neural network with 1 hidden layer.
