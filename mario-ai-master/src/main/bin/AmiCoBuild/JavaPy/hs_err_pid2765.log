@@ -1,0 +1,1507 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f567223b23d, pid=2765, tid=0x00007f56a013a700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_171-b11) (build 1.8.0_171-8u171-b11-0ubuntu0.16.04.1-b11)
+# Java VM: OpenJDK 64-Bit Server VM (25.171-b11 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# C  [libAmiCoJavaPy.so+0x323d]  Java_ch_idsia_tools_amico_AmiCoJavaPy_getAction+0x91
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f569800a800):  JavaThread "main" [_thread_in_native, id=2766, stack(0x00007f56a003a000,0x00007f56a013b000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x0000000000000008
+
+Registers:
+RAX=0x0000000000000000, RBX=0x00007f5688465fe0, RCX=0x00007f56721e9de0, RDX=0x0000000000000005
+RSP=0x00007f56a0139710, RBP=0x00007f56a0139760, RSI=0x00007f556c165ca8, RDI=0x00007f55d9e04d48
+R8 =0x00007f559974b500, R9 =0x0000000000000000, R10=0x00007f5698000078, R11=0x00007f5698000078
+R12=0x0000000000000000, R13=0x00007f5688465fe0, R14=0x00007f56a01397d8, R15=0x00007f569800a800
+RIP=0x00007f567223b23d, EFLAGS=0x0000000000010202, CSGSFS=0x0000000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f56a0139710)
+0x00007f56a0139710:   00007f56a01397d8 00007f569800a9e0
+0x00007f56a0139720:   00007f56a01397b0 00007f5671728048
+0x00007f56a0139730:   0000000000000000 00007f5671728048
+0x00007f56a0139740:   00007f56a0139780 00007f568845b028
+0x00007f56a0139750:   00007f56a0139750 00007f5688465fe0
+0x00007f56a0139760:   00007f56a01397b8 00007f5689018407
+0x00007f56a0139770:   0000000000000000 00007f56a0139778
+0x00007f56a0139780:   0000000000000000 00007f56a01397d8
+0x00007f56a0139790:   00007f56884662a8 0000000000000000
+0x00007f56a01397a0:   00007f5688465fe0 0000000000000000
+0x00007f56a01397b0:   00007f56a01397d8 00007f56a0139820
+0x00007f56a01397c0:   00007f5689007d80 0000000000000000
+0x00007f56a01397d0:   00007f5689011a5b 00000000d735dc60
+0x00007f56a01397e0:   00007f56a01397e0 00007f56884649b1
+0x00007f56a01397f0:   00007f56a01398a0 00007f5688465518
+0x00007f56a0139800:   0000000000000000 00007f5688464ac8
+0x00007f56a0139810:   00007f56a01397d8 00007f56a01398a0
+0x00007f56a0139820:   00007f56a01398e8 00007f5689007e54
+0x00007f56a0139830:   0000000000000000 0000000000000000
+0x00007f56a0139840:   0000000000000000 00000000d7328640
+0x00007f56a0139850:   00000000d88cb120 00000000d7328628
+0x00007f56a0139860:   00000000d88cab48 00000000d88ca590
+0x00007f56a0139870:   0000000000000013 0000000000000013
+0x00007f56a0139880:   00000000d735f2b8 00000000d735ef60
+0x00007f56a0139890:   0000000000000001 0000000000000001
+0x00007f56a01398a0:   00000000d7358048 00007f56a01398a8
+0x00007f56a01398b0:   00007f5688432d0d 00007f56a0139920
+0x00007f56a01398c0:   00007f5688435030 0000000000000000
+0x00007f56a01398d0:   00007f5688432dc8 00007f56a01398a0
+0x00007f56a01398e0:   00007f56a0139918 00007f56a0139968
+0x00007f56a01398f0:   00007f56890077d0 00000000d88c8068
+0x00007f56a0139900:   0000000000000000 00000164379a3e6b 
+
+Instructions: (pc=0x00007f567223b23d)
+0x00007f567223b21d:   75 15 48 8b 45 d8 48 8b 40 08 48 8b 40 30 48 8b
+0x00007f567223b22d:   55 d8 48 89 d7 ff d0 e8 67 ff ff ff 48 8b 45 d0
+0x00007f567223b23d:   48 8b 40 08 48 8b 80 a8 00 00 00 25 00 00 00 04
+0x00007f567223b24d:   48 85 c0 75 56 48 8b 05 a7 2e 20 00 48 89 c6 48 
+
+Register to memory mapping:
+
+RAX=0x0000000000000000 is an unknown value
+RBX={method} {0x00007f5688465fe0} 'getAction' '()[I' in 'ch/idsia/tools/amico/AmiCoJavaPy'
+RCX=0x00007f56721e9de0: <offset 0x655de0> in /usr/lib/x86_64-linux-gnu/libpython3.5m.so.1.0 at 0x00007f5671b94000
+RDX=0x0000000000000005 is an unknown value
+RSP=0x00007f56a0139710 is pointing into the stack for thread: 0x00007f569800a800
+RBP=0x00007f56a0139760 is pointing into the stack for thread: 0x00007f569800a800
+RSI=0x00007f556c165ca8 is an unknown value
+RDI=0x00007f55d9e04d48 is an unknown value
+R8 =0x00007f559974b500 is an unknown value
+R9 =0x0000000000000000 is an unknown value
+R10=0x00007f5698000078 is an unknown value
+R11=0x00007f5698000078 is an unknown value
+R12=0x0000000000000000 is an unknown value
+R13={method} {0x00007f5688465fe0} 'getAction' '()[I' in 'ch/idsia/tools/amico/AmiCoJavaPy'
+R14=0x00007f56a01397d8 is pointing into the stack for thread: 0x00007f569800a800
+R15=0x00007f569800a800 is a thread
+
+
+Stack: [0x00007f56a003a000,0x00007f56a013b000],  sp=0x00007f56a0139710,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libAmiCoJavaPy.so+0x323d]  Java_ch_idsia_tools_amico_AmiCoJavaPy_getAction+0x91
+j  ch.idsia.tools.amico.AmiCoJavaPy.getAction()[I+0
+j  ch.idsia.agents.AmiCoAgent.getAction()[Z+177
+j  ch.idsia.benchmark.tasks.BasicTask.runSingleEpisode(I)Z+69
+j  ch.idsia.benchmark.tasks.BasicTask.doEpisodes(IZI)V+42
+j  ch.idsia.scenarios.Main.main([Ljava/lang/String;)V+87
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x6648eb]
+V  [libjvm.so+0x68653e]
+V  [libjvm.so+0x688e6f]
+C  [libjli.so+0x3552]
+C  [libjli.so+0x74ad]
+C  [libpthread.so.0+0x76ba]  start_thread+0xca
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  ch.idsia.tools.amico.AmiCoJavaPy.getAction()[I+0
+j  ch.idsia.agents.AmiCoAgent.getAction()[Z+177
+j  ch.idsia.benchmark.tasks.BasicTask.runSingleEpisode(I)Z+69
+j  ch.idsia.benchmark.tasks.BasicTask.doEpisodes(IZI)V+42
+j  ch.idsia.scenarios.Main.main([Ljava/lang/String;)V+87
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f559984f000 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=2819, stack(0x00007f556c5c2000,0x00007f556c6c3000)]
+  0x00007f55998a5800 JavaThread "AWT-Shutdown" [_thread_blocked, id=2818, stack(0x00007f556c6c3000,0x00007f556c7c4000)]
+  0x00007f559990a800 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=2817, stack(0x00007f55c084e000,0x00007f55c094f000)]
+  0x00007f55998e1800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=2816, stack(0x00007f55d9abb000,0x00007f55d9bbc000)]
+  0x00007f56980d2000 JavaThread "Service Thread" daemon [_thread_blocked, id=2778, stack(0x00007f567260c000,0x00007f567270d000)]
+  0x00007f56980bd000 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=2777, stack(0x00007f567270d000,0x00007f567280e000)]
+  0x00007f56980bb800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=2776, stack(0x00007f567280e000,0x00007f567290f000)]
+  0x00007f56980b8800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=2775, stack(0x00007f567290f000,0x00007f5672a10000)]
+  0x00007f56980b7000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2774, stack(0x00007f5672a10000,0x00007f5672b11000)]
+  0x00007f5698084000 JavaThread "Finalizer" daemon [_thread_blocked, id=2773, stack(0x00007f5672dee000,0x00007f5672eef000)]
+  0x00007f569807f800 JavaThread "Reference Handler" daemon [_thread_blocked, id=2772, stack(0x00007f5672eef000,0x00007f5672ff0000)]
+=>0x00007f569800a800 JavaThread "main" [_thread_in_native, id=2766, stack(0x00007f56a003a000,0x00007f56a013b000)]
+
+Other Threads:
+  0x00007f5698078000 VMThread [stack: 0x00007f5672ff0000,0x00007f56730f1000] [id=2771]
+  0x00007f56980d4800 WatcherThread [stack: 0x00007f567250b000,0x00007f567260c000] [id=2779]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 36864K, used 25145K [0x00000000d7100000, 0x00000000d9a00000, 0x0000000100000000)
+  eden space 31744K, 79% used [0x00000000d7100000,0x00000000d898e458,0x00000000d9000000)
+  from space 5120K, 0% used [0x00000000d9500000,0x00000000d9500000,0x00000000d9a00000)
+  to   space 5120K, 0% used [0x00000000d9000000,0x00000000d9000000,0x00000000d9500000)
+ ParOldGen       total 84992K, used 0K [0x0000000085200000, 0x000000008a500000, 0x00000000d7100000)
+  object space 84992K, 0% used [0x0000000085200000,0x0000000085200000,0x000000008a500000)
+ Metaspace       used 11566K, capacity 11758K, committed 11904K, reserved 1060864K
+  class space    used 1239K, capacity 1326K, committed 1408K, reserved 1048576K
+
+Card table byte_map: [0x00007f569c315000,0x00007f569c6ed000] byte_map_base: 0x00007f569beec000
+
+Marking Bits: (ParMarkBitMap*) 0x00007f569f307320
+ Begin Bits: [0x00007f5680290000, 0x00007f5682148000)
+ End Bits:   [0x00007f5682148000, 0x00007f5684000000)
+
+Polling page: 0x00007f56a015b000
+
+CodeCache: size=245760Kb used=3090Kb max_used=3103Kb free=242669Kb
+ bounds [0x00007f5689000000, 0x00007f5689310000, 0x00007f5698000000]
+ total_blobs=1340 nmethods=823 adapters=432
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 4,620 Thread 0x00007f56980bd000  819       3       java.util.ArrayList::iterator (9 bytes)
+Event: 4,620 Thread 0x00007f56980bd000 nmethod 819 0x00007f56892fde90 code [0x00007f56892fe000, 0x00007f56892fe290]
+Event: 4,625 Thread 0x00007f56980bd000  820       3       sun.java2d.xr.XRUtils::XDoubleToFixed (7 bytes)
+Event: 4,625 Thread 0x00007f56980bd000 nmethod 820 0x00007f56892fdb10 code [0x00007f56892fdca0, 0x00007f56892fde10]
+Event: 4,702 Thread 0x00007f56980bd000  821       3       java.awt.geom.AffineTransform::transform (635 bytes)
+Event: 4,703 Thread 0x00007f56980bd000 nmethod 821 0x00007f5689302350 code [0x00007f56893025e0, 0x00007f5689303688]
+Event: 4,784 Thread 0x00007f56980bd000  822       3       ch.idsia.benchmark.mario.engine.sprites.Mario::isBlocking (224 bytes)
+Event: 4,786 Thread 0x00007f56980bd000 nmethod 822 0x00007f5689304d10 code [0x00007f5689305060, 0x00007f56893064a8]
+Event: 4,870 Thread 0x00007f56980b8800  823       4       ch.idsia.benchmark.mario.engine.MarioVisualComponent::drawString (53 bytes)
+Event: 4,876 Thread 0x00007f56980b8800 nmethod 823 0x00007f5689309050 code [0x00007f5689309240, 0x00007f5689309a00]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (4 events):
+Event: 3,349 Thread 0x00007f569800a800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f5689265dc8 method=sun.java2d.loops.GraphicsPrimitiveMgr.locatePrim(ILsun/java2d/loops/SurfaceType;Lsun/java2d/loops/CompositeType;Lsun/java2d/loops/SurfaceType;)Lsun/java2d/loops/GraphicsPrim
+Event: 3,415 Thread 0x00007f569800a800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f5689129ef4 method=java.lang.String.charAt(I)C @ 10
+Event: 3,489 Thread 0x00007f569800a800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f56892a87e4 method=ch.idsia.benchmark.mario.engine.level.Level.getBlockCapped(II)B @ 1
+Event: 3,514 Thread 0x00007f569800a800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f56892b6ea4 method=ch.idsia.benchmark.mario.engine.level.Level.getBlock(II)B @ 1
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0,075 Thread 0x00007f569800a800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d7284c20) thrown at [/build/openjdk-8-wnL82d/openjdk-8-8u171-b11/src/hotspot/src/share/vm/prims/jvm.cpp, line 1435]
+Event: 0,075 Thread 0x00007f569800a800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d7285018) thrown at [/build/openjdk-8-wnL82d/openjdk-8-8u171-b11/src/hotspot/src/share/vm/prims/jvm.cpp, line 1435]
+Event: 0,075 Thread 0x00007f569800a800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d7285ec0) thrown at [/build/openjdk-8-wnL82d/openjdk-8-8u171-b11/src/hotspot/src/share/vm/prims/jvm.cpp, line 1435]
+Event: 0,075 Thread 0x00007f569800a800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d72862b8) thrown at [/build/openjdk-8-wnL82d/openjdk-8-8u171-b11/src/hotspot/src/share/vm/prims/jvm.cpp, line 1435]
+Event: 3,117 Thread 0x00007f569800a800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x00000000d743ce28) thrown at [/build/openjdk-8-wnL82d/openjdk-8-8u171-b11/src/hotspot/src/share/vm/prims/methodHandles.cpp, line 1167]
+Event: 3,119 Thread 0x00007f569800a800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x00000000d744a578) thrown at [/build/openjdk-8-wnL82d/openjdk-8-8u171-b11/src/hotspot/src/share/vm/prims/methodHandles.cpp, line 1167]
+Event: 3,138 Thread 0x00007f569800a800 Exception <a 'java/io/FileNotFoundException'> (0x00000000d74ca7a0) thrown at [/build/openjdk-8-wnL82d/openjdk-8-8u171-b11/src/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 3,139 Thread 0x00007f569800a800 Exception <a 'java/io/FileNotFoundException'> (0x00000000d74cb290) thrown at [/build/openjdk-8-wnL82d/openjdk-8-8u171-b11/src/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 3,155 Thread 0x00007f569800a800 Exception <a 'java/lang/ClassNotFoundException': sun/dc/DuctusRenderingEngine> (0x00000000d7538ad8) thrown at [/build/openjdk-8-wnL82d/openjdk-8-8u171-b11/src/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 210]
+Event: 3,483 Thread 0x00007f559984f000 Exception <a 'java/lang/UnsupportedOperationException': > (0x00000000d825a6d0) thrown at [/build/openjdk-8-wnL82d/openjdk-8-8u171-b11/src/hotspot/src/share/vm/prims/jni.cpp, line 735]
+
+Events (10 events):
+Event: 3,521 loading class java/text/NumberFormat$Field
+Event: 3,521 loading class java/text/NumberFormat$Field done
+Event: 3,557 loading class ch/idsia/benchmark/mario/engine/GeneralizerLevelScene
+Event: 3,557 loading class ch/idsia/benchmark/mario/engine/GeneralizerLevelScene done
+Event: 3,635 loading class ch/idsia/benchmark/mario/engine/GeneralizerEnemies
+Event: 3,635 loading class ch/idsia/benchmark/mario/engine/GeneralizerEnemies done
+Event: 4,042 Executing VM operation: EnableBiasedLocking
+Event: 4,042 Executing VM operation: EnableBiasedLocking done
+Event: 4,579 Thread 0x00007f569800a800 DEOPT PACKING pc=0x00007f56892f56ce sp=0x00007f56a0139770
+Event: 4,579 Thread 0x00007f569800a800 DEOPT UNPACKING pc=0x00007f56890474c4 sp=0x00007f56a01394a0 mode 0
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:16 6301721                            /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+00600000-00601000 r--p 00000000 08:16 6301721                            /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+00601000-00602000 rw-p 00001000 08:16 6301721                            /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+01080000-010a1000 rw-p 00000000 00:00 0                                  [heap]
+85200000-8a500000 rw-p 00000000 00:00 0 
+8a500000-d7100000 ---p 00000000 00:00 0 
+d7100000-d9a00000 rw-p 00000000 00:00 0 
+d9a00000-100000000 ---p 00000000 00:00 0 
+100000000-100160000 rw-p 00000000 00:00 0 
+100160000-140000000 ---p 00000000 00:00 0 
+200000000-200100000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+200100000-200104000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+200104000-200120000 ---p 00000000 00:00 0 
+200120000-200520000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+200520000-200524000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+200524000-200540000 ---p 00000000 00:00 0 
+200540000-200940000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+200940000-200944000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+200944000-200960000 ---p 00000000 00:00 0 
+200960000-200d60000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+200d60000-200d64000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+200d64000-200d80000 ---p 00000000 00:00 0 
+200d80000-201180000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+201180000-201184000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+201184000-2011a0000 ---p 00000000 00:00 0 
+2011a0000-2015a0000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+2015a0000-2015a4000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+2015a4000-2015c0000 ---p 00000000 00:00 0 
+2015c0000-2019c0000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+2019c0000-2019c4000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+2019c4000-2019e0000 ---p 00000000 00:00 0 
+2019e0000-201de0000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+201de0000-201de4000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+201de4000-201e00000 ---p 00000000 00:00 0 
+201e00000-202200000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+202200000-202204000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+202204000-202220000 ---p 00000000 00:00 0 
+202220000-202620000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+202620000-202624000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+202624000-202640000 ---p 00000000 00:00 0 
+202640000-202a40000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+202a40000-202a44000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+202a44000-202a60000 ---p 00000000 00:00 0 
+202a60000-202e60000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+202e60000-202e64000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+202e64000-202e80000 ---p 00000000 00:00 0 
+202e80000-203280000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+203280000-203380000 rw-s 00000000 00:05 26214                            /dev/zero (deleted)
+203380000-203480000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+203480000-203580000 rw-s 00000000 00:05 26215                            /dev/zero (deleted)
+203580000-203680000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+203680000-203780000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+203780000-203860000 rw-s 00000000 00:06 578                              /dev/nvidiactl
+203860000-203960000 rw-s 00000000 00:05 26217                            /dev/zero (deleted)
+203960000-203b60000 rw-s 00000000 00:05 26218                            /dev/zero (deleted)
+203b60000-203f60000 rw-s 00000000 00:05 30015                            /dev/zero (deleted)
+203f60000-700000000 ---p 00000000 00:00 0 
+7f5560000000-7f5561970000 rw-p 00000000 00:00 0 
+7f5561970000-7f5564000000 ---p 00000000 00:00 0 
+7f5567258000-7f556726f000 r-xp 00000000 08:16 6300707                    /usr/lib/x86_64-linux-gnu/liblz4.so.1.7.1
+7f556726f000-7f556746e000 ---p 00017000 08:16 6300707                    /usr/lib/x86_64-linux-gnu/liblz4.so.1.7.1
+7f556746e000-7f556746f000 r--p 00016000 08:16 6300707                    /usr/lib/x86_64-linux-gnu/liblz4.so.1.7.1
+7f556746f000-7f5567470000 rw-p 00017000 08:16 6300707                    /usr/lib/x86_64-linux-gnu/liblz4.so.1.7.1
+7f5567470000-7f5567487000 r-xp 00000000 08:16 2360615                    /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f5567487000-7f5567687000 ---p 00017000 08:16 2360615                    /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f5567687000-7f5567688000 r--p 00017000 08:16 2360615                    /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f5567688000-7f5567689000 rw-p 00018000 08:16 2360615                    /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f5567689000-7f556768b000 rw-p 00000000 00:00 0 
+7f556768b000-7f55677f9000 r-xp 00000000 08:16 6291509                    /usr/lib/x86_64-linux-gnu/libapt-pkg.so.5.0.0
+7f55677f9000-7f55679f9000 ---p 0016e000 08:16 6291509                    /usr/lib/x86_64-linux-gnu/libapt-pkg.so.5.0.0
+7f55679f9000-7f55679ff000 r--p 0016e000 08:16 6291509                    /usr/lib/x86_64-linux-gnu/libapt-pkg.so.5.0.0
+7f55679ff000-7f5567a00000 rw-p 00174000 08:16 6291509                    /usr/lib/x86_64-linux-gnu/libapt-pkg.so.5.0.0
+7f5567a00000-7f556bf29000 rw-p 00000000 00:00 0 
+7f556bf29000-7f556c000000 ---p 00000000 00:00 0 
+7f556c135000-7f556c175000 rw-p 00000000 00:00 0 
+7f556c175000-7f556c1b9000 r-xp 00000000 08:16 6294059                    /usr/lib/python3/dist-packages/apt_pkg.cpython-35m-x86_64-linux-gnu.so
+7f556c1b9000-7f556c3b9000 ---p 00044000 08:16 6294059                    /usr/lib/python3/dist-packages/apt_pkg.cpython-35m-x86_64-linux-gnu.so
+7f556c3b9000-7f556c3ba000 r--p 00044000 08:16 6294059                    /usr/lib/python3/dist-packages/apt_pkg.cpython-35m-x86_64-linux-gnu.so
+7f556c3ba000-7f556c3c2000 rw-p 00045000 08:16 6294059                    /usr/lib/python3/dist-packages/apt_pkg.cpython-35m-x86_64-linux-gnu.so
+7f556c3c2000-7f556c402000 rw-p 00000000 00:00 0 
+7f556c402000-7f556c5c2000 ---p 00000000 00:00 0 
+7f556c5c2000-7f556c5c5000 ---p 00000000 00:00 0 
+7f556c5c5000-7f556c6c3000 rw-p 00000000 00:00 0 
+7f556c6c3000-7f556c6c6000 ---p 00000000 00:00 0 
+7f556c6c6000-7f556f7c5000 rw-p 00000000 00:00 0 
+7f556f7c5000-7f556f7db000 r-xp 00000000 08:16 6301775                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7f556f7db000-7f556f9db000 ---p 00016000 08:16 6301775                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7f556f9db000-7f556f9dc000 r--p 00016000 08:16 6301775                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7f556f9dc000-7f556f9dd000 rw-p 00017000 08:16 6301775                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7f556f9dd000-7f556f9ee000 r-xp 00000000 08:16 6301781                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7f556f9ee000-7f556fbee000 ---p 00011000 08:16 6301781                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7f556fbee000-7f556fbef000 r--p 00011000 08:16 6301781                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7f556fbef000-7f556fbf0000 rw-p 00012000 08:16 6301781                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7f556fbf0000-7f556fbf5000 r-xp 00000000 08:16 6299941                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f556fbf5000-7f556fdf4000 ---p 00005000 08:16 6299941                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f556fdf4000-7f556fdf5000 r--p 00004000 08:16 6299941                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f556fdf5000-7f556fdf6000 rw-p 00005000 08:16 6299941                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f556fdf6000-7f556fdff000 r-xp 00000000 08:16 6297463                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f556fdff000-7f556fffe000 ---p 00009000 08:16 6297463                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f556fffe000-7f556ffff000 r--p 00008000 08:16 6297463                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f556ffff000-7f5570000000 rw-p 00009000 08:16 6297463                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f5570000000-7f5570021000 rw-p 00000000 00:00 0 
+7f5570021000-7f5574000000 ---p 00000000 00:00 0 
+7f5574000000-7f5574021000 rw-p 00000000 00:00 0 
+7f5574021000-7f5578000000 ---p 00000000 00:00 0 
+7f5578000000-7f5578026000 rw-p 00000000 00:00 0 
+7f5578026000-7f557c000000 ---p 00000000 00:00 0 
+7f557c000000-7f557c021000 rw-p 00000000 00:00 0 
+7f557c021000-7f5580000000 ---p 00000000 00:00 0 
+7f5580000000-7f5580021000 rw-p 00000000 00:00 0 
+7f5580021000-7f5584000000 ---p 00000000 00:00 0 
+7f5584000000-7f5584021000 rw-p 00000000 00:00 0 
+7f5584021000-7f5588000000 ---p 00000000 00:00 0 
+7f5588000000-7f5588021000 rw-p 00000000 00:00 0 
+7f5588021000-7f558c000000 ---p 00000000 00:00 0 
+7f558c02f000-7f558c06f000 rw-p 00000000 00:00 0 
+7f558c06f000-7f558c093000 r-xp 00000000 08:16 2364015                    /lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f558c093000-7f558c292000 ---p 00024000 08:16 2364015                    /lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f558c292000-7f558c293000 r--p 00023000 08:16 2364015                    /lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f558c293000-7f558c294000 rw-p 00024000 08:16 2364015                    /lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f558c294000-7f558c338000 r-xp 00000000 08:16 6291656                    /usr/lib/x86_64-linux-gnu/libfreetype.so.6.12.1
+7f558c338000-7f558c537000 ---p 000a4000 08:16 6291656                    /usr/lib/x86_64-linux-gnu/libfreetype.so.6.12.1
+7f558c537000-7f558c53d000 r--p 000a3000 08:16 6291656                    /usr/lib/x86_64-linux-gnu/libfreetype.so.6.12.1
+7f558c53d000-7f558c53e000 rw-p 000a9000 08:16 6291656                    /usr/lib/x86_64-linux-gnu/libfreetype.so.6.12.1
+7f558c53e000-7f558c590000 r-xp 00000000 08:16 6301750                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libfontmanager.so
+7f558c590000-7f558c790000 ---p 00052000 08:16 6301750                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libfontmanager.so
+7f558c790000-7f558c792000 r--p 00052000 08:16 6301750                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libfontmanager.so
+7f558c792000-7f558c793000 rw-p 00054000 08:16 6301750                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libfontmanager.so
+7f558c793000-7f558c798000 r-xp 00000000 08:16 6299937                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f558c798000-7f558c997000 ---p 00005000 08:16 6299937                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f558c997000-7f558c998000 r--p 00004000 08:16 6299937                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f558c998000-7f558c999000 rw-p 00005000 08:16 6299937                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f558c999000-7f558c99b000 r-xp 00000000 08:16 6299926                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f558c99b000-7f558cb9b000 ---p 00002000 08:16 6299926                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f558cb9b000-7f558cb9c000 r--p 00002000 08:16 6299926                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f558cb9c000-7f558cb9d000 rw-p 00003000 08:16 6299926                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f558cb9d000-7f558cbbe000 r-xp 00000000 08:16 6301304                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f558cbbe000-7f558cdbd000 ---p 00021000 08:16 6301304                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f558cdbd000-7f558cdbe000 r--p 00020000 08:16 6301304                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f558cdbe000-7f558cdbf000 rw-p 00021000 08:16 6301304                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f558cdbf000-7f558cdce000 r-xp 00000000 08:16 6299947                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f558cdce000-7f558cfcd000 ---p 0000f000 08:16 6299947                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f558cfcd000-7f558cfce000 r--p 0000e000 08:16 6299947                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f558cfce000-7f558cfcf000 rw-p 0000f000 08:16 6299947                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f558cfcf000-7f558cfd4000 r-xp 00000000 08:16 6299965                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f558cfd4000-7f558d1d3000 ---p 00005000 08:16 6299965                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f558d1d3000-7f558d1d4000 r--p 00004000 08:16 6299965                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f558d1d4000-7f558d1d5000 rw-p 00005000 08:16 6299965                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f558d1d5000-7f558d1de000 r-xp 00000000 08:16 6299959                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f558d1de000-7f558d3dd000 ---p 00009000 08:16 6299959                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f558d3dd000-7f558d3de000 r--p 00008000 08:16 6299959                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f558d3de000-7f558d3df000 rw-p 00009000 08:16 6299959                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f558d3df000-7f558d514000 r-xp 00000000 08:16 6299922                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f558d514000-7f558d714000 ---p 00135000 08:16 6299922                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f558d714000-7f558d715000 r--p 00135000 08:16 6299922                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f558d715000-7f558d719000 rw-p 00136000 08:16 6299922                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f558d719000-7f558d72a000 r-xp 00000000 08:16 6299939                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f558d72a000-7f558d929000 ---p 00011000 08:16 6299939                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f558d929000-7f558d92a000 r--p 00010000 08:16 6299939                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f558d92a000-7f558d92b000 rw-p 00011000 08:16 6299939                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f558d92b000-7f558d9cb000 r-xp 00000000 08:16 6301753                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libawt.so
+7f558d9cb000-7f558dbcb000 ---p 000a0000 08:16 6301753                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libawt.so
+7f558dbcb000-7f558dbcc000 r--p 000a0000 08:16 6301753                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libawt.so
+7f558dbcc000-7f558dbd7000 rw-p 000a1000 08:16 6301753                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libawt.so
+7f558dbd7000-7f558dbfc000 rw-p 00000000 00:00 0 
+7f558dbfc000-7f558dbfd000 ---p 00000000 00:00 0 
+7f558dbfd000-7f558e3fd000 rw-p 00000000 00:00 0 
+7f558e3fd000-7f558e3fe000 ---p 00000000 00:00 0 
+7f558e3fe000-7f558ebfe000 rw-p 00000000 00:00 0 
+7f558ebfe000-7f558ebff000 ---p 00000000 00:00 0 
+7f558ebff000-7f558f3ff000 rw-p 00000000 00:00 0 
+7f558f3ff000-7f558f400000 ---p 00000000 00:00 0 
+7f558f400000-7f558fc00000 rw-p 00000000 00:00 0 
+7f558fc00000-7f5590021000 rw-p 00000000 00:00 0 
+7f5590021000-7f5594000000 ---p 00000000 00:00 0 
+7f5594000000-7f5594021000 rw-p 00000000 00:00 0 
+7f5594021000-7f5598000000 ---p 00000000 00:00 0 
+7f5598000000-7f559bf73000 rw-p 00000000 00:00 0 
+7f559bf73000-7f559c000000 ---p 00000000 00:00 0 
+7f559c000000-7f559c021000 rw-p 00000000 00:00 0 
+7f559c021000-7f55a0000000 ---p 00000000 00:00 0 
+7f55a0000000-7f55a3f97000 rw-p 00000000 00:00 0 
+7f55a3f97000-7f55a4000000 ---p 00000000 00:00 0 
+7f55a4000000-7f55a8000000 rw-p 00000000 00:00 0 
+7f55a8000000-7f55a8021000 rw-p 00000000 00:00 0 
+7f55a8021000-7f55ac000000 ---p 00000000 00:00 0 
+7f55ac000000-7f55aff68000 rw-p 00000000 00:00 0 
+7f55aff68000-7f55b0000000 ---p 00000000 00:00 0 
+7f55b0000000-7f55b0001000 rw-s 00000000 00:06 579                        /dev/nvidia0
+7f55b0001000-7f55b0002000 rw-s 00000000 00:06 579                        /dev/nvidia0
+7f55b0002000-7f55b0003000 rw-s 00000000 00:06 579                        /dev/nvidia0
+7f55b0003000-7f55b0004000 rw-s 00000000 00:06 579                        /dev/nvidia0
+7f55b0004000-7f55b0005000 rw-s 00000000 00:06 579                        /dev/nvidia0
+7f55b0005000-7f55b0006000 rw-s 00000000 00:06 579                        /dev/nvidia0
+7f55b0006000-7f55b0007000 rw-s 00000000 00:06 579                        /dev/nvidia0
+7f55b0007000-7f55b0008000 rw-s 00000000 00:06 579                        /dev/nvidia0
+7f55b0008000-7f55b0009000 rw-s 00000000 00:06 579                        /dev/nvidia0
+7f55b0009000-7f55b000a000 rw-s 00000000 00:06 579                        /dev/nvidia0
+7f55b000a000-7f55b000b000 rw-s 00000000 00:06 579                        /dev/nvidia0
+7f55b000b000-7f55b000c000 rw-s 00000000 00:06 579                        /dev/nvidia0
+7f55b000c000-7f55c0000000 ---p 00000000 00:00 0 
+7f55c0000000-7f55c0200000 rw-p 00000000 00:00 0 
+7f55c0200000-7f55c0400000 rw-p 00000000 00:00 0 
+7f55c0400000-7f55c0800000 rw-p 00000000 00:00 0 
+7f55c0803000-7f55c084e000 rw-s 00000000 00:05 2228236                    /SYSV00000000 (deleted)
+7f55c084e000-7f55c0851000 ---p 00000000 00:00 0 
+7f55c0851000-7f55c094f000 rw-p 00000000 00:00 0 
+7f55c094f000-7f55c0950000 ---p 00000000 00:00 0 
+7f55c0950000-7f55c4000000 rw-p 00000000 00:00 0 
+7f55c4000000-7f55c4021000 rw-p 00000000 00:00 0 
+7f55c4021000-7f55c8000000 ---p 00000000 00:00 0 
+7f55c8000000-7f55c8021000 rw-p 00000000 00:00 0 
+7f55c8021000-7f55cc000000 ---p 00000000 00:00 0 
+7f55cc000000-7f55cc021000 rw-p 00000000 00:00 0 
+7f55cc021000-7f55d0000000 ---p 00000000 00:00 0 
+7f55d0000000-7f55d0021000 rw-p 00000000 00:00 0 
+7f55d0021000-7f55d4000000 ---p 00000000 00:00 0 
+7f55d4000000-7f55d4021000 rw-p 00000000 00:00 0 
+7f55d4021000-7f55d8000000 ---p 00000000 00:00 0 
+7f55d801b000-7f55d8070000 r-xp 00000000 08:16 6301754                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libawt_xawt.so
+7f55d8070000-7f55d826f000 ---p 00055000 08:16 6301754                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libawt_xawt.so
+7f55d826f000-7f55d8270000 r--p 00054000 08:16 6301754                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libawt_xawt.so
+7f55d8270000-7f55d8273000 rw-p 00055000 08:16 6301754                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libawt_xawt.so
+7f55d8273000-7f55d8274000 rw-p 00000000 00:00 0 
+7f55d8274000-7f55d8275000 ---p 00000000 00:00 0 
+7f55d8275000-7f55d8a75000 rw-p 00000000 00:00 0 
+7f55d8a75000-7f55d8a76000 ---p 00000000 00:00 0 
+7f55d8a76000-7f55d9276000 rw-p 00000000 00:00 0 
+7f55d9276000-7f55d9277000 ---p 00000000 00:00 0 
+7f55d9277000-7f55d9a77000 rw-p 00000000 00:00 0 
+7f55d9a7b000-7f55d9abb000 rw-p 00000000 00:00 0 
+7f55d9abb000-7f55d9abe000 ---p 00000000 00:00 0 
+7f55d9abe000-7f55d9ffc000 rw-p 00000000 00:00 0 
+7f55d9ffc000-7f55d9ffd000 ---p 00000000 00:00 0 
+7f55d9ffd000-7f55da7fd000 rw-p 00000000 00:00 0 
+7f55da7fd000-7f55da7fe000 ---p 00000000 00:00 0 
+7f55da7fe000-7f55daffe000 rw-p 00000000 00:00 0 
+7f55daffe000-7f55dafff000 ---p 00000000 00:00 0 
+7f55dafff000-7f55db7ff000 rw-p 00000000 00:00 0 
+7f55db7ff000-7f55db800000 ---p 00000000 00:00 0 
+7f55db800000-7f55dc000000 rw-p 00000000 00:00 0 
+7f55dc000000-7f55dc021000 rw-p 00000000 00:00 0 
+7f55dc021000-7f55e0000000 ---p 00000000 00:00 0 
+7f55e0034000-7f55e0274000 rw-p 00000000 00:00 0 
+7f55e0274000-7f55e0275000 ---p 00000000 00:00 0 
+7f55e0275000-7f55e0a75000 rw-p 00000000 00:00 0 
+7f55e0a75000-7f55e0a76000 ---p 00000000 00:00 0 
+7f55e0a76000-7f55e1276000 rw-p 00000000 00:00 0 
+7f55e1276000-7f55e1277000 ---p 00000000 00:00 0 
+7f55e1277000-7f55e1ab7000 rw-p 00000000 00:00 0 
+7f55e1ab7000-7f55e1d28000 r-xp 00000000 08:16 6030416                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/lite/toco/python/_tensorflow_wrap_toco.so
+7f55e1d28000-7f55e1f27000 ---p 00271000 08:16 6030416                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/lite/toco/python/_tensorflow_wrap_toco.so
+7f55e1f27000-7f55e1f31000 r--p 00270000 08:16 6030416                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/lite/toco/python/_tensorflow_wrap_toco.so
+7f55e1f31000-7f55e1f32000 rw-p 0027a000 08:16 6030416                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/lite/toco/python/_tensorflow_wrap_toco.so
+7f55e1f32000-7f55e1f33000 rw-p 00000000 00:00 0 
+7f55e1f33000-7f55e1fb6000 r-xp 00000000 08:16 6030607                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/data/_prefetching_ops.so
+7f55e1fb6000-7f55e21b5000 ---p 00083000 08:16 6030607                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/data/_prefetching_ops.so
+7f55e21b5000-7f55e21b9000 r--p 00082000 08:16 6030607                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/data/_prefetching_ops.so
+7f55e21b9000-7f55e21ba000 rw-p 00086000 08:16 6030607                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/data/_prefetching_ops.so
+7f55e21ba000-7f55e227b000 rw-p 00000000 00:00 0 
+7f55e227b000-7f55e228d000 r-xp 00000000 08:16 6556712                    /usr/lib/python3.5/lib-dynload/parser.cpython-35m-x86_64-linux-gnu.so
+7f55e228d000-7f55e248c000 ---p 00012000 08:16 6556712                    /usr/lib/python3.5/lib-dynload/parser.cpython-35m-x86_64-linux-gnu.so
+7f55e248c000-7f55e248d000 r--p 00011000 08:16 6556712                    /usr/lib/python3.5/lib-dynload/parser.cpython-35m-x86_64-linux-gnu.so
+7f55e248d000-7f55e248e000 rw-p 00012000 08:16 6556712                    /usr/lib/python3.5/lib-dynload/parser.cpython-35m-x86_64-linux-gnu.so
+7f55e248e000-7f55e24ce000 rw-p 00000000 00:00 0 
+7f55e24ce000-7f55e2584000 r-xp 00000000 08:16 6029894                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tensor_forest/python/ops/_stats_ops.so
+7f55e2584000-7f55e2784000 ---p 000b6000 08:16 6029894                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tensor_forest/python/ops/_stats_ops.so
+7f55e2784000-7f55e2789000 r--p 000b6000 08:16 6029894                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tensor_forest/python/ops/_stats_ops.so
+7f55e2789000-7f55e278a000 rw-p 000bb000 08:16 6029894                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tensor_forest/python/ops/_stats_ops.so
+7f55e278a000-7f55e278b000 rw-p 00000000 00:00 0 
+7f55e278b000-7f55e2825000 r-xp 00000000 08:16 6029896                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tensor_forest/python/ops/_model_ops.so
+7f55e2825000-7f55e2a25000 ---p 0009a000 08:16 6029896                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tensor_forest/python/ops/_model_ops.so
+7f55e2a25000-7f55e2a29000 r--p 0009a000 08:16 6029896                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tensor_forest/python/ops/_model_ops.so
+7f55e2a29000-7f55e2a2a000 rw-p 0009e000 08:16 6029896                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tensor_forest/python/ops/_model_ops.so
+7f55e2a2a000-7f55e2a6b000 rw-p 00000000 00:00 0 
+7f55e2a6b000-7f55e2d76000 r-xp 00000000 08:16 6029813                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tensor_forest/libforestprotos.so
+7f55e2d76000-7f55e2f76000 ---p 0030b000 08:16 6029813                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tensor_forest/libforestprotos.so
+7f55e2f76000-7f55e2f8a000 r--p 0030b000 08:16 6029813                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tensor_forest/libforestprotos.so
+7f55e2f8a000-7f55e2f8b000 rw-p 0031f000 08:16 6029813                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tensor_forest/libforestprotos.so
+7f55e2f8b000-7f55e2f8d000 rw-p 00000000 00:00 0 
+7f55e2f8d000-7f55e300b000 r-xp 00000000 08:16 6029891                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tensor_forest/python/ops/_tensor_forest_ops.so
+7f55e300b000-7f55e320a000 ---p 0007e000 08:16 6029891                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tensor_forest/python/ops/_tensor_forest_ops.so
+7f55e320a000-7f55e320e000 r--p 0007d000 08:16 6029891                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tensor_forest/python/ops/_tensor_forest_ops.so
+7f55e320e000-7f55e320f000 rw-p 00081000 08:16 6029891                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tensor_forest/python/ops/_tensor_forest_ops.so
+7f55e320f000-7f55e3290000 rw-p 00000000 00:00 0 
+7f55e3290000-7f55e331b000 r-xp 00000000 08:16 6030316                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/seq2seq/python/ops/_beam_search_ops.so
+7f55e331b000-7f55e351b000 ---p 0008b000 08:16 6030316                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/seq2seq/python/ops/_beam_search_ops.so
+7f55e351b000-7f55e351e000 r--p 0008b000 08:16 6030316                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/seq2seq/python/ops/_beam_search_ops.so
+7f55e351e000-7f55e351f000 rw-p 0008e000 08:16 6030316                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/seq2seq/python/ops/_beam_search_ops.so
+7f55e351f000-7f55e3560000 rw-p 00000000 00:00 0 
+7f55e3560000-7f55e3607000 r-xp 00000000 08:16 6030680                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/resampler/python/ops/_resampler_ops.so
+7f55e3607000-7f55e3806000 ---p 000a7000 08:16 6030680                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/resampler/python/ops/_resampler_ops.so
+7f55e3806000-7f55e380a000 r--p 000a6000 08:16 6030680                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/resampler/python/ops/_resampler_ops.so
+7f55e380a000-7f55e380b000 rw-p 000aa000 08:16 6030680                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/resampler/python/ops/_resampler_ops.so
+7f55e380b000-7f55e384c000 rw-p 00000000 00:00 0 
+7f55e384c000-7f55e38c2000 r-xp 00000000 08:16 6029397                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/periodic_resample/python/ops/_periodic_resample_op.so
+7f55e38c2000-7f55e3ac1000 ---p 00076000 08:16 6029397                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/periodic_resample/python/ops/_periodic_resample_op.so
+7f55e3ac1000-7f55e3ac4000 r--p 00075000 08:16 6029397                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/periodic_resample/python/ops/_periodic_resample_op.so
+7f55e3ac4000-7f55e3ac5000 rw-p 00078000 08:16 6029397                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/periodic_resample/python/ops/_periodic_resample_op.so
+7f55e3ac5000-7f55e3b06000 rw-p 00000000 00:00 0 
+7f55e3b06000-7f55e4c14000 r-xp 00000000 08:16 6029535                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/nccl/python/ops/_nccl_ops.so
+7f55e4c14000-7f55e4e14000 ---p 0110e000 08:16 6029535                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/nccl/python/ops/_nccl_ops.so
+7f55e4e14000-7f55e4e18000 r--p 0110e000 08:16 6029535                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/nccl/python/ops/_nccl_ops.so
+7f55e4e18000-7f55e4e19000 rw-p 01112000 08:16 6029535                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/nccl/python/ops/_nccl_ops.so
+7f55e4e19000-7f55e4e1a000 rw-p 00000000 00:00 0 
+7f55e4e1a000-7f55e4e8c000 r-xp 00000000 08:16 6031531                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/memory_stats/python/ops/_memory_stats_ops.so
+7f55e4e8c000-7f55e508c000 ---p 00072000 08:16 6031531                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/memory_stats/python/ops/_memory_stats_ops.so
+7f55e508c000-7f55e508f000 r--p 00072000 08:16 6031531                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/memory_stats/python/ops/_memory_stats_ops.so
+7f55e508f000-7f55e5090000 rw-p 00075000 08:16 6031531                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/memory_stats/python/ops/_memory_stats_ops.so
+7f55e5090000-7f55e51d1000 rw-p 00000000 00:00 0 
+7f55e51d1000-7f55e54b1000 r-xp 00000000 08:16 6029705                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/image/python/ops/_single_image_random_dot_stereograms.so
+7f55e54b1000-7f55e56b1000 ---p 002e0000 08:16 6029705                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/image/python/ops/_single_image_random_dot_stereograms.so
+7f55e56b1000-7f55e56c3000 r--p 002e0000 08:16 6029705                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/image/python/ops/_single_image_random_dot_stereograms.so
+7f55e56c3000-7f55e56c4000 rw-p 002f2000 08:16 6029705                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/image/python/ops/_single_image_random_dot_stereograms.so
+7f55e56c4000-7f55e56c6000 rw-p 00000000 00:00 0 
+7f55e56c6000-7f55e57c2000 r-xp 00000000 08:16 6029708                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/image/python/ops/_image_ops.so
+7f55e57c2000-7f55e59c1000 ---p 000fc000 08:16 6029708                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/image/python/ops/_image_ops.so
+7f55e59c1000-7f55e59c5000 r--p 000fb000 08:16 6029708                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/image/python/ops/_image_ops.so
+7f55e59c5000-7f55e59c6000 rw-p 000ff000 08:16 6029708                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/image/python/ops/_image_ops.so
+7f55e59c6000-7f55e5a07000 rw-p 00000000 00:00 0 
+7f55e5a07000-7f55e5a8d000 r-xp 00000000 08:16 6029704                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/image/python/ops/_distort_image_ops.so
+7f55e5a8d000-7f55e5c8d000 ---p 00086000 08:16 6029704                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/image/python/ops/_distort_image_ops.so
+7f55e5c8d000-7f55e5c90000 r--p 00086000 08:16 6029704                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/image/python/ops/_distort_image_ops.so
+7f55e5c90000-7f55e5c91000 rw-p 00089000 08:16 6029704                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/image/python/ops/_distort_image_ops.so
+7f55e5c91000-7f55e5d92000 rw-p 00000000 00:00 0 
+7f55e5d92000-7f55e5e23000 r-xp 00000000 08:16 6030456                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/cudnn_rnn/python/ops/_cudnn_rnn_ops.so
+7f55e5e23000-7f55e6022000 ---p 00091000 08:16 6030456                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/cudnn_rnn/python/ops/_cudnn_rnn_ops.so
+7f55e6022000-7f55e6026000 r--p 00090000 08:16 6030456                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/cudnn_rnn/python/ops/_cudnn_rnn_ops.so
+7f55e6026000-7f55e6027000 rw-p 00094000 08:16 6030456                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/cudnn_rnn/python/ops/_cudnn_rnn_ops.so
+7f55e6027000-7f55e61a8000 rw-p 00000000 00:00 0 
+7f55e61a8000-7f55e621d000 r-xp 00000000 08:16 6031478                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tpu/python/ops/_tpu_ops.so
+7f55e621d000-7f55e641c000 ---p 00075000 08:16 6031478                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tpu/python/ops/_tpu_ops.so
+7f55e641c000-7f55e641f000 r--p 00074000 08:16 6031478                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tpu/python/ops/_tpu_ops.so
+7f55e641f000-7f55e6420000 rw-p 00077000 08:16 6031478                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/tpu/python/ops/_tpu_ops.so
+7f55e6420000-7f55e64a1000 rw-p 00000000 00:00 0 
+7f55e64a1000-7f55e652d000 r-xp 00000000 08:16 6030480                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/factorization/python/ops/_factorization_ops.so
+7f55e652d000-7f55e672c000 ---p 0008c000 08:16 6030480                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/factorization/python/ops/_factorization_ops.so
+7f55e672c000-7f55e6730000 r--p 0008b000 08:16 6030480                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/factorization/python/ops/_factorization_ops.so
+7f55e6730000-7f55e6731000 rw-p 0008f000 08:16 6030480                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/factorization/python/ops/_factorization_ops.so
+7f55e6731000-7f55e6772000 rw-p 00000000 00:00 0 
+7f55e6772000-7f55e67f3000 r-xp 00000000 08:16 6030478                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/factorization/python/ops/_clustering_ops.so
+7f55e67f3000-7f55e69f3000 ---p 00081000 08:16 6030478                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/factorization/python/ops/_clustering_ops.so
+7f55e69f3000-7f55e69f6000 r--p 00081000 08:16 6030478                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/factorization/python/ops/_clustering_ops.so
+7f55e69f6000-7f55e69f7000 rw-p 00084000 08:16 6030478                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/factorization/python/ops/_clustering_ops.so
+7f55e69f7000-7f55e6a38000 rw-p 00000000 00:00 0 
+7f55e6a38000-7f55e6c96000 r-xp 00000000 08:16 6031368                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/rnn/python/ops/_lstm_ops.so
+7f55e6c96000-7f55e6e95000 ---p 0025e000 08:16 6031368                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/rnn/python/ops/_lstm_ops.so
+7f55e6e95000-7f55e6e9a000 r--p 0025d000 08:16 6031368                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/rnn/python/ops/_lstm_ops.so
+7f55e6e9a000-7f55e6e9b000 rw-p 00262000 08:16 6031368                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/rnn/python/ops/_lstm_ops.so
+7f55e6e9b000-7f55e6edc000 rw-p 00000000 00:00 0 
+7f55e6edc000-7f55e702f000 r-xp 00000000 08:16 6031363                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/rnn/python/ops/_gru_ops.so
+7f55e702f000-7f55e722f000 ---p 00153000 08:16 6031363                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/rnn/python/ops/_gru_ops.so
+7f55e722f000-7f55e7233000 r--p 00153000 08:16 6031363                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/rnn/python/ops/_gru_ops.so
+7f55e7233000-7f55e7234000 rw-p 00157000 08:16 6031363                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/rnn/python/ops/_gru_ops.so
+7f55e7234000-7f55e7335000 rw-p 00000000 00:00 0 
+7f55e7335000-7f55e73a7000 r-xp 00000000 08:16 6030980                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/input_pipeline/python/ops/_input_pipeline_ops.so
+7f55e73a7000-7f55e75a7000 ---p 00072000 08:16 6030980                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/input_pipeline/python/ops/_input_pipeline_ops.so
+7f55e75a7000-7f55e75aa000 r--p 00072000 08:16 6030980                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/input_pipeline/python/ops/_input_pipeline_ops.so
+7f55e75aa000-7f55e75ab000 rw-p 00075000 08:16 6030980                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/input_pipeline/python/ops/_input_pipeline_ops.so
+7f55e75ab000-7f55e776c000 rw-p 00000000 00:00 0 
+7f55e776c000-7f55e77fb000 r-xp 00000000 08:16 6031195                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/layers/python/ops/_sparse_feature_cross_op.so
+7f55e77fb000-7f55e79fa000 ---p 0008f000 08:16 6031195                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/layers/python/ops/_sparse_feature_cross_op.so
+7f55e79fa000-7f55e79fe000 r--p 0008e000 08:16 6031195                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/layers/python/ops/_sparse_feature_cross_op.so
+7f55e79fe000-7f55e79ff000 rw-p 00092000 08:16 6031195                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/contrib/layers/python/ops/_sparse_feature_cross_op.so
+7f55e79ff000-7f55e7a00000 rw-p 00000000 00:00 0 
+7f55e7a00000-7f55e7c00000 rw-p 00000000 00:00 0 
+7f55e7c1c000-7f55e819d000 rw-p 00000000 00:00 0 
+7f55e819d000-7f55e81ed000 r-xp 00000000 08:16 5639528                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/ndimage/_ni_label.cpython-35m-x86_64-linux-gnu.so
+7f55e81ed000-7f55e83ec000 ---p 00050000 08:16 5639528                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/ndimage/_ni_label.cpython-35m-x86_64-linux-gnu.so
+7f55e83ec000-7f55e83f1000 rw-p 0004f000 08:16 5639528                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/ndimage/_ni_label.cpython-35m-x86_64-linux-gnu.so
+7f55e83f1000-7f55e83f2000 rw-p 00000000 00:00 0 
+7f55e83f2000-7f55e841b000 r-xp 00000000 08:16 5638999                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/spatial/_hausdorff.cpython-35m-x86_64-linux-gnu.so
+7f55e841b000-7f55e861b000 ---p 00029000 08:16 5638999                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/spatial/_hausdorff.cpython-35m-x86_64-linux-gnu.so
+7f55e861b000-7f55e861e000 rw-p 00029000 08:16 5638999                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/spatial/_hausdorff.cpython-35m-x86_64-linux-gnu.so
+7f55e861e000-7f55e861f000 rw-p 00000000 00:00 0 
+7f55e861f000-7f55e8636000 r-xp 00000000 08:16 5638996                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/spatial/_distance_wrap.cpython-35m-x86_64-linux-gnu.so
+7f55e8636000-7f55e8836000 ---p 00017000 08:16 5638996                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/spatial/_distance_wrap.cpython-35m-x86_64-linux-gnu.so
+7f55e8836000-7f55e8837000 rw-p 00017000 08:16 5638996                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/spatial/_distance_wrap.cpython-35m-x86_64-linux-gnu.so
+7f55e8837000-7f55e8877000 rw-p 00000000 00:00 0 
+7f55e8877000-7f55e88a0000 r-xp 00000000 08:16 5638998                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/spatial/_voronoi.cpython-35m-x86_64-linux-gnu.so
+7f55e88a0000-7f55e8aa0000 ---p 00029000 08:16 5638998                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/spatial/_voronoi.cpython-35m-x86_64-linux-gnu.so
+7f55e8aa0000-7f55e8aa3000 rw-p 00029000 08:16 5638998                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/spatial/_voronoi.cpython-35m-x86_64-linux-gnu.so
+7f55e8aa3000-7f55e8aa4000 rw-p 00000000 00:00 0 
+7f55e8aa4000-7f55e8b83000 r-xp 00000000 08:16 5639007                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/spatial/qhull.cpython-35m-x86_64-linux-gnu.so
+7f55e8b83000-7f55e8d82000 ---p 000df000 08:16 5639007                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/spatial/qhull.cpython-35m-x86_64-linux-gnu.so
+7f55e8d82000-7f55e8d8b000 rw-p 000de000 08:16 5639007                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/spatial/qhull.cpython-35m-x86_64-linux-gnu.so
+7f55e8d8b000-7f55e8d8e000 rw-p 00000000 00:00 0 
+7f55e8d8e000-7f55e8d98000 rw-p 0040e000 08:16 5639007                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/spatial/qhull.cpython-35m-x86_64-linux-gnu.so
+7f55e8d98000-7f55e8e31000 r-xp 00000000 08:16 5639003                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/spatial/ckdtree.cpython-35m-x86_64-linux-gnu.so
+7f55e8e31000-7f55e9030000 ---p 00099000 08:16 5639003                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/spatial/ckdtree.cpython-35m-x86_64-linux-gnu.so
+7f55e9030000-7f55e9038000 rw-p 00098000 08:16 5639003                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/spatial/ckdtree.cpython-35m-x86_64-linux-gnu.so
+7f55e9038000-7f55e9039000 rw-p 00000000 00:00 0 
+7f55e9039000-7f55e908b000 r-xp 00000000 08:16 5639175                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/interpnd.cpython-35m-x86_64-linux-gnu.so
+7f55e908b000-7f55e928b000 ---p 00052000 08:16 5639175                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/interpnd.cpython-35m-x86_64-linux-gnu.so
+7f55e928b000-7f55e9290000 rw-p 00052000 08:16 5639175                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/interpnd.cpython-35m-x86_64-linux-gnu.so
+7f55e9290000-7f55e92d1000 rw-p 00000000 00:00 0 
+7f55e92d1000-7f55e9327000 r-xp 00000000 08:16 5639179                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/_ppoly.cpython-35m-x86_64-linux-gnu.so
+7f55e9327000-7f55e9527000 ---p 00056000 08:16 5639179                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/_ppoly.cpython-35m-x86_64-linux-gnu.so
+7f55e9527000-7f55e952d000 rw-p 00056000 08:16 5639179                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/_ppoly.cpython-35m-x86_64-linux-gnu.so
+7f55e952d000-7f55e952e000 rw-p 00000000 00:00 0 
+7f55e952e000-7f55e9532000 rw-p 001c9000 08:16 5639179                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/_ppoly.cpython-35m-x86_64-linux-gnu.so
+7f55e9532000-7f55e9570000 r-xp 00000000 08:16 5639176                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/_bspl.cpython-35m-x86_64-linux-gnu.so
+7f55e9570000-7f55e976f000 ---p 0003e000 08:16 5639176                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/_bspl.cpython-35m-x86_64-linux-gnu.so
+7f55e976f000-7f55e9775000 rw-p 0003d000 08:16 5639176                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/_bspl.cpython-35m-x86_64-linux-gnu.so
+7f55e9775000-7f55e9776000 rw-p 00000000 00:00 0 
+7f55e9776000-7f55e9779000 rw-p 0014b000 08:16 5639176                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/_bspl.cpython-35m-x86_64-linux-gnu.so
+7f55e9779000-7f55e97d9000 r-xp 00000000 08:16 5639170                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/dfitpack.cpython-35m-x86_64-linux-gnu.so
+7f55e97d9000-7f55e99d9000 ---p 00060000 08:16 5639170                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/dfitpack.cpython-35m-x86_64-linux-gnu.so
+7f55e99d9000-7f55e99e0000 rw-p 00060000 08:16 5639170                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/dfitpack.cpython-35m-x86_64-linux-gnu.so
+7f55e99e0000-7f55e99e2000 rw-p 00112000 08:16 5639170                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/dfitpack.cpython-35m-x86_64-linux-gnu.so
+7f55e99e2000-7f55e9a17000 r-xp 00000000 08:16 5639185                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/_fitpack.cpython-35m-x86_64-linux-gnu.so
+7f55e9a17000-7f55e9c17000 ---p 00035000 08:16 5639185                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/_fitpack.cpython-35m-x86_64-linux-gnu.so
+7f55e9c17000-7f55e9c18000 rw-p 00035000 08:16 5639185                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/_fitpack.cpython-35m-x86_64-linux-gnu.so
+7f55e9c18000-7f55e9c1a000 rw-p 00092000 08:16 5639185                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/interpolate/_fitpack.cpython-35m-x86_64-linux-gnu.so
+7f55e9c1a000-7f55e9c5a000 rw-p 00000000 00:00 0 
+7f55e9c5a000-7f55e9c64000 r-xp 00000000 08:16 5640130                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_nnls.cpython-35m-x86_64-linux-gnu.so
+7f55e9c64000-7f55e9e64000 ---p 0000a000 08:16 5640130                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_nnls.cpython-35m-x86_64-linux-gnu.so
+7f55e9e64000-7f55e9e65000 rw-p 0000a000 08:16 5640130                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_nnls.cpython-35m-x86_64-linux-gnu.so
+7f55e9e65000-7f55e9e67000 rw-p 00022000 08:16 5640130                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_nnls.cpython-35m-x86_64-linux-gnu.so
+7f55e9e67000-7f55e9e6a000 r-xp 00000000 08:16 5640124                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_zeros.cpython-35m-x86_64-linux-gnu.so
+7f55e9e6a000-7f55ea069000 ---p 00003000 08:16 5640124                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_zeros.cpython-35m-x86_64-linux-gnu.so
+7f55ea069000-7f55ea06a000 rw-p 00002000 08:16 5640124                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_zeros.cpython-35m-x86_64-linux-gnu.so
+7f55ea06a000-7f55ea090000 r-xp 00000000 08:16 5640146                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_lsq/givens_elimination.cpython-35m-x86_64-linux-gnu.so
+7f55ea090000-7f55ea290000 ---p 00026000 08:16 5640146                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_lsq/givens_elimination.cpython-35m-x86_64-linux-gnu.so
+7f55ea290000-7f55ea293000 rw-p 00026000 08:16 5640146                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_lsq/givens_elimination.cpython-35m-x86_64-linux-gnu.so
+7f55ea293000-7f55ea2d4000 rw-p 00000000 00:00 0 
+7f55ea2d4000-7f55ea2fe000 r-xp 00000000 08:16 5640126                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_group_columns.cpython-35m-x86_64-linux-gnu.so
+7f55ea2fe000-7f55ea4fe000 ---p 0002a000 08:16 5640126                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_group_columns.cpython-35m-x86_64-linux-gnu.so
+7f55ea4fe000-7f55ea501000 rw-p 0002a000 08:16 5640126                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_group_columns.cpython-35m-x86_64-linux-gnu.so
+7f55ea501000-7f55ea502000 rw-p 00000000 00:00 0 
+7f55ea502000-7f55ea521000 r-xp 00000000 08:16 5640128                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_minpack.cpython-35m-x86_64-linux-gnu.so
+7f55ea521000-7f55ea721000 ---p 0001f000 08:16 5640128                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_minpack.cpython-35m-x86_64-linux-gnu.so
+7f55ea721000-7f55ea722000 rw-p 0001f000 08:16 5640128                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_minpack.cpython-35m-x86_64-linux-gnu.so
+7f55ea722000-7f55ea724000 rw-p 0004e000 08:16 5640128                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_minpack.cpython-35m-x86_64-linux-gnu.so
+7f55ea724000-7f55ea73b000 r-xp 00000000 08:16 5640121                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_slsqp.cpython-35m-x86_64-linux-gnu.so
+7f55ea73b000-7f55ea93a000 ---p 00017000 08:16 5640121                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_slsqp.cpython-35m-x86_64-linux-gnu.so
+7f55ea93a000-7f55ea93b000 rw-p 00016000 08:16 5640121                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_slsqp.cpython-35m-x86_64-linux-gnu.so
+7f55ea93b000-7f55ea93d000 rw-p 00040000 08:16 5640121                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_slsqp.cpython-35m-x86_64-linux-gnu.so
+7f55ea93d000-7f55ea95b000 r-xp 00000000 08:16 5640139                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_cobyla.cpython-35m-x86_64-linux-gnu.so
+7f55ea95b000-7f55eab5b000 ---p 0001e000 08:16 5640139                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_cobyla.cpython-35m-x86_64-linux-gnu.so
+7f55eab5b000-7f55eab5c000 rw-p 0001e000 08:16 5640139                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_cobyla.cpython-35m-x86_64-linux-gnu.so
+7f55eab5c000-7f55eab5e000 rw-p 00046000 08:16 5640139                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_cobyla.cpython-35m-x86_64-linux-gnu.so
+7f55eab5e000-7f55eab6a000 r-xp 00000000 08:16 5640105                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/moduleTNC.cpython-35m-x86_64-linux-gnu.so
+7f55eab6a000-7f55ead69000 ---p 0000c000 08:16 5640105                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/moduleTNC.cpython-35m-x86_64-linux-gnu.so
+7f55ead69000-7f55ead6a000 rw-p 0000b000 08:16 5640105                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/moduleTNC.cpython-35m-x86_64-linux-gnu.so
+7f55ead6a000-7f55ead88000 r-xp 00000000 08:16 5640106                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_lbfgsb.cpython-35m-x86_64-linux-gnu.so
+7f55ead88000-7f55eaf88000 ---p 0001e000 08:16 5640106                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_lbfgsb.cpython-35m-x86_64-linux-gnu.so
+7f55eaf88000-7f55eaf89000 rw-p 0001e000 08:16 5640106                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_lbfgsb.cpython-35m-x86_64-linux-gnu.so
+7f55eaf89000-7f55eaf8c000 rw-p 00052000 08:16 5640106                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_lbfgsb.cpython-35m-x86_64-linux-gnu.so
+7f55eaf8c000-7f55eaf95000 r-xp 00000000 08:16 5640258                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/_lib/messagestream.cpython-35m-x86_64-linux-gnu.so
+7f55eaf95000-7f55eb195000 ---p 00009000 08:16 5640258                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/_lib/messagestream.cpython-35m-x86_64-linux-gnu.so
+7f55eb195000-7f55eb196000 rw-p 00009000 08:16 5640258                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/_lib/messagestream.cpython-35m-x86_64-linux-gnu.so
+7f55eb196000-7f55eb1e0000 r-xp 00000000 08:16 5640248                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_trlib/_trlib.cpython-35m-x86_64-linux-gnu.so
+7f55eb1e0000-7f55eb3df000 ---p 0004a000 08:16 5640248                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_trlib/_trlib.cpython-35m-x86_64-linux-gnu.so
+7f55eb3df000-7f55eb3e3000 rw-p 00049000 08:16 5640248                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_trlib/_trlib.cpython-35m-x86_64-linux-gnu.so
+7f55eb3e3000-7f55eb3e4000 rw-p 00000000 00:00 0 
+7f55eb3e4000-7f55eb3e8000 rw-p 001aa000 08:16 5640248                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/_trlib/_trlib.cpython-35m-x86_64-linux-gnu.so
+7f55eb3e8000-7f55eb428000 rw-p 00000000 00:00 0 
+7f55eb428000-7f55eb431000 r-xp 00000000 08:16 5640116                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/minpack2.cpython-35m-x86_64-linux-gnu.so
+7f55eb431000-7f55eb631000 ---p 00009000 08:16 5640116                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/minpack2.cpython-35m-x86_64-linux-gnu.so
+7f55eb631000-7f55eb632000 rw-p 00009000 08:16 5640116                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/minpack2.cpython-35m-x86_64-linux-gnu.so
+7f55eb632000-7f55eb634000 rw-p 00022000 08:16 5640116                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/optimize/minpack2.cpython-35m-x86_64-linux-gnu.so
+7f55eb634000-7f55eb674000 rw-p 00000000 00:00 0 
+7f55eb674000-7f55eb6ff000 r-xp 00000000 08:16 5639372                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/sparse/linalg/eigen/arpack/_arpack.cpython-35m-x86_64-linux-gnu.so
+7f55eb6ff000-7f55eb8ff000 ---p 0008b000 08:16 5639372                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/sparse/linalg/eigen/arpack/_arpack.cpython-35m-x86_64-linux-gnu.so
+7f55eb8ff000-7f55eb90b000 rw-p 0008b000 08:16 5639372                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/sparse/linalg/eigen/arpack/_arpack.cpython-35m-x86_64-linux-gnu.so
+7f55eb90b000-7f55eb90c000 rw-p 00000000 00:00 0 
+7f55eb90c000-7f55eb911000 rw-p 0017c000 08:16 5639372                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/sparse/linalg/eigen/arpack/_arpack.cpython-35m-x86_64-linux-gnu.so
+7f55eb911000-7f55eb964000 r-xp 00000000 08:16 5639407                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/sparse/linalg/dsolve/_superlu.cpython-35m-x86_64-linux-gnu.so
+7f55eb964000-7f55ebb64000 ---p 00053000 08:16 5639407                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/sparse/linalg/dsolve/_superlu.cpython-35m-x86_64-linux-gnu.so
+7f55ebb64000-7f55ebb66000 rw-p 00053000 08:16 5639407                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/sparse/linalg/dsolve/_superlu.cpython-35m-x86_64-linux-gnu.so
+7f55ebb66000-7f55ebb6d000 rw-p 0019d000 08:16 5639407                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/sparse/linalg/dsolve/_superlu.cpython-35m-x86_64-linux-gnu.so
+7f55ebb6d000-7f55ebbad000 rw-p 00000000 00:00 0 
+7f55ebbad000-7f55ebbe4000 r-xp 00000000 08:16 5639429                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/sparse/linalg/isolve/_iterative.cpython-35m-x86_64-linux-gnu.so
+7f55ebbe4000-7f55ebde4000 ---p 00037000 08:16 5639429                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/sparse/linalg/isolve/_iterative.cpython-35m-x86_64-linux-gnu.so
+7f55ebde4000-7f55ebdec000 rw-p 00037000 08:16 5639429                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/sparse/linalg/isolve/_iterative.cpython-35m-x86_64-linux-gnu.so
+7f55ebdec000-7f55ebdee000 rw-p 00000000 00:00 0 
+7f55ebdee000-7f55ebdf1000 rw-p 000be000 08:16 5639429                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/sparse/linalg/isolve/_iterative.cpython-35m-x86_64-linux-gnu.so
+7f55ebdf1000-7f55ebe5f000 r-xp 00000000 08:16 5639265                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/sparse/_csparsetools.cpython-35m-x86_64-linux-gnu.so
+7f55ebe5f000-7f55ec05f000 ---p 0006e000 08:16 5639265                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/sparse/_csparsetools.cpython-35m-x86_64-linux-gnu.so
+7f55ec05f000-7f55ec065000 rw-p 0006e000 08:16 5639265                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/sparse/_csparsetools.cpython-35m-x86_64-linux-gnu.so
+7f55ec065000-7f55ec0a6000 rw-p 00000000 00:00 0 
+7f55ec0a6000-7f55ec446000 r-xp 00000000 08:16 5639263                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/sparse/_sparsetools.cpython-35m-x86_64-linux-gnu.so
+7f55ec446000-7f55ec646000 ---p 003a0000 08:16 5639263                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/sparse/_sparsetools.cpython-35m-x86_64-linux-gnu.so
+7f55ec646000-7f55ec64c000 rw-p 003a0000 08:16 5639263                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/sparse/_sparsetools.cpython-35m-x86_64-linux-gnu.so
+7f55ec64c000-7f55ec68c000 rw-p 00000000 00:00 0 
+7f55ec68c000-7f55ec6a6000 r-xp 00000000 08:16 5639115                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/lsoda.cpython-35m-x86_64-linux-gnu.so
+7f55ec6a6000-7f55ec8a5000 ---p 0001a000 08:16 5639115                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/lsoda.cpython-35m-x86_64-linux-gnu.so
+7f55ec8a5000-7f55ec8a7000 rw-p 00019000 08:16 5639115                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/lsoda.cpython-35m-x86_64-linux-gnu.so
+7f55ec8a7000-7f55ec8aa000 rw-p 00049000 08:16 5639115                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/lsoda.cpython-35m-x86_64-linux-gnu.so
+7f55ec8aa000-7f55ec8c5000 r-xp 00000000 08:16 5639114                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/_dop.cpython-35m-x86_64-linux-gnu.so
+7f55ec8c5000-7f55ecac5000 ---p 0001b000 08:16 5639114                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/_dop.cpython-35m-x86_64-linux-gnu.so
+7f55ecac5000-7f55ecac7000 rw-p 0001b000 08:16 5639114                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/_dop.cpython-35m-x86_64-linux-gnu.so
+7f55ecac7000-7f55ecac9000 rw-p 00046000 08:16 5639114                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/_dop.cpython-35m-x86_64-linux-gnu.so
+7f55ecac9000-7f55ecafb000 r-xp 00000000 08:16 5639112                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/vode.cpython-35m-x86_64-linux-gnu.so
+7f55ecafb000-7f55eccfb000 ---p 00032000 08:16 5639112                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/vode.cpython-35m-x86_64-linux-gnu.so
+7f55eccfb000-7f55eccfd000 rw-p 00032000 08:16 5639112                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/vode.cpython-35m-x86_64-linux-gnu.so
+7f55eccfd000-7f55eccfe000 rw-p 00000000 00:00 0 
+7f55eccfe000-7f55ecd01000 rw-p 00084000 08:16 5639112                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/vode.cpython-35m-x86_64-linux-gnu.so
+7f55ecd01000-7f55ecd1c000 r-xp 00000000 08:16 5639117                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/_quadpack.cpython-35m-x86_64-linux-gnu.so
+7f55ecd1c000-7f55ecf1c000 ---p 0001b000 08:16 5639117                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/_quadpack.cpython-35m-x86_64-linux-gnu.so
+7f55ecf1c000-7f55ecf1d000 rw-p 0001b000 08:16 5639117                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/_quadpack.cpython-35m-x86_64-linux-gnu.so
+7f55ecf1d000-7f55ecf20000 rw-p 00055000 08:16 5639117                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/_quadpack.cpython-35m-x86_64-linux-gnu.so
+7f55ecf20000-7f55ecf36000 r-xp 00000000 08:16 5639113                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/_odepack.cpython-35m-x86_64-linux-gnu.so
+7f55ecf36000-7f55ed135000 ---p 00016000 08:16 5639113                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/_odepack.cpython-35m-x86_64-linux-gnu.so
+7f55ed135000-7f55ed137000 rw-p 00015000 08:16 5639113                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/_odepack.cpython-35m-x86_64-linux-gnu.so
+7f55ed137000-7f55ed13a000 rw-p 0003b000 08:16 5639113                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/integrate/_odepack.cpython-35m-x86_64-linux-gnu.so
+7f55ed13a000-7f55ed14b000 r-xp 00000000 08:16 5639593                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/special/_ellip_harm_2.cpython-35m-x86_64-linux-gnu.so
+7f55ed14b000-7f55ed34b000 ---p 00011000 08:16 5639593                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/special/_ellip_harm_2.cpython-35m-x86_64-linux-gnu.so
+7f55ed34b000-7f55ed34d000 rw-p 00011000 08:16 5639593                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/special/_ellip_harm_2.cpython-35m-x86_64-linux-gnu.so
+7f55ed34d000-7f55ed351000 rw-p 00058000 08:16 5639593                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/special/_ellip_harm_2.cpython-35m-x86_64-linux-gnu.so
+7f55ed351000-7f55ed357000 r-xp 00000000 08:16 5639580                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/special/_comb.cpython-35m-x86_64-linux-gnu.so
+7f55ed357000-7f55ed557000 ---p 00006000 08:16 5639580                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/special/_comb.cpython-35m-x86_64-linux-gnu.so
+7f55ed557000-7f55ed558000 rw-p 00006000 08:16 5639580                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/special/_comb.cpython-35m-x86_64-linux-gnu.so
+7f55ed558000-7f55ed598000 rw-p 00000000 00:00 0 
+7f55ed598000-7f55ed65e000 r-xp 00000000 08:16 5639576                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/special/specfun.cpython-35m-x86_64-linux-gnu.so
+7f55ed65e000-7f55ed85e000 ---p 000c6000 08:16 5639576                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/special/specfun.cpython-35m-x86_64-linux-gnu.so
+7f55ed85e000-7f55ed865000 rw-p 000c6000 08:16 5639576                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/special/specfun.cpython-35m-x86_64-linux-gnu.so
+7f55ed865000-7f55ed867000 rw-p 001bb000 08:16 5639576                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/special/specfun.cpython-35m-x86_64-linux-gnu.so
+7f55ed867000-7f55ed885000 r-xp 00000000 08:16 5639591                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/special/_ufuncs_cxx.cpython-35m-x86_64-linux-gnu.so
+7f55ed885000-7f55eda85000 ---p 0001e000 08:16 5639591                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/special/_ufuncs_cxx.cpython-35m-x86_64-linux-gnu.so
+7f55eda85000-7f55eda86000 rw-p 0001e000 08:16 5639591                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/special/_ufuncs_cxx.cpython-35m-x86_64-linux-gnu.so
+7f55eda86000-7f55eda87000 rw-p 00000000 00:00 0 
+7f55eda87000-7f55edc1d000 r-xp 00000000 08:16 5639586                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/special/_ufuncs.cpython-35m-x86_64-linux-gnu.so
+7f55edc1d000-7f55ede1d000 ---p 00196000 08:16 5639586                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/special/_ufuncs.cpython-35m-x86_64-linux-gnu.so
+7f55ede1d000-7f55ede28000 rw-p 00196000 08:16 5639586                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/special/_ufuncs.cpython-35m-x86_64-linux-gnu.so
+7f55ede28000-7f55ede31000 rw-p 00000000 00:00 0 
+7f55ede31000-7f55ede3b000 rw-p 004e0000 08:16 5639586                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/special/_ufuncs.cpython-35m-x86_64-linux-gnu.so
+7f55ede3b000-7f55ede7b000 rw-p 00000000 00:00 0 
+7f55ede7b000-7f55ede97000 r-xp 00000000 08:16 5639525                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/ndimage/_nd_image.cpython-35m-x86_64-linux-gnu.so
+7f55ede97000-7f55ee096000 ---p 0001c000 08:16 5639525                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/ndimage/_nd_image.cpython-35m-x86_64-linux-gnu.so
+7f55ee096000-7f55ee097000 rw-p 0001b000 08:16 5639525                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/ndimage/_nd_image.cpython-35m-x86_64-linux-gnu.so
+7f55ee097000-7f55ee123000 r-xp 00000000 08:16 5640314                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/cython_lapack.cpython-35m-x86_64-linux-gnu.so
+7f55ee123000-7f55ee322000 ---p 0008c000 08:16 5640314                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/cython_lapack.cpython-35m-x86_64-linux-gnu.so
+7f55ee322000-7f55ee326000 rw-p 0008b000 08:16 5640314                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/cython_lapack.cpython-35m-x86_64-linux-gnu.so
+7f55ee326000-7f55ee332000 rw-p 001e6000 08:16 5640314                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/cython_lapack.cpython-35m-x86_64-linux-gnu.so
+7f55ee332000-7f55ee36c000 r-xp 00000000 08:16 5640315                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/cython_blas.cpython-35m-x86_64-linux-gnu.so
+7f55ee36c000-7f55ee56c000 ---p 0003a000 08:16 5640315                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/cython_blas.cpython-35m-x86_64-linux-gnu.so
+7f55ee56c000-7f55ee570000 rw-p 0003a000 08:16 5640315                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/cython_blas.cpython-35m-x86_64-linux-gnu.so
+7f55ee570000-7f55ee576000 rw-p 00133000 08:16 5640315                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/cython_blas.cpython-35m-x86_64-linux-gnu.so
+7f55ee576000-7f55ee5c1000 r-xp 00000000 08:16 5640318                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/_decomp_update.cpython-35m-x86_64-linux-gnu.so
+7f55ee5c1000-7f55ee7c0000 ---p 0004b000 08:16 5640318                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/_decomp_update.cpython-35m-x86_64-linux-gnu.so
+7f55ee7c0000-7f55ee7c6000 rw-p 0004a000 08:16 5640318                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/_decomp_update.cpython-35m-x86_64-linux-gnu.so
+7f55ee7c6000-7f55ee807000 rw-p 00000000 00:00 0 
+7f55ee807000-7f55ee83d000 r-xp 00000000 08:16 5640320                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/_solve_toeplitz.cpython-35m-x86_64-linux-gnu.so
+7f55ee83d000-7f55eea3c000 ---p 00036000 08:16 5640320                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/_solve_toeplitz.cpython-35m-x86_64-linux-gnu.so
+7f55eea3c000-7f55eea40000 rw-p 00035000 08:16 5640320                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/_solve_toeplitz.cpython-35m-x86_64-linux-gnu.so
+7f55eea40000-7f55eea41000 rw-p 00000000 00:00 0 
+7f55eea41000-7f55eea4f000 r-xp 00000000 08:16 5640346                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/_flinalg.cpython-35m-x86_64-linux-gnu.so
+7f55eea4f000-7f55eec4e000 ---p 0000e000 08:16 5640346                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/_flinalg.cpython-35m-x86_64-linux-gnu.so
+7f55eec4e000-7f55eec51000 rw-p 0000d000 08:16 5640346                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/_flinalg.cpython-35m-x86_64-linux-gnu.so
+7f55eec51000-7f55eec54000 rw-p 00032000 08:16 5640346                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/_flinalg.cpython-35m-x86_64-linux-gnu.so
+7f55eec54000-7f55eec94000 rw-p 00000000 00:00 0 
+7f55eec94000-7f55eed79000 r-xp 00000000 08:16 5640338                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/_flapack.cpython-35m-x86_64-linux-gnu.so
+7f55eed79000-7f55eef79000 ---p 000e5000 08:16 5640338                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/_flapack.cpython-35m-x86_64-linux-gnu.so
+7f55eef79000-7f55eefcd000 rw-p 000e5000 08:16 5640338                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/_flapack.cpython-35m-x86_64-linux-gnu.so
+7f55eefcd000-7f55eefd3000 rw-p 00328000 08:16 5640338                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/_flapack.cpython-35m-x86_64-linux-gnu.so
+7f55eefd3000-7f55ef041000 r-xp 00000000 08:16 5640342                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/_fblas.cpython-35m-x86_64-linux-gnu.so
+7f55ef041000-7f55ef241000 ---p 0006e000 08:16 5640342                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/_fblas.cpython-35m-x86_64-linux-gnu.so
+7f55ef241000-7f55ef267000 rw-p 0006e000 08:16 5640342                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/_fblas.cpython-35m-x86_64-linux-gnu.so
+7f55ef267000-7f55ef26a000 rw-p 0015b000 08:16 5640342                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/linalg/_fblas.cpython-35m-x86_64-linux-gnu.so
+7f55ef26a000-7f55ef27a000 r-xp 00000000 08:16 5640269                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/_lib/_ccallback_c.cpython-35m-x86_64-linux-gnu.so
+7f55ef27a000-7f55ef479000 ---p 00010000 08:16 5640269                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/_lib/_ccallback_c.cpython-35m-x86_64-linux-gnu.so
+7f55ef479000-7f55ef47b000 rw-p 0000f000 08:16 5640269                    /home/matthieu/.local/lib/python3.5/site-packages/scipy/_lib/_ccallback_c.cpython-35m-x86_64-linux-gnu.so
+7f55ef47b000-7f55ef49f000 r-xp 00000000 08:16 5637522                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/.libs/liblzma-f444c404.so.5.2.2
+7f55ef49f000-7f55ef69f000 ---p 00024000 08:16 5637522                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/.libs/liblzma-f444c404.so.5.2.2
+7f55ef69f000-7f55ef6a0000 rw-p 00024000 08:16 5637522                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/.libs/liblzma-f444c404.so.5.2.2
+7f55ef6a0000-7f55ef6a1000 rw-p 000d3000 08:16 5637522                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/.libs/liblzma-f444c404.so.5.2.2
+7f55ef6a1000-7f55ef714000 r-xp 00000000 08:16 5637520                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/.libs/libtiff-16d54532.so.5.3.0
+7f55ef714000-7f55ef913000 ---p 00073000 08:16 5637520                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/.libs/libtiff-16d54532.so.5.3.0
+7f55ef913000-7f55ef917000 rw-p 00072000 08:16 5637520                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/.libs/libtiff-16d54532.so.5.3.0
+7f55ef917000-7f55ef91f000 rw-p 001ac000 08:16 5637520                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/.libs/libtiff-16d54532.so.5.3.0
+7f55ef91f000-7f55ef966000 r-xp 00000000 08:16 5637523                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/.libs/libopenjp2-59185378.so.2.1.0
+7f55ef966000-7f55efb66000 ---p 00047000 08:16 5637523                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/.libs/libopenjp2-59185378.so.2.1.0
+7f55efb66000-7f55efb68000 rw-p 00047000 08:16 5637523                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/.libs/libopenjp2-59185378.so.2.1.0
+7f55efb68000-7f55efb6a000 rw-p 00052000 08:16 5637523                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/.libs/libopenjp2-59185378.so.2.1.0
+7f55efb6a000-7f55efba4000 r-xp 00000000 08:16 5637521                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/.libs/libjpeg-bcb94a84.so.9.2.0
+7f55efba4000-7f55efda4000 ---p 0003a000 08:16 5637521                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/.libs/libjpeg-bcb94a84.so.9.2.0
+7f55efda4000-7f55efda5000 rw-p 0003a000 08:16 5637521                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/.libs/libjpeg-bcb94a84.so.9.2.0
+7f55efda5000-7f55efda7000 rw-p 00146000 08:16 5637521                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/.libs/libjpeg-bcb94a84.so.9.2.0
+7f55efda7000-7f55efe20000 r-xp 00000000 08:16 5637380                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/_imaging.cpython-35m-x86_64-linux-gnu.so
+7f55efe20000-7f55f001f000 ---p 00079000 08:16 5637380                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/_imaging.cpython-35m-x86_64-linux-gnu.so
+7f55f001f000-7f55f0026000 rw-p 00078000 08:16 5637380                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/_imaging.cpython-35m-x86_64-linux-gnu.so
+7f55f0026000-7f55f0035000 rw-p 001fc000 08:16 5637380                    /home/matthieu/.local/lib/python3.5/site-packages/PIL/_imaging.cpython-35m-x86_64-linux-gnu.so
+7f55f0035000-7f55f0775000 rw-p 00000000 00:00 0 
+7f55f0775000-7f55f078c000 r-xp 00000000 08:16 5637227                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5l.cpython-35m-x86_64-linux-gnu.so
+7f55f078c000-7f55f098c000 ---p 00017000 08:16 5637227                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5l.cpython-35m-x86_64-linux-gnu.so
+7f55f098c000-7f55f098f000 rw-p 00017000 08:16 5637227                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5l.cpython-35m-x86_64-linux-gnu.so
+7f55f098f000-7f55f0992000 rw-p 00080000 08:16 5637227                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5l.cpython-35m-x86_64-linux-gnu.so
+7f55f0992000-7f55f09aa000 r-xp 00000000 08:16 5637226                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5o.cpython-35m-x86_64-linux-gnu.so
+7f55f09aa000-7f55f0baa000 ---p 00018000 08:16 5637226                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5o.cpython-35m-x86_64-linux-gnu.so
+7f55f0baa000-7f55f0bae000 rw-p 00018000 08:16 5637226                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5o.cpython-35m-x86_64-linux-gnu.so
+7f55f0bae000-7f55f0bb1000 rw-p 0007d000 08:16 5637226                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5o.cpython-35m-x86_64-linux-gnu.so
+7f55f0bb1000-7f55f0bb5000 r-xp 00000000 08:16 5637219                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5fd.cpython-35m-x86_64-linux-gnu.so
+7f55f0bb5000-7f55f0db5000 ---p 00004000 08:16 5637219                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5fd.cpython-35m-x86_64-linux-gnu.so
+7f55f0db5000-7f55f0db6000 rw-p 00004000 08:16 5637219                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5fd.cpython-35m-x86_64-linux-gnu.so
+7f55f0db6000-7f55f0db8000 rw-p 00016000 08:16 5637219                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5fd.cpython-35m-x86_64-linux-gnu.so
+7f55f0db8000-7f55f0dc4000 r-xp 00000000 08:16 5637228                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5i.cpython-35m-x86_64-linux-gnu.so
+7f55f0dc4000-7f55f0fc3000 ---p 0000c000 08:16 5637228                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5i.cpython-35m-x86_64-linux-gnu.so
+7f55f0fc3000-7f55f0fc5000 rw-p 0000b000 08:16 5637228                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5i.cpython-35m-x86_64-linux-gnu.so
+7f55f0fc5000-7f55f0fc8000 rw-p 0003e000 08:16 5637228                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5i.cpython-35m-x86_64-linux-gnu.so
+7f55f0fc8000-7f55f0fee000 r-xp 00000000 08:16 5637216                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5g.cpython-35m-x86_64-linux-gnu.so
+7f55f0fee000-7f55f11ed000 ---p 00026000 08:16 5637216                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5g.cpython-35m-x86_64-linux-gnu.so
+7f55f11ed000-7f55f11f1000 rw-p 00025000 08:16 5637216                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5g.cpython-35m-x86_64-linux-gnu.so
+7f55f11f1000-7f55f11f2000 rw-p 00000000 00:00 0 
+7f55f11f2000-7f55f11f4000 rw-p 000ea000 08:16 5637216                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5g.cpython-35m-x86_64-linux-gnu.so
+7f55f11f4000-7f55f120f000 r-xp 00000000 08:16 5637211                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5f.cpython-35m-x86_64-linux-gnu.so
+7f55f120f000-7f55f140f000 ---p 0001b000 08:16 5637211                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5f.cpython-35m-x86_64-linux-gnu.so
+7f55f140f000-7f55f1412000 rw-p 0001b000 08:16 5637211                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5f.cpython-35m-x86_64-linux-gnu.so
+7f55f1412000-7f55f1413000 rw-p 00000000 00:00 0 
+7f55f1413000-7f55f1416000 rw-p 0008e000 08:16 5637211                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5f.cpython-35m-x86_64-linux-gnu.so
+7f55f1416000-7f55f1427000 r-xp 00000000 08:16 5637215                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5ds.cpython-35m-x86_64-linux-gnu.so
+7f55f1427000-7f55f1626000 ---p 00011000 08:16 5637215                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5ds.cpython-35m-x86_64-linux-gnu.so
+7f55f1626000-7f55f1628000 rw-p 00010000 08:16 5637215                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5ds.cpython-35m-x86_64-linux-gnu.so
+7f55f1628000-7f55f162b000 rw-p 00054000 08:16 5637215                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5ds.cpython-35m-x86_64-linux-gnu.so
+7f55f162b000-7f55f166b000 rw-p 00000000 00:00 0 
+7f55f166b000-7f55f1686000 r-xp 00000000 08:16 5637221                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5d.cpython-35m-x86_64-linux-gnu.so
+7f55f1686000-7f55f1885000 ---p 0001b000 08:16 5637221                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5d.cpython-35m-x86_64-linux-gnu.so
+7f55f1885000-7f55f1889000 rw-p 0001a000 08:16 5637221                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5d.cpython-35m-x86_64-linux-gnu.so
+7f55f1889000-7f55f188c000 rw-p 00092000 08:16 5637221                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5d.cpython-35m-x86_64-linux-gnu.so
+7f55f188c000-7f55f1895000 r-xp 00000000 08:16 5637224                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/_proxy.cpython-35m-x86_64-linux-gnu.so
+7f55f1895000-7f55f1a95000 ---p 00009000 08:16 5637224                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/_proxy.cpython-35m-x86_64-linux-gnu.so
+7f55f1a95000-7f55f1a96000 rw-p 00009000 08:16 5637224                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/_proxy.cpython-35m-x86_64-linux-gnu.so
+7f55f1a96000-7f55f1a98000 rw-p 0002d000 08:16 5637224                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/_proxy.cpython-35m-x86_64-linux-gnu.so
+7f55f1a98000-7f55f1aa2000 r-xp 00000000 08:16 5637207                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5ac.cpython-35m-x86_64-linux-gnu.so
+7f55f1aa2000-7f55f1ca1000 ---p 0000a000 08:16 5637207                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5ac.cpython-35m-x86_64-linux-gnu.so
+7f55f1ca1000-7f55f1ca3000 rw-p 00009000 08:16 5637207                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5ac.cpython-35m-x86_64-linux-gnu.so
+7f55f1ca3000-7f55f1ca5000 rw-p 0003a000 08:16 5637207                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5ac.cpython-35m-x86_64-linux-gnu.so
+7f55f1ca5000-7f55f1cf6000 r-xp 00000000 08:16 5637213                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5p.cpython-35m-x86_64-linux-gnu.so
+7f55f1cf6000-7f55f1ef6000 ---p 00051000 08:16 5637213                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5p.cpython-35m-x86_64-linux-gnu.so
+7f55f1ef6000-7f55f1eff000 rw-p 00051000 08:16 5637213                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5p.cpython-35m-x86_64-linux-gnu.so
+7f55f1eff000-7f55f1f00000 rw-p 00000000 00:00 0 
+7f55f1f00000-7f55f1f03000 rw-p 002ed000 08:16 5637213                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5p.cpython-35m-x86_64-linux-gnu.so
+7f55f1f03000-7f55f1f1b000 r-xp 00000000 08:16 5637208                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5s.cpython-35m-x86_64-linux-gnu.so
+7f55f1f1b000-7f55f211a000 ---p 00018000 08:16 5637208                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5s.cpython-35m-x86_64-linux-gnu.so
+7f55f211a000-7f55f211e000 rw-p 00017000 08:16 5637208                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5s.cpython-35m-x86_64-linux-gnu.so
+7f55f211e000-7f55f2121000 rw-p 0007b000 08:16 5637208                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5s.cpython-35m-x86_64-linux-gnu.so
+7f55f2121000-7f55f2141000 r-xp 00000000 08:16 5637231                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5a.cpython-35m-x86_64-linux-gnu.so
+7f55f2141000-7f55f2341000 ---p 00020000 08:16 5637231                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5a.cpython-35m-x86_64-linux-gnu.so
+7f55f2341000-7f55f2344000 rw-p 00020000 08:16 5637231                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5a.cpython-35m-x86_64-linux-gnu.so
+7f55f2344000-7f55f2345000 rw-p 00000000 00:00 0 
+7f55f2345000-7f55f2348000 rw-p 000ab000 08:16 5637231                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5a.cpython-35m-x86_64-linux-gnu.so
+7f55f2348000-7f55f2351000 r-xp 00000000 08:16 5637230                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5z.cpython-35m-x86_64-linux-gnu.so
+7f55f2351000-7f55f2550000 ---p 00009000 08:16 5637230                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5z.cpython-35m-x86_64-linux-gnu.so
+7f55f2550000-7f55f2552000 rw-p 00008000 08:16 5637230                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5z.cpython-35m-x86_64-linux-gnu.so
+7f55f2552000-7f55f2554000 rw-p 00028000 08:16 5637230                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5z.cpython-35m-x86_64-linux-gnu.so
+7f55f2554000-7f55f256a000 r-xp 00000000 08:16 5637210                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5.cpython-35m-x86_64-linux-gnu.so
+7f55f256a000-7f55f276a000 ---p 00016000 08:16 5637210                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5.cpython-35m-x86_64-linux-gnu.so
+7f55f276a000-7f55f276d000 rw-p 00016000 08:16 5637210                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5.cpython-35m-x86_64-linux-gnu.so
+7f55f276d000-7f55f2770000 rw-p 00081000 08:16 5637210                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5.cpython-35m-x86_64-linux-gnu.so
+7f55f2770000-7f55f2779000 r-xp 00000000 08:16 5637220                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/utils.cpython-35m-x86_64-linux-gnu.so
+7f55f2779000-7f55f2979000 ---p 00009000 08:16 5637220                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/utils.cpython-35m-x86_64-linux-gnu.so
+7f55f2979000-7f55f297a000 rw-p 00009000 08:16 5637220                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/utils.cpython-35m-x86_64-linux-gnu.so
+7f55f297a000-7f55f297d000 rw-p 0002d000 08:16 5637220                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/utils.cpython-35m-x86_64-linux-gnu.so
+7f55f297d000-7f55f29de000 r-xp 00000000 08:16 5637206                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5t.cpython-35m-x86_64-linux-gnu.so
+7f55f29de000-7f55f2bde000 ---p 00061000 08:16 5637206                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5t.cpython-35m-x86_64-linux-gnu.so
+7f55f2bde000-7f55f2be7000 rw-p 00061000 08:16 5637206                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5t.cpython-35m-x86_64-linux-gnu.so
+7f55f2be7000-7f55f2be9000 rw-p 00000000 00:00 0 
+7f55f2be9000-7f55f2bec000 rw-p 00317000 08:16 5637206                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5t.cpython-35m-x86_64-linux-gnu.so
+7f55f2bec000-7f55f2c1c000 r-xp 00000000 08:16 5637229                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/defs.cpython-35m-x86_64-linux-gnu.so
+7f55f2c1c000-7f55f2e1b000 ---p 00030000 08:16 5637229                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/defs.cpython-35m-x86_64-linux-gnu.so
+7f55f2e1b000-7f55f2e1d000 rw-p 0002f000 08:16 5637229                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/defs.cpython-35m-x86_64-linux-gnu.so
+7f55f2e1d000-7f55f2e23000 rw-p 000c9000 08:16 5637229                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/defs.cpython-35m-x86_64-linux-gnu.so
+7f55f2e23000-7f55f2e63000 rw-p 00000000 00:00 0 
+7f55f2e63000-7f55f2e82000 r-xp 00000000 08:16 5637218                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/_objects.cpython-35m-x86_64-linux-gnu.so
+7f55f2e82000-7f55f3081000 ---p 0001f000 08:16 5637218                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/_objects.cpython-35m-x86_64-linux-gnu.so
+7f55f3081000-7f55f3084000 rw-p 0001e000 08:16 5637218                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/_objects.cpython-35m-x86_64-linux-gnu.so
+7f55f3084000-7f55f3085000 rw-p 00000000 00:00 0 
+7f55f3085000-7f55f3088000 rw-p 000a9000 08:16 5637218                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/_objects.cpython-35m-x86_64-linux-gnu.so
+7f55f3088000-7f55f3094000 r-xp 00000000 08:16 5637225                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5r.cpython-35m-x86_64-linux-gnu.so
+7f55f3094000-7f55f3293000 ---p 0000c000 08:16 5637225                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5r.cpython-35m-x86_64-linux-gnu.so
+7f55f3293000-7f55f3296000 rw-p 0000b000 08:16 5637225                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5r.cpython-35m-x86_64-linux-gnu.so
+7f55f3296000-7f55f3299000 rw-p 0003e000 08:16 5637225                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/h5r.cpython-35m-x86_64-linux-gnu.so
+7f55f3299000-7f55f32ab000 r-xp 00000000 08:16 5637223                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/_conv.cpython-35m-x86_64-linux-gnu.so
+7f55f32ab000-7f55f34ab000 ---p 00012000 08:16 5637223                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/_conv.cpython-35m-x86_64-linux-gnu.so
+7f55f34ab000-7f55f34ac000 rw-p 00012000 08:16 5637223                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/_conv.cpython-35m-x86_64-linux-gnu.so
+7f55f34ac000-7f55f34af000 rw-p 00066000 08:16 5637223                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/_conv.cpython-35m-x86_64-linux-gnu.so
+7f55f34af000-7f55f34c3000 r-xp 00000000 08:16 5637540                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libz-a147dcb0.so.1.2.3
+7f55f34c3000-7f55f36c2000 ---p 00014000 08:16 5637540                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libz-a147dcb0.so.1.2.3
+7f55f36c2000-7f55f36c3000 rw-p 00013000 08:16 5637540                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libz-a147dcb0.so.1.2.3
+7f55f36c3000-7f55f36c4000 rw-p 00015000 08:16 5637540                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libz-a147dcb0.so.1.2.3
+7f55f36c4000-7f55f36cb000 r-xp 00000000 08:16 5637539                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libaec-39ca7337.so.0.0.4
+7f55f36cb000-7f55f38ca000 ---p 00007000 08:16 5637539                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libaec-39ca7337.so.0.0.4
+7f55f38ca000-7f55f38cb000 rw-p 00006000 08:16 5637539                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libaec-39ca7337.so.0.0.4
+7f55f38cb000-7f55f38cc000 rw-p 0001a000 08:16 5637539                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libaec-39ca7337.so.0.0.4
+7f55f38cc000-7f55f38ce000 r-xp 00000000 08:16 5637537                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libsz-08416a88.so.2.0.1
+7f55f38ce000-7f55f3acd000 ---p 00002000 08:16 5637537                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libsz-08416a88.so.2.0.1
+7f55f3acd000-7f55f3ace000 rw-p 00001000 08:16 5637537                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libsz-08416a88.so.2.0.1
+7f55f3ace000-7f55f3ad0000 rw-p 00006000 08:16 5637537                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libsz-08416a88.so.2.0.1
+7f55f3ad0000-7f55f3aee000 r-xp 00000000 08:16 5637538                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libhdf5_hl-6491d8e2.so.10.1.1
+7f55f3aee000-7f55f3cee000 ---p 0001e000 08:16 5637538                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libhdf5_hl-6491d8e2.so.10.1.1
+7f55f3cee000-7f55f3cef000 rw-p 0001e000 08:16 5637538                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libhdf5_hl-6491d8e2.so.10.1.1
+7f55f3cef000-7f55f3cf0000 rw-p 00000000 00:00 0 
+7f55f3cf0000-7f55f3cfa000 rw-p 00024000 08:16 5637538                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libhdf5_hl-6491d8e2.so.10.1.1
+7f55f3cfa000-7f55f3fcf000 r-xp 00000000 08:16 5637541                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libhdf5-6675071d.so.10.2.1
+7f55f3fcf000-7f55f41cf000 ---p 002d5000 08:16 5637541                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libhdf5-6675071d.so.10.2.1
+7f55f41cf000-7f55f41da000 rw-p 002d5000 08:16 5637541                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libhdf5-6675071d.so.10.2.1
+7f55f41da000-7f55f41dc000 rw-p 00000000 00:00 0 
+7f55f41dc000-7f55f4211000 rw-p 0031f000 08:16 5637541                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/.libs/libhdf5-6675071d.so.10.2.1
+7f55f4211000-7f55f421b000 r-xp 00000000 08:16 5637212                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/_errors.cpython-35m-x86_64-linux-gnu.so
+7f55f421b000-7f55f441b000 ---p 0000a000 08:16 5637212                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/_errors.cpython-35m-x86_64-linux-gnu.so
+7f55f441b000-7f55f441c000 rw-p 0000a000 08:16 5637212                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/_errors.cpython-35m-x86_64-linux-gnu.so
+7f55f441c000-7f55f441f000 rw-p 00031000 08:16 5637212                    /home/matthieu/.local/lib/python3.5/site-packages/h5py/_errors.cpython-35m-x86_64-linux-gnu.so
+7f55f441f000-7f55f447d000 r-xp 00000000 08:16 2363780                    /lib/x86_64-linux-gnu/libssl.so.1.0.0
+7f55f447d000-7f55f467d000 ---p 0005e000 08:16 2363780                    /lib/x86_64-linux-gnu/libssl.so.1.0.0
+7f55f467d000-7f55f4681000 r--p 0005e000 08:16 2363780                    /lib/x86_64-linux-gnu/libssl.so.1.0.0
+7f55f4681000-7f55f4688000 rw-p 00062000 08:16 2363780                    /lib/x86_64-linux-gnu/libssl.so.1.0.0
+7f55f4688000-7f55f469f000 r-xp 00000000 08:16 6554341                    /usr/lib/python3.5/lib-dynload/_ssl.cpython-35m-x86_64-linux-gnu.so
+7f55f469f000-7f55f489f000 ---p 00017000 08:16 6554341                    /usr/lib/python3.5/lib-dynload/_ssl.cpython-35m-x86_64-linux-gnu.so
+7f55f489f000-7f55f48a0000 r--p 00017000 08:16 6554341                    /usr/lib/python3.5/lib-dynload/_ssl.cpython-35m-x86_64-linux-gnu.so
+7f55f48a0000-7f55f48a5000 rw-p 00018000 08:16 6554341                    /usr/lib/python3.5/lib-dynload/_ssl.cpython-35m-x86_64-linux-gnu.so
+7f55f48a5000-7f55f4ae5000 rw-p 00000000 00:00 0 
+7f55f4ae5000-7f55f4af6000 r-xp 00000000 08:16 6556720                    /usr/lib/python3.5/lib-dynload/_json.cpython-35m-x86_64-linux-gnu.so
+7f55f4af6000-7f55f4cf5000 ---p 00011000 08:16 6556720                    /usr/lib/python3.5/lib-dynload/_json.cpython-35m-x86_64-linux-gnu.so
+7f55f4cf5000-7f55f4cf6000 r--p 00010000 08:16 6556720                    /usr/lib/python3.5/lib-dynload/_json.cpython-35m-x86_64-linux-gnu.so
+7f55f4cf6000-7f55f4cf7000 rw-p 00011000 08:16 6556720                    /usr/lib/python3.5/lib-dynload/_json.cpython-35m-x86_64-linux-gnu.so
+7f55f4cf7000-7f55f5377000 rw-p 00000000 00:00 0 
+7f55f5378000-7f55f55f8000 rw-p 00000000 00:00 0 
+7f55f55f8000-7f55f560a000 r-xp 00000000 08:16 5645544                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/python/framework/fast_tensor_util.so
+7f55f560a000-7f55f580a000 ---p 00012000 08:16 5645544                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/python/framework/fast_tensor_util.so
+7f55f580a000-7f55f580b000 r--p 00012000 08:16 5645544                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/python/framework/fast_tensor_util.so
+7f55f580b000-7f55f580d000 rw-p 00013000 08:16 5645544                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/python/framework/fast_tensor_util.so
+7f55f580d000-7f55f588d000 rw-p 00000000 00:00 0 
+7f55f588d000-7f55f5891000 r-xp 00000000 08:16 6556727                    /usr/lib/python3.5/lib-dynload/termios.cpython-35m-x86_64-linux-gnu.so
+7f55f5891000-7f55f5a90000 ---p 00004000 08:16 6556727                    /usr/lib/python3.5/lib-dynload/termios.cpython-35m-x86_64-linux-gnu.so
+7f55f5a90000-7f55f5a91000 r--p 00003000 08:16 6556727                    /usr/lib/python3.5/lib-dynload/termios.cpython-35m-x86_64-linux-gnu.so
+7f55f5a91000-7f55f5a93000 rw-p 00004000 08:16 6556727                    /usr/lib/python3.5/lib-dynload/termios.cpython-35m-x86_64-linux-gnu.so
+7f55f5a93000-7f55f5a9a000 r-xp 00000000 08:16 6556716                    /usr/lib/python3.5/lib-dynload/_csv.cpython-35m-x86_64-linux-gnu.so
+7f55f5a9a000-7f55f5c9a000 ---p 00007000 08:16 6556716                    /usr/lib/python3.5/lib-dynload/_csv.cpython-35m-x86_64-linux-gnu.so
+7f55f5c9a000-7f55f5c9b000 r--p 00007000 08:16 6556716                    /usr/lib/python3.5/lib-dynload/_csv.cpython-35m-x86_64-linux-gnu.so
+7f55f5c9b000-7f55f5c9d000 rw-p 00008000 08:16 6556716                    /usr/lib/python3.5/lib-dynload/_csv.cpython-35m-x86_64-linux-gnu.so
+7f55f5c9d000-7f55f5d9d000 rw-p 00000000 00:00 0 
+7f55f5d9d000-7f55f5da1000 r-xp 00000000 08:16 2363930                    /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7f55f5da1000-7f55f5fa0000 ---p 00004000 08:16 2363930                    /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7f55f5fa0000-7f55f5fa1000 r--p 00003000 08:16 2363930                    /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7f55f5fa1000-7f55f5fa2000 rw-p 00004000 08:16 2363930                    /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7f55f5fa2000-7f55f5fe2000 rw-p 00000000 00:00 0 
+7f55f5fe2000-7f55f61ed000 r-xp 00000000 08:16 5507394                    /home/matthieu/.local/lib/python3.5/site-packages/google/protobuf/pyext/_message.cpython-35m-x86_64-linux-gnu.so
+7f55f61ed000-7f55f63ec000 ---p 0020b000 08:16 5507394                    /home/matthieu/.local/lib/python3.5/site-packages/google/protobuf/pyext/_message.cpython-35m-x86_64-linux-gnu.so
+7f55f63ec000-7f55f63fc000 rw-p 0020a000 08:16 5507394                    /home/matthieu/.local/lib/python3.5/site-packages/google/protobuf/pyext/_message.cpython-35m-x86_64-linux-gnu.so
+7f55f63fc000-7f55f63fd000 rw-p 00000000 00:00 0 
+7f55f63fd000-7f55f63fe000 r-xp 00000000 08:16 5507430                    /home/matthieu/.local/lib/python3.5/site-packages/google/protobuf/internal/_api_implementation.cpython-35m-x86_64-linux-gnu.so
+7f55f63fe000-7f55f65fd000 ---p 00001000 08:16 5507430                    /home/matthieu/.local/lib/python3.5/site-packages/google/protobuf/internal/_api_implementation.cpython-35m-x86_64-linux-gnu.so
+7f55f65fd000-7f55f65fe000 rw-p 00000000 08:16 5507430                    /home/matthieu/.local/lib/python3.5/site-packages/google/protobuf/internal/_api_implementation.cpython-35m-x86_64-linux-gnu.so
+7f55f65fe000-7f55f67be000 rw-p 00000000 00:00 0 
+7f55f67be000-7f55f67bf000 r-xp 00000000 08:16 6554343                    /usr/lib/python3.5/lib-dynload/_opcode.cpython-35m-x86_64-linux-gnu.so
+7f55f67bf000-7f55f69be000 ---p 00001000 08:16 6554343                    /usr/lib/python3.5/lib-dynload/_opcode.cpython-35m-x86_64-linux-gnu.so
+7f55f69be000-7f55f69bf000 r--p 00000000 08:16 6554343                    /usr/lib/python3.5/lib-dynload/_opcode.cpython-35m-x86_64-linux-gnu.so
+7f55f69bf000-7f55f69c0000 rw-p 00001000 08:16 6554343                    /usr/lib/python3.5/lib-dynload/_opcode.cpython-35m-x86_64-linux-gnu.so
+7f55f69c0000-7f55f6a00000 rw-p 00000000 00:00 0 
+7f55f6a00000-7f55f6c00000 rw-p 00000000 00:00 0 
+7f55f6c1e000-7f55f6d5e000 rw-p 00000000 00:00 0 
+7f55f6d5e000-7f55f6d9b000 r-xp 00000000 08:16 6301474                    /usr/lib/nvidia-396/libnvidia-fatbinaryloader.so.396.26
+7f55f6d9b000-7f55f6f9a000 ---p 0003d000 08:16 6301474                    /usr/lib/nvidia-396/libnvidia-fatbinaryloader.so.396.26
+7f55f6f9a000-7f55f6fa5000 rw-p 0003c000 08:16 6301474                    /usr/lib/nvidia-396/libnvidia-fatbinaryloader.so.396.26
+7f55f6fa5000-7f55f6faa000 rw-p 00000000 00:00 0 
+7f55f6faa000-7f55f9433000 r-xp 00000000 08:16 6303465                    /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcurand.so.9.0.176
+7f55f9433000-7f55f9632000 ---p 02489000 08:16 6303465                    /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcurand.so.9.0.176
+7f55f9632000-7f55faa04000 rw-p 02488000 08:16 6303465                    /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcurand.so.9.0.176
+7f55faa04000-7f55faf0e000 rw-p 00000000 00:00 0 
+7f55faf0e000-7f5602d3c000 r-xp 00000000 08:16 6303451                    /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcufft.so.9.0.176
+7f5602d3c000-7f5602f3c000 ---p 07e2e000 08:16 6303451                    /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcufft.so.9.0.176
+7f5602f3c000-7f5602f4b000 rw-p 07e2e000 08:16 6303451                    /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcufft.so.9.0.176
+7f5602f4b000-7f5602faf000 rw-p 00000000 00:00 0 
+7f5602faf000-7f56141a9000 r-xp 00000000 08:16 6304450                    /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcudnn.so.7
+7f56141a9000-7f56143a9000 ---p 111fa000 08:16 6304450                    /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcudnn.so.7
+7f56143a9000-7f56143fc000 rw-p 111fa000 08:16 6304450                    /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcudnn.so.7
+7f56143fc000-7f5614446000 rw-p 00000000 00:00 0 
+7f5614446000-7f5615052000 r-xp 00000000 08:16 6306026                    /usr/lib/x86_64-linux-gnu/libcuda.so.396.26
+7f5615052000-7f5615251000 ---p 00c0c000 08:16 6306026                    /usr/lib/x86_64-linux-gnu/libcuda.so.396.26
+7f5615251000-7f56153b7000 rw-p 00c0b000 08:16 6306026                    /usr/lib/x86_64-linux-gnu/libcuda.so.396.26
+7f56153b7000-7f56153c6000 rw-p 00000000 00:00 0 
+7f56153c6000-7f56153e7000 r-xp 00000000 08:16 6292173                    /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0
+7f56153e7000-7f56155e6000 ---p 00021000 08:16 6292173                    /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0
+7f56155e6000-7f56155e7000 r--p 00020000 08:16 6292173                    /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0
+7f56155e7000-7f56155e8000 rw-p 00021000 08:16 6292173                    /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0
+7f56155e8000-7f5615651000 r-xp 00000000 08:16 6302882                    /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcudart.so.9.0.176
+7f5615651000-7f5615850000 ---p 00069000 08:16 6302882                    /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcudart.so.9.0.176
+7f5615850000-7f5615854000 rw-p 00068000 08:16 6302882                    /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcudart.so.9.0.176
+7f5615854000-7f5615855000 rw-p 00000000 00:00 0 
+7f5615855000-7f561a204000 r-xp 00000000 08:16 6303422                    /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcusolver.so.9.0.176
+7f561a204000-7f561a404000 ---p 049af000 08:16 6303422                    /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcusolver.so.9.0.176
+7f561a404000-7f561a43e000 rw-p 049af000 08:16 6303422                    /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcusolver.so.9.0.176
+7f561a43e000-7f561a450000 rw-p 00000000 00:00 0 
+7f561a450000-7f561d948000 r-xp 00000000 08:16 6303433                    /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcublas.so.9.0.282
+7f561d948000-7f561db47000 ---p 034f8000 08:16 6303433                    /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcublas.so.9.0.282
+7f561db47000-7f561db82000 rw-p 034f7000 08:16 6303433                    /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcublas.so.9.0.282
+7f561db82000-7f561db92000 rw-p 00000000 00:00 0 
+7f561db92000-7f561e7df000 r-xp 00000000 08:16 5509736                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/libtensorflow_framework.so
+7f561e7df000-7f561e9de000 ---p 00c4d000 08:16 5509736                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/libtensorflow_framework.so
+7f561e9de000-7f561ea1f000 r--p 00c4c000 08:16 5509736                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/libtensorflow_framework.so
+7f561ea1f000-7f561ea20000 rw-p 00c8d000 08:16 5509736                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/libtensorflow_framework.so
+7f561ea20000-7f561ea2a000 rw-p 00000000 00:00 0 
+7f561ea2a000-7f564046d000 r-xp 00000000 08:16 5509785                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so
+7f564046d000-7f564066c000 ---p 21a43000 08:16 5509785                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so
+7f564066c000-7f56407b4000 r--p 21a42000 08:16 5509785                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so
+7f56407b4000-7f56407c1000 rw-p 21b8a000 08:16 5509785                    /home/matthieu/.local/lib/python3.5/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so
+7f56407c1000-7f564089c000 rw-p 00000000 00:00 0 
+7f564089c000-7f5640957000 r-xp 00000000 08:16 1319283                    /usr/local/lib/python3.5/dist-packages/numpy/random/mtrand.cpython-35m-x86_64-linux-gnu.so
+7f5640957000-7f5640b57000 ---p 000bb000 08:16 1319283                    /usr/local/lib/python3.5/dist-packages/numpy/random/mtrand.cpython-35m-x86_64-linux-gnu.so
+7f5640b57000-7f5640b7c000 rw-p 000bb000 08:16 1319283                    /usr/local/lib/python3.5/dist-packages/numpy/random/mtrand.cpython-35m-x86_64-linux-gnu.so
+7f5640b7c000-7f5640bbe000 rw-p 00000000 00:00 0 
+7f5640bbe000-7f5640bc7000 r-xp 00000000 08:16 3496                       /usr/local/lib/python3.5/dist-packages/numpy/fft/fftpack_lite.cpython-35m-x86_64-linux-gnu.so
+7f5640bc7000-7f5640dc6000 ---p 00009000 08:16 3496                       /usr/local/lib/python3.5/dist-packages/numpy/fft/fftpack_lite.cpython-35m-x86_64-linux-gnu.so
+7f5640dc6000-7f5640dc7000 rw-p 00008000 08:16 3496                       /usr/local/lib/python3.5/dist-packages/numpy/fft/fftpack_lite.cpython-35m-x86_64-linux-gnu.so
+7f5640dc7000-7f5640dfe000 r-xp 00000000 08:16 6300738                    /usr/lib/x86_64-linux-gnu/libmpdec.so.2.4.2
+7f5640dfe000-7f5640ffd000 ---p 00037000 08:16 6300738                    /usr/lib/x86_64-linux-gnu/libmpdec.so.2.4.2
+7f5640ffd000-7f5640ffe000 r--p 00036000 08:16 6300738                    /usr/lib/x86_64-linux-gnu/libmpdec.so.2.4.2
+7f5640ffe000-7f5640fff000 rw-p 00037000 08:16 6300738                    /usr/lib/x86_64-linux-gnu/libmpdec.so.2.4.2
+7f5640fff000-7f5641023000 r-xp 00000000 08:16 6556725                    /usr/lib/python3.5/lib-dynload/_decimal.cpython-35m-x86_64-linux-gnu.so
+7f5641023000-7f5641222000 ---p 00024000 08:16 6556725                    /usr/lib/python3.5/lib-dynload/_decimal.cpython-35m-x86_64-linux-gnu.so
+7f5641222000-7f5641223000 r--p 00023000 08:16 6556725                    /usr/lib/python3.5/lib-dynload/_decimal.cpython-35m-x86_64-linux-gnu.so
+7f5641223000-7f564122c000 rw-p 00024000 08:16 6556725                    /usr/lib/python3.5/lib-dynload/_decimal.cpython-35m-x86_64-linux-gnu.so
+7f564122c000-7f5641255000 r-xp 00000000 08:16 1319301                    /usr/local/lib/python3.5/dist-packages/numpy/linalg/_umath_linalg.cpython-35m-x86_64-linux-gnu.so
+7f5641255000-7f5641454000 ---p 00029000 08:16 1319301                    /usr/local/lib/python3.5/dist-packages/numpy/linalg/_umath_linalg.cpython-35m-x86_64-linux-gnu.so
+7f5641454000-7f5641459000 rw-p 00028000 08:16 1319301                    /usr/local/lib/python3.5/dist-packages/numpy/linalg/_umath_linalg.cpython-35m-x86_64-linux-gnu.so
+7f5641459000-7f564145d000 r-xp 00000000 08:16 1319302                    /usr/local/lib/python3.5/dist-packages/numpy/linalg/lapack_lite.cpython-35m-x86_64-linux-gnu.so
+7f564145d000-7f564165d000 ---p 00004000 08:16 1319302                    /usr/local/lib/python3.5/dist-packages/numpy/linalg/lapack_lite.cpython-35m-x86_64-linux-gnu.so
+7f564165d000-7f5641660000 rw-p 00004000 08:16 1319302                    /usr/local/lib/python3.5/dist-packages/numpy/linalg/lapack_lite.cpython-35m-x86_64-linux-gnu.so
+7f5641661000-7f5641761000 rw-p 00000000 00:00 0 
+7f5641761000-7f564197b000 r-xp 00000000 08:16 2363782                    /lib/x86_64-linux-gnu/libcrypto.so.1.0.0
+7f564197b000-7f5641b7a000 ---p 0021a000 08:16 2363782                    /lib/x86_64-linux-gnu/libcrypto.so.1.0.0
+7f5641b7a000-7f5641b96000 r--p 00219000 08:16 2363782                    /lib/x86_64-linux-gnu/libcrypto.so.1.0.0
+7f5641b96000-7f5641ba2000 rw-p 00235000 08:16 2363782                    /lib/x86_64-linux-gnu/libcrypto.so.1.0.0
+7f5641ba2000-7f5641ba5000 rw-p 00000000 00:00 0 
+7f5641ba5000-7f5641baa000 r-xp 00000000 08:16 6554342                    /usr/lib/python3.5/lib-dynload/_hashlib.cpython-35m-x86_64-linux-gnu.so
+7f5641baa000-7f5641daa000 ---p 00005000 08:16 6554342                    /usr/lib/python3.5/lib-dynload/_hashlib.cpython-35m-x86_64-linux-gnu.so
+7f5641daa000-7f5641dab000 r--p 00005000 08:16 6554342                    /usr/lib/python3.5/lib-dynload/_hashlib.cpython-35m-x86_64-linux-gnu.so
+7f5641dab000-7f5641dac000 rw-p 00006000 08:16 6554342                    /usr/lib/python3.5/lib-dynload/_hashlib.cpython-35m-x86_64-linux-gnu.so
+7f5641dac000-7f5641dec000 rw-p 00000000 00:00 0 
+7f5641dec000-7f5641e0d000 r-xp 00000000 08:16 2363941                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f5641e0d000-7f564200c000 ---p 00021000 08:16 2363941                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f564200c000-7f564200d000 r--p 00020000 08:16 2363941                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f564200d000-7f564200e000 rw-p 00021000 08:16 2363941                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f564200e000-7f5642015000 r-xp 00000000 08:16 6556722                    /usr/lib/python3.5/lib-dynload/_lzma.cpython-35m-x86_64-linux-gnu.so
+7f5642015000-7f5642214000 ---p 00007000 08:16 6556722                    /usr/lib/python3.5/lib-dynload/_lzma.cpython-35m-x86_64-linux-gnu.so
+7f5642214000-7f5642215000 r--p 00006000 08:16 6556722                    /usr/lib/python3.5/lib-dynload/_lzma.cpython-35m-x86_64-linux-gnu.so
+7f5642215000-7f5642217000 rw-p 00007000 08:16 6556722                    /usr/lib/python3.5/lib-dynload/_lzma.cpython-35m-x86_64-linux-gnu.so
+7f5642217000-7f5642226000 r-xp 00000000 08:16 2363873                    /lib/x86_64-linux-gnu/libbz2.so.1.0.4
+7f5642226000-7f5642425000 ---p 0000f000 08:16 2363873                    /lib/x86_64-linux-gnu/libbz2.so.1.0.4
+7f5642425000-7f5642426000 r--p 0000e000 08:16 2363873                    /lib/x86_64-linux-gnu/libbz2.so.1.0.4
+7f5642426000-7f5642427000 rw-p 0000f000 08:16 2363873                    /lib/x86_64-linux-gnu/libbz2.so.1.0.4
+7f5642427000-7f564242b000 r-xp 00000000 08:16 6556713                    /usr/lib/python3.5/lib-dynload/_bz2.cpython-35m-x86_64-linux-gnu.so
+7f564242b000-7f564262a000 ---p 00004000 08:16 6556713                    /usr/lib/python3.5/lib-dynload/_bz2.cpython-35m-x86_64-linux-gnu.so
+7f564262a000-7f564262b000 r--p 00003000 08:16 6556713                    /usr/lib/python3.5/lib-dynload/_bz2.cpython-35m-x86_64-linux-gnu.so
+7f564262b000-7f564262c000 rw-p 00004000 08:16 6556713                    /usr/lib/python3.5/lib-dynload/_bz2.cpython-35m-x86_64-linux-gnu.so
+7f564262c000-7f56427ac000 rw-p 00000000 00:00 0 
+7f56427ac000-7f56427ce000 r-xp 00000000 08:16 6556723                    /usr/lib/python3.5/lib-dynload/_ctypes.cpython-35m-x86_64-linux-gnu.so
+7f56427ce000-7f56429cd000 ---p 00022000 08:16 6556723                    /usr/lib/python3.5/lib-dynload/_ctypes.cpython-35m-x86_64-linux-gnu.so
+7f56429cd000-7f56429ce000 r--p 00021000 08:16 6556723                    /usr/lib/python3.5/lib-dynload/_ctypes.cpython-35m-x86_64-linux-gnu.so
+7f56429ce000-7f56429d2000 rw-p 00022000 08:16 6556723                    /usr/lib/python3.5/lib-dynload/_ctypes.cpython-35m-x86_64-linux-gnu.so
+7f56429d2000-7f56429d3000 rw-p 00000000 00:00 0 
+7f56429d3000-7f56449d3000 rw-p 00000000 00:00 0 
+7f56449d3000-7f56469d3000 rw-p 00000000 00:00 0 
+7f56469d3000-7f56469d4000 ---p 00000000 00:00 0 
+7f56469d4000-7f56471d4000 rw-p 00000000 00:00 0 
+7f56471d4000-7f56491d4000 rw-p 00000000 00:00 0 
+7f56491d4000-7f56491d5000 ---p 00000000 00:00 0 
+7f56491d5000-7f56499d5000 rw-p 00000000 00:00 0 
+7f56499d5000-7f564bce9000 r-xp 00000000 08:16 1319297                    /usr/local/lib/python3.5/dist-packages/numpy/.libs/libopenblasp-r0-39a31c03.2.18.so
+7f564bce9000-7f564bee8000 ---p 02314000 08:16 1319297                    /usr/local/lib/python3.5/dist-packages/numpy/.libs/libopenblasp-r0-39a31c03.2.18.so
+7f564bee8000-7f564bf07000 rw-p 02313000 08:16 1319297                    /usr/local/lib/python3.5/dist-packages/numpy/.libs/libopenblasp-r0-39a31c03.2.18.so
+7f564bf07000-7f564bf6a000 rw-p 00000000 00:00 0 
+7f564bf6a000-7f564c000000 rw-p 02425000 08:16 1319297                    /usr/local/lib/python3.5/dist-packages/numpy/.libs/libopenblasp-r0-39a31c03.2.18.so
+7f564c000000-7f564c021000 rw-p 00000000 00:00 0 
+7f564c021000-7f5650000000 ---p 00000000 00:00 0 
+7f5650000000-7f5650021000 rw-p 00000000 00:00 0 
+7f5650021000-7f5654000000 ---p 00000000 00:00 0 
+7f5654000000-7f5654072000 rw-p 00000000 00:00 0 
+7f5654072000-7f5658000000 ---p 00000000 00:00 0 
+7f5658000000-7f5658240000 rw-p 00000000 00:00 0 
+7f5658240000-7f565c000000 ---p 00000000 00:00 0 
+7f565c000000-7f565c021000 rw-p 00000000 00:00 0 
+7f565c021000-7f5660000000 ---p 00000000 00:00 0 
+7f5660000000-7f5660221000 rw-p 00000000 00:00 0 
+7f5660221000-7f5664000000 ---p 00000000 00:00 0 
+7f5664000000-7f5664021000 rw-p 00000000 00:00 0 
+7f5664021000-7f5668000000 ---p 00000000 00:00 0 
+7f5668000000-7f5668021000 rw-p 00000000 00:00 0 
+7f5668021000-7f566c000000 ---p 00000000 00:00 0 
+7f566c000000-7f566c021000 rw-p 00000000 00:00 0 
+7f566c021000-7f5670000000 ---p 00000000 00:00 0 
+7f567002e000-7f56700ae000 rw-p 00000000 00:00 0 
+7f56700ae000-7f567023f000 r-xp 00000000 08:16 1319343                    /usr/local/lib/python3.5/dist-packages/numpy/core/umath.cpython-35m-x86_64-linux-gnu.so
+7f567023f000-7f567043f000 ---p 00191000 08:16 1319343                    /usr/local/lib/python3.5/dist-packages/numpy/core/umath.cpython-35m-x86_64-linux-gnu.so
+7f567043f000-7f5670445000 rw-p 00191000 08:16 1319343                    /usr/local/lib/python3.5/dist-packages/numpy/core/umath.cpython-35m-x86_64-linux-gnu.so
+7f5670445000-7f5670447000 rw-p 00000000 00:00 0 
+7f5670447000-7f5670448000 ---p 00000000 00:00 0 
+7f5670448000-7f5670c48000 rw-p 00000000 00:00 0 
+7f5670c48000-7f5670d38000 r-xp 00000000 08:16 1319298                    /usr/local/lib/python3.5/dist-packages/numpy/.libs/libgfortran-ed201abd.so.3.0.0
+7f5670d38000-7f5670f37000 ---p 000f0000 08:16 1319298                    /usr/local/lib/python3.5/dist-packages/numpy/.libs/libgfortran-ed201abd.so.3.0.0
+7f5670f37000-7f5670f39000 rw-p 000ef000 08:16 1319298                    /usr/local/lib/python3.5/dist-packages/numpy/.libs/libgfortran-ed201abd.so.3.0.0
+7f5670f39000-7f5670f3a000 rw-p 00000000 00:00 0 
+7f5670f3a000-7f5670f42000 rw-p 000f2000 08:16 1319298                    /usr/local/lib/python3.5/dist-packages/numpy/.libs/libgfortran-ed201abd.so.3.0.0
+7f5670f42000-7f567111a000 r-xp 00000000 08:16 1319350                    /usr/local/lib/python3.5/dist-packages/numpy/core/multiarray.cpython-35m-x86_64-linux-gnu.so
+7f567111a000-7f567131a000 ---p 001d8000 08:16 1319350                    /usr/local/lib/python3.5/dist-packages/numpy/core/multiarray.cpython-35m-x86_64-linux-gnu.so
+7f567131a000-7f5671333000 rw-p 001d8000 08:16 1319350                    /usr/local/lib/python3.5/dist-packages/numpy/core/multiarray.cpython-35m-x86_64-linux-gnu.so
+7f5671333000-7f567134b000 rw-p 00000000 00:00 0 
+7f567134b000-7f5671351000 rw-p 001f2000 08:16 1319350                    /usr/local/lib/python3.5/dist-packages/numpy/core/multiarray.cpython-35m-x86_64-linux-gnu.so
+7f5671351000-7f5671591000 rw-p 00000000 00:00 0 
+7f56715c2000-7f5671682000 rw-p 00000000 00:00 0 
+7f5671682000-7f56716a8000 r--p 00000000 08:16 7618160                    /usr/share/locale-langpack/fr/LC_MESSAGES/libc.mo
+7f56716a8000-7f5671768000 rw-p 00000000 00:00 0 
+7f5671768000-7f567176a000 r-xp 00000000 08:16 2360619                    /lib/x86_64-linux-gnu/libutil-2.23.so
+7f567176a000-7f5671969000 ---p 00002000 08:16 2360619                    /lib/x86_64-linux-gnu/libutil-2.23.so
+7f5671969000-7f567196a000 r--p 00001000 08:16 2360619                    /lib/x86_64-linux-gnu/libutil-2.23.so
+7f567196a000-7f567196b000 rw-p 00002000 08:16 2360619                    /lib/x86_64-linux-gnu/libutil-2.23.so
+7f567196b000-7f5671991000 r-xp 00000000 08:16 2359379                    /lib/x86_64-linux-gnu/libexpat.so.1.6.0
+7f5671991000-7f5671b91000 ---p 00026000 08:16 2359379                    /lib/x86_64-linux-gnu/libexpat.so.1.6.0
+7f5671b91000-7f5671b93000 r--p 00026000 08:16 2359379                    /lib/x86_64-linux-gnu/libexpat.so.1.6.0
+7f5671b93000-7f5671b94000 rw-p 00028000 08:16 2359379                    /lib/x86_64-linux-gnu/libexpat.so.1.6.0
+7f5671b94000-7f5671f52000 r-xp 00000000 08:16 6295192                    /usr/lib/x86_64-linux-gnu/libpython3.5m.so.1.0
+7f5671f52000-7f5672151000 ---p 003be000 08:16 6295192                    /usr/lib/x86_64-linux-gnu/libpython3.5m.so.1.0
+7f5672151000-7f5672153000 r--p 003bd000 08:16 6295192                    /usr/lib/x86_64-linux-gnu/libpython3.5m.so.1.0
+7f5672153000-7f56721ea000 rw-p 003bf000 08:16 6295192                    /usr/lib/x86_64-linux-gnu/libpython3.5m.so.1.0
+7f56721ea000-7f567221b000 rw-p 00000000 00:00 0 
+7f5672225000-7f5672238000 r--s 00346000 08:16 6301744                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar
+7f5672238000-7f567223d000 r-xp 00000000 08:05 229861                     /media/matthieu/Data/Matthieu/##Etude/#Licence_3eme_annee/##Mario/MarioBros-MachineLearning/mario-ai-master/src/main/bin/AmiCoBuild/JavaPy/libAmiCoJavaPy.so
+7f567223d000-7f567243d000 ---p 00005000 08:05 229861                     /media/matthieu/Data/Matthieu/##Etude/#Licence_3eme_annee/##Mario/MarioBros-MachineLearning/mario-ai-master/src/main/bin/AmiCoBuild/JavaPy/libAmiCoJavaPy.so
+7f567243d000-7f567243e000 r--p 00005000 08:05 229861                     /media/matthieu/Data/Matthieu/##Etude/#Licence_3eme_annee/##Mario/MarioBros-MachineLearning/mario-ai-master/src/main/bin/AmiCoBuild/JavaPy/libAmiCoJavaPy.so
+7f567243e000-7f567243f000 rw-p 00006000 08:05 229861                     /media/matthieu/Data/Matthieu/##Etude/#Licence_3eme_annee/##Mario/MarioBros-MachineLearning/mario-ai-master/src/main/bin/AmiCoBuild/JavaPy/libAmiCoJavaPy.so
+7f567243f000-7f56724d5000 r--s 008d7000 08:16 6687607                    /usr/share/java/openjfx/jre/lib/ext/jfxrt.jar
+7f56724d5000-7f56724f0000 r--s 00394000 08:16 6301733                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar
+7f56724f0000-7f567250b000 r--s 001d6000 08:16 6301740                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar
+7f567250b000-7f567250c000 ---p 00000000 00:00 0 
+7f567250c000-7f567260c000 rw-p 00000000 00:00 0 
+7f567260c000-7f567260f000 ---p 00000000 00:00 0 
+7f567260f000-7f567270d000 rw-p 00000000 00:00 0 
+7f567270d000-7f5672710000 ---p 00000000 00:00 0 
+7f5672710000-7f567280e000 rw-p 00000000 00:00 0 
+7f567280e000-7f5672811000 ---p 00000000 00:00 0 
+7f5672811000-7f567290f000 rw-p 00000000 00:00 0 
+7f567290f000-7f5672912000 ---p 00000000 00:00 0 
+7f5672912000-7f5672a10000 rw-p 00000000 00:00 0 
+7f5672a10000-7f5672a13000 ---p 00000000 00:00 0 
+7f5672a13000-7f5672b11000 rw-p 00000000 00:00 0 
+7f5672b11000-7f5672dee000 r--p 00000000 08:16 6294233                    /usr/lib/locale/locale-archive
+7f5672dee000-7f5672df1000 ---p 00000000 00:00 0 
+7f5672df1000-7f5672eef000 rw-p 00000000 00:00 0 
+7f5672eef000-7f5672ef2000 ---p 00000000 00:00 0 
+7f5672ef2000-7f5672ff0000 rw-p 00000000 00:00 0 
+7f5672ff0000-7f5672ff1000 ---p 00000000 00:00 0 
+7f5672ff1000-7f5674000000 rw-p 00000000 00:00 0 
+7f5674000000-7f5674021000 rw-p 00000000 00:00 0 
+7f5674021000-7f5678000000 ---p 00000000 00:00 0 
+7f5678000000-7f5678021000 rw-p 00000000 00:00 0 
+7f5678021000-7f567c000000 ---p 00000000 00:00 0 
+7f567c000000-7f567c021000 rw-p 00000000 00:00 0 
+7f567c021000-7f5680000000 ---p 00000000 00:00 0 
+7f568000b000-7f5680010000 r--s 0009d000 08:16 6306852                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar
+7f5680010000-7f56800c1000 rw-p 00000000 00:00 0 
+7f56800c1000-7f5680290000 r--s 03c2f000 08:16 6306841                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar
+7f5680290000-7f5684000000 rw-p 00000000 00:00 0 
+7f5684000000-7f5684021000 rw-p 00000000 00:00 0 
+7f5684021000-7f5688000000 ---p 00000000 00:00 0 
+7f5688004000-7f5688bfc000 rw-p 00000000 00:00 0 
+7f5688bfc000-7f5688bfd000 ---p 00000000 00:00 0 
+7f5688bfd000-7f5688cfd000 rw-p 00000000 00:00 0 
+7f5688cfd000-7f5688cfe000 ---p 00000000 00:00 0 
+7f5688cfe000-7f5688dfe000 rw-p 00000000 00:00 0 
+7f5688dfe000-7f5688dff000 ---p 00000000 00:00 0 
+7f5688dff000-7f5688eff000 rw-p 00000000 00:00 0 
+7f5688eff000-7f5688f00000 ---p 00000000 00:00 0 
+7f5688f00000-7f5689000000 rw-p 00000000 00:00 0 
+7f5689000000-7f5689310000 rwxp 00000000 00:00 0 
+7f5689310000-7f5698000000 ---p 00000000 00:00 0 
+7f5698000000-7f569bef9000 rw-p 00000000 00:00 0 
+7f569bef9000-7f569c000000 ---p 00000000 00:00 0 
+7f569c003000-7f569c004000 rw-s 00000000 00:06 578                        /dev/nvidiactl
+7f569c004000-7f569c005000 rw-s 00000000 00:06 578                        /dev/nvidiactl
+7f569c005000-7f569c006000 rw-s 00000000 00:06 578                        /dev/nvidiactl
+7f569c006000-7f569c007000 rw-s 00000000 00:06 578                        /dev/nvidiactl
+7f569c007000-7f569c008000 rw-s 00000000 00:06 578                        /dev/nvidiactl
+7f569c008000-7f569c009000 rw-s 00000000 00:06 578                        /dev/nvidiactl
+7f569c009000-7f569c00a000 rw-s 00000000 00:06 578                        /dev/nvidiactl
+7f569c00a000-7f569c00b000 rw-s 00000000 00:06 578                        /dev/nvidiactl
+7f569c00b000-7f569c00c000 rw-s 00000000 00:06 578                        /dev/nvidiactl
+7f569c00c000-7f569c00d000 rw-s 00000000 00:06 578                        /dev/nvidiactl
+7f569c00d000-7f569c00e000 rw-s 00000000 00:06 578                        /dev/nvidiactl
+7f569c00e000-7f569c00f000 rw-s 00000000 00:06 578                        /dev/nvidiactl
+7f569c00f000-7f569c0af000 rw-p 00000000 00:00 0 
+7f569c0af000-7f569c315000 ---p 00000000 00:00 0 
+7f569c315000-7f569c33f000 rw-p 00000000 00:00 0 
+7f569c33f000-7f569c5a4000 ---p 00000000 00:00 0 
+7f569c5a4000-7f569c5b9000 rw-p 00000000 00:00 0 
+7f569c5b9000-7f569c6ec000 ---p 00000000 00:00 0 
+7f569c6ec000-7f569c6fa000 rw-p 00000000 00:00 0 
+7f569c6fa000-7f569caad000 ---p 00000000 00:00 0 
+7f569caad000-7f569cab5000 r-xp 00000000 08:16 6301768                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7f569cab5000-7f569ccb4000 ---p 00008000 08:16 6301768                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7f569ccb4000-7f569ccb5000 r--p 00007000 08:16 6301768                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7f569ccb5000-7f569ccb6000 rw-p 00008000 08:16 6301768                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7f569ccb6000-7f569ccc1000 r-xp 00000000 08:16 2363771                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f569ccc1000-7f569cec0000 ---p 0000b000 08:16 2363771                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f569cec0000-7f569cec1000 r--p 0000a000 08:16 2363771                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f569cec1000-7f569cec2000 rw-p 0000b000 08:16 2363771                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f569cec2000-7f569cec8000 rw-p 00000000 00:00 0 
+7f569cec8000-7f569ced3000 r-xp 00000000 08:16 2363894                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f569ced3000-7f569d0d2000 ---p 0000b000 08:16 2363894                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f569d0d2000-7f569d0d3000 r--p 0000a000 08:16 2363894                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f569d0d3000-7f569d0d4000 rw-p 0000b000 08:16 2363894                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f569d0d4000-7f569d0ea000 r-xp 00000000 08:16 2359388                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f569d0ea000-7f569d2e9000 ---p 00016000 08:16 2359388                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f569d2e9000-7f569d2ea000 r--p 00015000 08:16 2359388                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f569d2ea000-7f569d2eb000 rw-p 00016000 08:16 2359388                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f569d2eb000-7f569d2ed000 rw-p 00000000 00:00 0 
+7f569d2ed000-7f569d2f5000 r-xp 00000000 08:16 2360620                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f569d2f5000-7f569d4f4000 ---p 00008000 08:16 2360620                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f569d4f4000-7f569d4f5000 r--p 00007000 08:16 2360620                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f569d4f5000-7f569d4f6000 rw-p 00008000 08:16 2360620                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f569d4f6000-7f569d523000 r-xp 00000000 08:16 6301759                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7f569d523000-7f569d722000 ---p 0002d000 08:16 6301759                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7f569d722000-7f569d723000 r--p 0002c000 08:16 6301759                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7f569d723000-7f569d725000 rw-p 0002d000 08:16 6301759                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7f569d725000-7f569d734000 r-xp 00000000 08:16 6301745                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7f569d734000-7f569d933000 ---p 0000f000 08:16 6301745                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7f569d933000-7f569d935000 r--p 0000e000 08:16 6301745                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7f569d935000-7f569d936000 rw-p 00010000 08:16 6301745                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7f569d936000-7f569d93d000 r-xp 00000000 08:16 2363895                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f569d93d000-7f569db3c000 ---p 00007000 08:16 2363895                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f569db3c000-7f569db3d000 r--p 00006000 08:16 2363895                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f569db3d000-7f569db3e000 rw-p 00007000 08:16 2363895                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f569db3e000-7f569db54000 r-xp 00000000 08:16 2363912                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f569db54000-7f569dd53000 ---p 00016000 08:16 2363912                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f569dd53000-7f569dd54000 rw-p 00015000 08:16 2363912                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f569dd54000-7f569de5c000 r-xp 00000000 08:16 2359387                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f569de5c000-7f569e05b000 ---p 00108000 08:16 2359387                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f569e05b000-7f569e05c000 r--p 00107000 08:16 2359387                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f569e05c000-7f569e05d000 rw-p 00108000 08:16 2359387                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f569e05d000-7f569e1cf000 r-xp 00000000 08:16 6291847                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f569e1cf000-7f569e3cf000 ---p 00172000 08:16 6291847                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f569e3cf000-7f569e3d9000 r--p 00172000 08:16 6291847                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f569e3d9000-7f569e3db000 rw-p 0017c000 08:16 6291847                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f569e3db000-7f569e3df000 rw-p 00000000 00:00 0 
+7f569e3df000-7f569f038000 r-xp 00000000 08:16 6301773                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f569f038000-7f569f238000 ---p 00c59000 08:16 6301773                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f569f238000-7f569f2cb000 r--p 00c59000 08:16 6301773                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f569f2cb000-7f569f2f4000 rw-p 00cec000 08:16 6301773                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f569f2f4000-7f569f324000 rw-p 00000000 00:00 0 
+7f569f324000-7f569f33c000 r-xp 00000000 08:16 2359390                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f569f33c000-7f569f53b000 ---p 00018000 08:16 2359390                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f569f53b000-7f569f53c000 r--p 00017000 08:16 2359390                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f569f53c000-7f569f53d000 rw-p 00018000 08:16 2359390                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f569f53d000-7f569f541000 rw-p 00000000 00:00 0 
+7f569f541000-7f569f544000 r-xp 00000000 08:16 2359393                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f569f544000-7f569f743000 ---p 00003000 08:16 2359393                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f569f743000-7f569f744000 r--p 00002000 08:16 2359393                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f569f744000-7f569f745000 rw-p 00003000 08:16 2359393                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f569f745000-7f569f75e000 r-xp 00000000 08:16 2360593                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f569f75e000-7f569f95d000 ---p 00019000 08:16 2360593                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f569f95d000-7f569f95e000 r--p 00018000 08:16 2360593                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f569f95e000-7f569f95f000 rw-p 00019000 08:16 2360593                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f569f95f000-7f569fb1f000 r-xp 00000000 08:16 2359391                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f569fb1f000-7f569fd1f000 ---p 001c0000 08:16 2359391                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f569fd1f000-7f569fd23000 r--p 001c0000 08:16 2359391                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f569fd23000-7f569fd25000 rw-p 001c4000 08:16 2359391                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f569fd25000-7f569fd29000 rw-p 00000000 00:00 0 
+7f569fd29000-7f569fd36000 r-xp 00000000 08:16 6301769                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f569fd36000-7f569ff36000 ---p 0000d000 08:16 6301769                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f569ff36000-7f569ff37000 r--p 0000d000 08:16 6301769                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f569ff37000-7f569ff38000 rw-p 0000e000 08:16 6301769                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f569ff38000-7f569ff5e000 r-xp 00000000 08:16 2359389                    /lib/x86_64-linux-gnu/ld-2.23.so
+7f569ff5e000-7f569ff5f000 rwxp 00000000 00:00 0 
+7f569ff5f000-7f569ff66000 r--s 00000000 08:16 6555453                    /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7f569ff66000-7f569ff67000 r--s 00010000 08:16 6301730                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar
+7f569ff67000-7f569ff69000 r--s 00008000 08:16 6301729                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar
+7f569ff69000-7f569ff6c000 r--s 0000f000 08:16 6301735                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar
+7f569ff6c000-7f569ff6f000 r--s 00038000 08:16 6301732                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar
+7f569ff6f000-7f56a003a000 rw-p 00000000 00:00 0 
+7f56a003a000-7f56a003d000 ---p 00000000 00:00 0 
+7f56a003d000-7f56a013f000 rw-p 00000000 00:00 0 
+7f56a013f000-7f56a0140000 r--s 0000a000 08:16 6301741                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar
+7f56a0140000-7f56a0146000 r--s 0003b000 08:16 6301734                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar
+7f56a0146000-7f56a0148000 r--s 00001000 08:16 6301731                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar
+7f56a0148000-7f56a0152000 r--s 00116000 08:16 6301742                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar
+7f56a0152000-7f56a015a000 rw-s 00000000 08:16 5899620                    /tmp/hsperfdata_matthieu/2765
+7f56a015a000-7f56a015b000 rw-p 00000000 00:00 0 
+7f56a015b000-7f56a015c000 r--p 00000000 00:00 0 
+7f56a015c000-7f56a015d000 rw-p 00000000 00:00 0 
+7f56a015d000-7f56a015e000 r--p 00025000 08:16 2359389                    /lib/x86_64-linux-gnu/ld-2.23.so
+7f56a015e000-7f56a015f000 rw-p 00026000 08:16 2359389                    /lib/x86_64-linux-gnu/ld-2.23.so
+7f56a015f000-7f56a0160000 rw-p 00000000 00:00 0 
+7ffeacaa1000-7ffeacac2000 rw-p 00000000 00:00 0                          [stack]
+7ffeacb81000-7ffeacb84000 r--p 00000000 00:00 0                          [vvar]
+7ffeacb84000-7ffeacb86000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+java_command: ch.idsia.scenarios.Main -ag MarioDQNAgent2.MarioDQNAgent.py
+java_class_path (initial): .
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+LD_LIBRARY_PATH=/media/matthieu/Data/Matthieu/##Etude/#Licence_3eme_annee/##Mario/MarioBros-MachineLearning/mario-ai-master/src/main/bin/AmiCoBuild/JavaPy::/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xa6e6f0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xa6e6f0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x8b5d50], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: SIG_IGN, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGXFSZ: SIG_IGN, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGILL: [libjvm.so+0x8b5d50], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x8b5c00], sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x8b60d0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x8b60d0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x8b60d0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x8b60d0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04.4 LTS"
+
+uname:Linux 4.4.0-128-generic #154-Ubuntu SMP Fri May 25 14:15:18 UTC 2018 x86_64
+libc:glibc 2.23 NPTL 2.23 
+rlimit: STACK 8192k, CORE 0k, NPROC 31115, NOFILE 1048576, AS infinity
+load average:0,52 1,17 0,65
+
+/proc/meminfo:
+MemTotal:        8048492 kB
+MemFree:         5405460 kB
+MemAvailable:    6403388 kB
+Buffers:          119628 kB
+Cached:          1099004 kB
+SwapCached:            0 kB
+Active:          1602756 kB
+Inactive:         725332 kB
+Active(anon):    1110712 kB
+Inactive(anon):    27192 kB
+Active(file):     492044 kB
+Inactive(file):   698140 kB
+Unevictable:          48 kB
+Mlocked:              48 kB
+SwapTotal:      11998204 kB
+SwapFree:       11998204 kB
+Dirty:               264 kB
+Writeback:             0 kB
+AnonPages:       1101448 kB
+Mapped:           519812 kB
+Shmem:             28380 kB
+Slab:             101568 kB
+SReclaimable:      56392 kB
+SUnreclaim:        45176 kB
+KernelStack:        7600 kB
+PageTables:        31264 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    16022448 kB
+Committed_AS:    4107452 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      311828 kB
+DirectMap2M:     3756032 kB
+DirectMap1G:     4194304 kB
+
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 69 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 69
+model name	: Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz
+stepping	: 1
+microcode	: 0x23
+cpu MHz		: 2799.976
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb invpcid_single ibrs ibpb stibp kaiser tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 5188.20
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 69
+model name	: Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz
+stepping	: 1
+microcode	: 0x23
+cpu MHz		: 2799.875
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb invpcid_single ibrs ibpb stibp kaiser tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 5188.20
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 69
+model name	: Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz
+stepping	: 1
+microcode	: 0x23
+cpu MHz		: 2799.976
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb invpcid_single ibrs ibpb stibp kaiser tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 5188.20
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 69
+model name	: Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz
+stepping	: 1
+microcode	: 0x23
+cpu MHz		: 2799.976
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb invpcid_single ibrs ibpb stibp kaiser tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 5188.20
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 8048492k(5404964k free), swap 11998204k(11998204k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.171-b11) for linux-amd64 JRE (1.8.0_171-8u171-b11-0ubuntu0.16.04.1-b11), built on Apr 27 2018 17:19:03 by "buildd" with gcc 5.4.0 20160609
+
+time: Mon Jun 25 17:40:13 2018
+elapsed time: 5 seconds (0d 0h 0m 5s)
+

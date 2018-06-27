@@ -38,6 +38,7 @@ for arg in sys.argv[1:]:
 #--- Functions ---
 def getWinLoss():
 	print("\nGetWinLoss")
+	moyWin = 0
 	for r in range(len(filesResult)):
 		nbWin = 0
 		nbLoss = 0	
@@ -50,6 +51,10 @@ def getWinLoss():
 		print("",sys.argv[r+1])
 		print(" - Win : ",nbWin)
 		print(" - Loss: ",nbLoss)	
+		moyWin += nbWin
+	moyWin /= len(filesResult)
+	print(" Mean:")	
+	print(" - Win : ",moyWin)
 	input()	
 	
 def getPlot(column, index):
