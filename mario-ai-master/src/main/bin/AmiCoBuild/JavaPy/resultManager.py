@@ -97,6 +97,7 @@ def get3MPlot(column):
 	plt.plot(time, maxRes, label="max")
 	plt.plot(time, minRes, label="min")
 	plt.legend()
+	print(np.mean(meanRes))
 	plt.show()
 	
 def listFiles(preText):
