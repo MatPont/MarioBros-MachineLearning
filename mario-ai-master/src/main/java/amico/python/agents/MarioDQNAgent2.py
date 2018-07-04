@@ -257,7 +257,7 @@ class MarioDQNAgent():
 				# Convolutional layer
 				#conv2 = ops.conv(conv1,
 				conv2 = ops.conv(self.network_inputs[scope_name],			
-						32,
+						1,
 						kernel=[3,3],
 						strides=[2,2],
 						w_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
@@ -265,14 +265,14 @@ class MarioDQNAgent():
 				conv2 = activation(conv2)
 
 				# Convolutional layer
-				conv3 = conv2
-				"""conv3 = ops.conv(conv2,
-						64,
+				#conv3 = conv2
+				conv3 = ops.conv(conv2,
+						2,
 						kernel=[2,2],
 						strides=[1,1],
 						w_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
 						name="conv3")
-				conv3 = activation(conv3)"""
+				conv3 = activation(conv3)
 
 				conv3 = tf.contrib.layers.flatten(conv3)
 				num_units = first_fc_num_units
