@@ -57,28 +57,37 @@ def getWinLoss():
 	print(" - Win : ",moyWin)
 	input()	
 	
-def getPlot(column, index):
-	index = int(index)
-	column = int(column)
+def getPlotData(column, index):
 	myRes = []
 	result = filesResult[index]
-	print("\nGetPlot")
 	for i in range(len(result)):
 		if(result[i][0] == "WIN " or result[i][0] == "LOSS"):
 			if(column != 0):
 				myRes.append(float(result[i][column]))
 			else:
 				myRes.append(1 if result[i][0] == "WIN " else 0)
-	time = [x for x in range(len(myRes))]			
-	plt.plot(time, myRes)
+	time = [x for x in range(len(myRes))]
+	return time, myRes	
+
+def getPlot(column, index):
+	print("\nGetPlot")
+	index = int(index)
+	column = int(column)
+	if(index == -1):
+		for i in range(len(sys.argv)-1):
+			time, myRes = getPlotData(column, i)
+			plt.plot(time, myRes)			
+	else:
+		time, myRes = getPlotData(column, index)
+		plt.plot(time, myRes)
 	plt.show()
 	
 def get3MPlot(column):
+	print("\nGetPlot")
 	column = int(column)
 	meanRes = []
 	maxRes = []
 	minRes = []		
-	print("\nGetPlot")
 	for i in range(len(filesResult[0])):
 		myRes = []		
 		for r in range(len(filesResult)):
@@ -101,6 +110,7 @@ def get3MPlot(column):
 	plt.show()
 	
 def listFiles(preText):
+	print(preText,"-1- all")
 	for arg, i in zip(sys.argv[1:], range(len(sys.argv))):
 		print(preText,i,"-",arg)
 #-----------------
