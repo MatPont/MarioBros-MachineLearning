@@ -46,7 +46,7 @@ useDoubleQLearning = False
 useDuelingNetwork = False
 
 # Either number of units in the LSTM or in the fully connected according to "useLSTM" (for stateRepresentationID : 0 or 1)
-S0_first_fc_num_units = 512 # also for S2
+S0_first_fc_num_units = 2048 # also for S2
 S1_first_fc_num_units = 256
 
 # saveFiles:
@@ -240,23 +240,24 @@ class MarioDQNAgent():
 		print(net_shape)
 		
 		with tf.variable_scope(scope_name):
+			# Input Layer
 			self.network_inputs[scope_name] = tf.placeholder(tf.float32, shape=net_shape, name=scope_name+"_inputs")
 			
 			#----- Deep Q Network (with convolution) -----
 			if stateRepresentationID == 0 or stateRepresentationID == 2:
 				# Convolutional layer
-				conv1 = ops.conv(self.network_inputs[scope_name],
+				"""conv1 = ops.conv(self.network_inputs[scope_name],
 						16,
 						kernel=[7,7],
 						strides=[4,4],
 						w_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
 						name="conv1")
-				conv1 = activation(conv1)
+				conv1 = activation(conv1)"""
 
 				# Convolutional layer
-				conv2 = ops.conv(conv1,
-				#conv2 = ops.conv(self.network_inputs[scope_name],			
-						32,
+				#conv2 = ops.conv(conv1,
+				conv2 = ops.conv(self.network_inputs[scope_name],			
+						1,
 						kernel=[3,3],
 						strides=[2,2],
 						w_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
@@ -264,8 +265,9 @@ class MarioDQNAgent():
 				conv2 = activation(conv2)
 
 				# Convolutional layer
+				#conv3 = conv2
 				conv3 = ops.conv(conv2,
-						64,
+						2,
 						kernel=[2,2],
 						strides=[1,1],
 						w_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
@@ -274,13 +276,13 @@ class MarioDQNAgent():
 
 				conv3 = tf.contrib.layers.flatten(conv3)
 				num_units = first_fc_num_units
-				# First fully-connected layer (LSTM or not)	
+				# fully-connected layer (LSTM or not)	
 				fc1_out = self.build_before_last_fc_layer(conv3, num_units, scope_name, activation)
 
 				# Final layer (Dueling or not)
 				self.build_last_fc_layer(fc1_out, num_units, scope_name, prediction_network)
 					
-			# ----- Q Network with hidden layer -----
+			# ----- Q Network (without convolution) -----
 			elif stateRepresentationID == 1:
 				#inputLayer = tf.contrib.layers.flatten(self.network_inputs[scope_name])
 				inputLayer = self.network_inputs[scope_name]
@@ -339,7 +341,6 @@ class MarioDQNAgent():
 				else:
 					rnn_cell = tf.contrib.rnn.BasicLSTMCell(num_units=num_units, activation=activation)
 				self.rnn_trainLength[network_scope_name] = tf.placeholder(dtype=tf.int32)
-				# We take the output from the final convolutional layer and send it to a recurrent layer.
 				# The input must be reshaped into [batch x trace x units] for rnn processing, 
 				# and then returned to [batch x units] when sent through the upper levels.
 				self.rnn_batch_size[network_scope_name] = tf.placeholder(dtype=tf.int32, shape=[])
@@ -449,8 +450,8 @@ class MarioDQNAgent():
 			# Loss - Implement mean squared error between the target and prediction networks as the loss
 			#self.loss = tf.reduce_mean(tf.square(tf.subtract(self.target_y, self.predict_y)), name="loss")
 			#self.loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=self.predict_y, logits=self.target_y), name="loss")			
-			self.loss = tf.square(tf.subtract(self.target_y, self.predict_y))
-			#self.loss = tf.nn.softmax_cross_entropy_with_logits(labels=self.predict_y, logits=self.target_y)
+			#self.loss = tf.square(tf.subtract(self.target_y, self.predict_y))
+			self.loss = tf.nn.softmax_cross_entropy_with_logits_v2(labels=self.predict_y, logits=self.target_y)
 			if useLSTM and maskHalfLoss:
 				self.maskA = tf.zeros([self.batch_size, self.trace_length//2])
 				self.maskB = tf.ones([self.batch_size, self.trace_length//2])
@@ -506,7 +507,6 @@ class MarioDQNAgent():
 			q_value_state_prime = self.q_targets.eval({self.network_inputs['target_network'] : state_prime}, session = self.session)
 		else:
 			state_train = self.get_rnn_state('target_network')
-			#q_value_state_prime = self.q_targets.eval({...}, session = self.session)
 			#q_value_state_prime = self.session.run(self.q_targets, 
 			q_value_state_prime, self.rnn_state_train['target_network'] = self.session.run([self.q_targets, self.rnn_state['target_network']],
 					{self.network_inputs['target_network'] : state_prime,
@@ -514,18 +514,17 @@ class MarioDQNAgent():
 					self.rnn_batch_size['target_network'] : self.batch_size,
 					self.rnn_state_in['target_network'] : state_train})
 		
+		# Double Q Learning (or not)
 		if not useDoubleQLearning:
-			# Regular Q Learning
 			#  the max logit is the max action q value
 			max_q_value_state_prime = np.max(q_value_state_prime, axis=1)
 		else:
-			# Double Q Learning
 			if not useLSTM:
 				q_value_state_prime_o = self.q_predictions.eval({self.network_inputs['prediction_network'] : state_prime}, session = self.session)
-			else:	
+			else:
 				state_train = self.get_rnn_state('prediction_network')
-				#q_value_state_prime_o = self.session.run(self.q_predictions,
-				q_value_state_prime_o, self.rnn_state_train['prediction_network'] = self.session.run([self.q_predictions, self.rnn_state['prediction_network']], 
+				q_value_state_prime_o = self.session.run(self.q_predictions,
+				#q_value_state_prime_o, self.rnn_state_train['prediction_network'] = self.session.run([self.q_predictions, self.rnn_state['prediction_network']], 
 						{self.network_inputs['prediction_network'] : state_prime,
 						self.rnn_trainLength['prediction_network'] : self.trace_length,
 						self.rnn_batch_size['prediction_network'] : self.batch_size,

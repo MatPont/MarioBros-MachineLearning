@@ -46,7 +46,7 @@ useDoubleQLearning = False
 useDuelingNetwork = False
 
 # Either number of units in the LSTM or in the fully connected according to "useLSTM" (for stateRepresentationID : 0 or 1)
-S0_first_fc_num_units = 512 # also for S2
+S0_first_fc_num_units = 2048 # also for S2
 S1_first_fc_num_units = 256
 
 # saveFiles:
@@ -451,7 +451,7 @@ class MarioDQNAgent():
 			#self.loss = tf.reduce_mean(tf.square(tf.subtract(self.target_y, self.predict_y)), name="loss")
 			#self.loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=self.predict_y, logits=self.target_y), name="loss")			
 			self.loss = tf.square(tf.subtract(self.target_y, self.predict_y))
-			#self.loss = tf.nn.softmax_cross_entropy_with_logits(labels=self.predict_y, logits=self.target_y)
+			#self.loss = tf.nn.softmax_cross_entropy_with_logits_v2(labels=self.predict_y, logits=self.target_y)
 			if useLSTM and maskHalfLoss:
 				self.maskA = tf.zeros([self.batch_size, self.trace_length//2])
 				self.maskB = tf.ones([self.batch_size, self.trace_length//2])

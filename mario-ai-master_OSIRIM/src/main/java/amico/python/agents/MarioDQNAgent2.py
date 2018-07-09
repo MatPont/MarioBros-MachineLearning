@@ -39,11 +39,14 @@ useLSTMTanH = True # Allows to use TanH for LSTM or the activation define in bui
 #        because batch loss will probably be nan or very high 
 #        (clipping gradients isn't working everytime to solve this problem)
 
+# Double Q Learning
+useDoubleQLearning = False
+
 # Dueling Network:
-useDuelingNetwork = True
+useDuelingNetwork = False
 
 # Either number of units in the LSTM or in the fully connected according to "useLSTM" (for stateRepresentationID : 0 or 1)
-S0_first_fc_num_units = 512 # also for S2
+S0_first_fc_num_units = 2048 # also for S2
 S1_first_fc_num_units = 256
 
 # saveFiles:
@@ -57,6 +60,8 @@ if useLSTM:
 	if trace_length > batch_size:
 		trace_length = batch_size
 	batch_size //= trace_length
+	if trace_length == 1:
+		maskHalfLoss = False
 else:
 	trace_length = 1
 
@@ -235,33 +240,35 @@ class MarioDQNAgent():
 		print(net_shape)
 		
 		with tf.variable_scope(scope_name):
+			# Input Layer
 			self.network_inputs[scope_name] = tf.placeholder(tf.float32, shape=net_shape, name=scope_name+"_inputs")
 			
 			#----- Deep Q Network (with convolution) -----
 			if stateRepresentationID == 0 or stateRepresentationID == 2:
-				# 16 9*9 filters with stride 4
-				conv1 = ops.conv(self.network_inputs[scope_name],
+				# Convolutional layer
+				"""conv1 = ops.conv(self.network_inputs[scope_name],
 						16,
-						kernel=[9,9],
+						kernel=[7,7],
 						strides=[4,4],
 						w_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
 						name="conv1")
-				conv1 = activation(conv1)
+				conv1 = activation(conv1)"""
 
-				# 32 5*5 filters with stride 2
-				conv2 = ops.conv(conv1,
-				#conv2 = ops.conv(self.network_inputs[scope_name],			
-						32,
-						kernel=[5,5],
+				# Convolutional layer
+				#conv2 = ops.conv(conv1,
+				conv2 = ops.conv(self.network_inputs[scope_name],			
+						1,
+						kernel=[3,3],
 						strides=[2,2],
 						w_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
 						name="conv2")
 				conv2 = activation(conv2)
 
-				# 64 3*3 filters with stride 1
+				# Convolutional layer
+				#conv3 = conv2
 				conv3 = ops.conv(conv2,
-						64,
-						kernel=[3,3],
+						2,
+						kernel=[2,2],
 						strides=[1,1],
 						w_initializer=tf.contrib.layers.xavier_initializer_conv2d(),
 						name="conv3")
@@ -269,13 +276,13 @@ class MarioDQNAgent():
 
 				conv3 = tf.contrib.layers.flatten(conv3)
 				num_units = first_fc_num_units
-				# First fully-connected layer (LSTM or not)	
+				# fully-connected layer (LSTM or not)	
 				fc1_out = self.build_before_last_fc_layer(conv3, num_units, scope_name, activation)
 
 				# Final layer (Dueling or not)
 				self.build_last_fc_layer(fc1_out, num_units, scope_name, prediction_network)
 					
-			# ----- Q Network with x hidden layer -----
+			# ----- Q Network (without convolution) -----
 			elif stateRepresentationID == 1:
 				#inputLayer = tf.contrib.layers.flatten(self.network_inputs[scope_name])
 				inputLayer = self.network_inputs[scope_name]
@@ -334,7 +341,6 @@ class MarioDQNAgent():
 				else:
 					rnn_cell = tf.contrib.rnn.BasicLSTMCell(num_units=num_units, activation=activation)
 				self.rnn_trainLength[network_scope_name] = tf.placeholder(dtype=tf.int32)
-				# We take the output from the final convolutional layer and send it to a recurrent layer.
 				# The input must be reshaped into [batch x trace x units] for rnn processing, 
 				# and then returned to [batch x units] when sent through the upper levels.
 				self.rnn_batch_size[network_scope_name] = tf.placeholder(dtype=tf.int32, shape=[])
@@ -396,7 +402,9 @@ class MarioDQNAgent():
 	def copy_prediction_parameters_to_target_network(self):
 		print("\nCopying prediction network parameters to target network")
 		for param in tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, scope='prediction_network'):
-			self.copy_parameters_operation[param.name].eval({ self.copied_parameters[param.name] : param.eval(session = self.session) }, session = self.session)	
+			self.copy_parameters_operation[param.name].eval({ self.copied_parameters[param.name] : param.eval(session = self.session) }, session = self.session)				
+		if useLSTM:
+			self.rnn_state_train['target_network'] = self.rnn_state_train['prediction_network']
 	
 	def clip_gradients(self, gradient):
 		# Clip gradients to min_grad and max_grad before.
@@ -445,10 +453,10 @@ class MarioDQNAgent():
 			self.loss = tf.square(tf.subtract(self.target_y, self.predict_y))
 			#self.loss = tf.nn.softmax_cross_entropy_with_logits(labels=self.predict_y, logits=self.target_y)
 			if useLSTM and maskHalfLoss:
-				self.maskA = tf.zeros([self.batch_size,self.trace_length//2])
-				self.maskB = tf.ones([self.batch_size,self.trace_length//2])
-				self.mask = tf.concat([self.maskA,self.maskB],1)
-				self.mask = tf.reshape(self.mask,[-1])
+				self.maskA = tf.zeros([self.batch_size, self.trace_length//2])
+				self.maskB = tf.ones([self.batch_size, self.trace_length//2])
+				self.mask = tf.concat([self.maskA, self.maskB], 1)
+				self.mask = tf.reshape(self.mask, [-1])
 				self.loss = self.loss * self.mask #self.loss = tf.reduce_mean(self.loss * self.mask)
 			self.loss = tf.reduce_mean(self.loss, name="loss")
 			
@@ -476,6 +484,13 @@ class MarioDQNAgent():
 				self.optimizer = self.opt.apply_gradients(clipped_gradients) # this increments global step
 			else:
 				self.optimizer = self.opt.minimize(self.loss)
+				
+	def get_rnn_state(self, scope_name):
+		if reset_rnn_state:
+			state_train = (np.zeros([self.batch_size,first_fc_num_units]), np.zeros([self.batch_size,first_fc_num_units])) 
+		else:
+			state_train = self.rnn_state_train[scope_name]
+		return state_train
 	
 	# ----- Minibatch -----			
 	def run_minibatch(self):
@@ -491,20 +506,31 @@ class MarioDQNAgent():
 		if not useLSTM:
 			q_value_state_prime = self.q_targets.eval({self.network_inputs['target_network'] : state_prime}, session = self.session)
 		else:
-			if reset_rnn_state:
-				state_train = (np.zeros([self.batch_size,first_fc_num_units]), np.zeros([self.batch_size,first_fc_num_units])) 
-			else:
-				state_train = self.rnn_state_train['target_network']		
-			#q_value_state_prime = self.q_targets.eval({...}, session = self.session)
-			q_value_state_prime, self.rnn_state_train['target_network'] = self.session.run(
-					[self.q_targets, self.rnn_state['target_network']], 
+			state_train = self.get_rnn_state('target_network')
+			#q_value_state_prime = self.session.run(self.q_targets, 
+			q_value_state_prime, self.rnn_state_train['target_network'] = self.session.run([self.q_targets, self.rnn_state['target_network']],
 					{self.network_inputs['target_network'] : state_prime,
 					self.rnn_trainLength['target_network'] : self.trace_length,
 					self.rnn_batch_size['target_network'] : self.batch_size,
 					self.rnn_state_in['target_network'] : state_train})
 		
-		# the max logit is the max action q value
-		max_q_value_state_prime = np.max(q_value_state_prime, axis=1)
+		# Double Q Learning (or not)
+		if not useDoubleQLearning:
+			#  the max logit is the max action q value
+			max_q_value_state_prime = np.max(q_value_state_prime, axis=1)
+		else:
+			if not useLSTM:
+				q_value_state_prime_o = self.q_predictions.eval({self.network_inputs['prediction_network'] : state_prime}, session = self.session)
+			else:
+				state_train = self.get_rnn_state('prediction_network')
+				q_value_state_prime_o = self.session.run(self.q_predictions,
+				#q_value_state_prime_o, self.rnn_state_train['prediction_network'] = self.session.run([self.q_predictions, self.rnn_state['prediction_network']], 
+						{self.network_inputs['prediction_network'] : state_prime,
+						self.rnn_trainLength['prediction_network'] : self.trace_length,
+						self.rnn_batch_size['prediction_network'] : self.batch_size,
+						self.rnn_state_in['prediction_network'] : state_train})
+			max_a = np.argmax(q_value_state_prime_o, axis = 1)
+			max_q_value_state_prime = q_value_state_prime[range(batch_size*trace_length), max_a]
 		
 		# the state_prime_is_terminal * 1  converts [True, False, True] to [1,0,1].
 		# Subtracting this from 1 effectively eliminates the entire term, leaving just reward for terminal states
@@ -520,8 +546,7 @@ class MarioDQNAgent():
 					self.global_step : self.total_iterations # and update our global step. TODO, maybe this should be self.global_step. make sure isn't incremented twice with minimize() call
 				})
 		else:
-			if not reset_rnn_state:
-				state_train = self.rnn_state_train['prediction_network']
+			state_train = self.get_rnn_state('prediction_network')	
 			_, self.report_predictions, lr, self.one_hot_actions, self.final_predictions, self.report_loss, self.rnn_state_train['prediction_network'] = self.session.run(
 					[self.optimizer, self.q_predictions, self.learning_rate, self.chosen_actions_one_hot, self.predict_y, self.loss, self.rnn_state['prediction_network']],
 					{self.network_inputs['prediction_network'] : state,	 # it'll need the states possibly
@@ -537,7 +562,7 @@ class MarioDQNAgent():
 		if self.total_iterations % self.report_frequency == 0:		
 			print("lr=",lr)
 		
-		self.minibatches_run += 1
+		self.minibatches_run += 1	
 		
 	# ----- Choose Action -----
 	def choose_action(self, state):
@@ -565,7 +590,9 @@ class MarioDQNAgent():
 				else:
 					rnn_state = self.rnn_state_train['prediction_network']
 					rnn_state = (np.array([rnn_state[0][-1]]), np.array([rnn_state[1][-1]]))
-				aq = self.q_predictions.eval({self.network_inputs['prediction_network'] : [state],
+				aq = self.q_predictions.eval(
+				#aq, self.rnn_state_train['prediction_network'] = self.session.run([self.q_predictions, self.rnn_state['prediction_network']],
+						{self.network_inputs['prediction_network'] : [state],
 						self.rnn_trainLength['prediction_network'] : 1,
 						self.rnn_batch_size['prediction_network'] : 1,
 						self.rnn_state_in['prediction_network'] : rnn_state}, session = self.session) #[0]
@@ -606,6 +633,7 @@ class MarioDQNAgent():
 			total_iterations = self.total_iterations, 
 			total_random_action = self.total_random_action)		
 		print("=== Parameters saved as \"{}.npz\" ===\n".format(hyperparametersFile))	
+		# TODO - save rnn_state_train 
 		
 	def save_memory(self, memoryFile):	
 		self.replay_memory.save_memory(memoryFile)
